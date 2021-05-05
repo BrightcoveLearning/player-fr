@@ -1,0 +1,1562 @@
+﻿<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>Utilisation de DFP Premium avec Brightcove Player</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/prism.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/styles.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="https://support.brightcove.com/site-assets/css/site/tabs.css">
+  <link rel="stylesheet" href="/assets/css/local.css">
+  <link data-react-helmet="true" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+  <script src="/assets/js/sajari-head.js"></script>
+</head>
+
+<body class="body">
+
+<header>
+  <div class="div-header">
+    <a href="/"><img class="product-logo" src="https://support.brightcove.com/site-assets/images/site/product-logos/Player_Logo.svg" alt="logo du produit" style="max-height: 100px;max-width: 232px;"/></a>
+<!-- GTranslate: https://gtranslate.io/ -->
+<select onchange="doGTranslate(this);"><option value="">Sélectionner la langue</option><option value="en|en" translate="No">English</option><option value="en|zh-TW" translate="No">繁體中文</option><option value="en|fr" translate="No">Français</option><option value="en|de" translate="No">Deutsche</option><option value="en|ja" translate="No">日本語</option><option value="en|ko" translate="No">한국어</option><option value="en|es" translate="No">Español</option></select>
+
+<script>
+/* <![CDATA[ */
+function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+/* ]]> */
+</script>
+
+
+
+    <span class="secondary-nav"><a href="https://supportportal.brightcove.com/s/login/?"><img src="https://support.brightcove.com/site-assets/images/site/support.png" alt="assistance"/> Contactez le support</a> <span style="vertical-align: top;margin-left:1em;margin-right:1em;">|</span> <a href="https://status.brightcove.com/"><img src="https://support.brightcove.com/site-assets/images/site/status.png" alt="état du système"/> État du système</a></span> <br/>
+    
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb arr-right">
+      
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+      
+      
+      
+      <li class="breadcrumb-item"><a href="/advertising/">Publicité</a></li>
+      
+      <li class="breadcrumb-item active" aria-current="page">Utilisation de DFP Premium avec Brightcove Player</li>
+    </ol>
+  </nav>
+</header>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-3 left-side-bar">
+        <select id="site_select" class="bcls-select" style="margin-right: 1rem;">
+          <option value="">Autres documents Brightcove</option>
+          
+            
+              <option value="https://support.brightcove.com">Accueil Documentation</option>
+            
+          
+            
+              <option value="https://audience.support.brightcove.com">Audience de Brightcove</option>
+            
+          
+            
+              <option value="https://beacon.support.brightcove.com">Balise Brightcove</option>
+            
+          
+            
+              <option value="https://campaign.support.brightcove.com">Campagne Brightcove</option>
+            
+          
+            
+              <option value="https://engage.support.brightcove.com">Brightcove Engagez</option>
+            
+          
+            
+              <option value="https://live.support.brightcove.com">Brightcove Live</option>
+            
+          
+            
+              <option value="https://gallery.support.brightcove.com">Brightcove Gallery</option>
+            
+          
+            
+              <option value="https://ssai.support.brightcove.com">Brightcove SSAI</option>
+            
+          
+            
+              <option value="https://social.support.brightcove.com">Brightcove Social</option>
+            
+          
+            
+              <option value="https://studio.support.brightcove.com">Video Cloud Studio</option>
+            
+          
+            
+              <option value="https://player.support.brightcove.com">Développement du joueur Brightcove</option>
+            
+          
+            
+              <option value="https://apis.support.brightcove.com">API de la plate-forme Video Cloud</option>
+            
+          
+            
+              <option value="https://sdks.support.brightcove.com">SDK pour périphériques Video Cloud</option>
+            
+          
+            
+              <option value="https://integrations.support.brightcove.com">Intégrations et connecteurs CMS</option>
+            
+          
+            
+              <option value="https://general.support.brightcove.com">Informations générales sur Video Cloud</option>
+            
+          
+            
+              <option value="https://zencoder.support.brightcove.com">Zencoder</option>
+            
+          
+        </select>
+
+        <nav class="sidenav" id="side_nav">
+          
+            
+            <h5><a href="/index.html">Accueil</a></h5>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/getting-started/index.html">Mise en route <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vidéos de base du développeur</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/what-brightcove-player.html">Qu' est-ce que le Brightcove Player ?</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/overview-brightcove-player.html">Vue d'ensemble : Lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">Guide d'apprentissage : Publicité vidéo</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/overview-brightcove-player-plugins.html">Vue d'ensemble : Plugins de lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/training/player-development-training-videos.html">Vidéos de formation au développement du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/step-step-brightcove-player.html">Étape par étape : Lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/step-step-player-customization.html">Étape par étape : Personnalisation du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">Formation : Développer avec Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-using-rest-apis.html">Guide d'apprentissage : Utilisation des API REST</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/basics/index.html">Apprendre les bases <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/basics/developer-basics-advanced-player-code.html">Code joueur avancé</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-autoplaying-video.html">Lecture automatique d'une vidéo</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-converting-code.html">Plugin personnalisé - Conversion de code</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-passing-data.html">Plugin personnalisé - Passage de données</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-using-studio.html">Plugin personnalisé - Utilisation de Studio</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-custom-plugin-why-and-how.html">Plugin personnalisé - Pourquoi et comment</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vidéos de base du développeur</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-generating-player-code.html">Génération du code de joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/basics/developer-basics-preparing-write-code.html">Préparation à l'écriture du code</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/references/index.html">Références <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/references/brightcove-player-5-6-migration-guide.html">Guide de migration de Brightcove Player 5 à 6</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/index.html">Documentation de l'API Brightcove Player (site externe)</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-cookies.html">Brightcove Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Référence des erreurs du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://groups.google.com/forum/embed/?place=forum/bcplayerdev#!forum/bcplayerdev">Forum de l'annonce des joueurs de Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-system-requirements.html">Configuration système requise pour Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Architecture de recherche de catalogue</a></li>
+                  
+                
+                  
+                    <li><a href="https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html">Problèmes connus</a></li>
+                  
+                
+                  
+                    <li><a href="/references/player-catalog.html">Catalogue du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/references/player-feature-support-browser.html">Prise en charge des fonctionnalités du lecteur par navigateur</a></li>
+                  
+                
+                  
+                    <li><a href="/references/player-metadata-bcinfo.html">Métadonnées du lecteur de bcinfo</a></li>
+                  
+                
+                  
+                    <li><a href="https://docs.brightcove.com/brightcove-player/current-release/Player.html">API Méthodes et événements du joueur (site externe)</a></li>
+                  
+                
+                  
+                    <li><a href="/references/guide-playlist-api.html">Guide de l'API de playlist</a></li>
+                  
+                
+                  
+                    <li><a href="/references/video-metadata-mediainfo.html">Métadonnées vidéo de mediainfo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/plugins/index.html">Plugins <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/plugins/360degvr-video-plugin.html">Vidéo 360º</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Publicités uniquement</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicité avec le plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicité avec le plugin IMA3</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/upgrading-ima3-plugin-version-3.html">Mise à niveau vers IMA3 Plugin Version 3</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Publicité avec SSAI</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/chromecast-plugin-brightcove-player.html">Chromecast</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Écran de fin personnalisé</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Afficher les messages d'erreur</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-thumbnail-previews-plugin.html">Afficher les aperçus miniatures</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">DRM</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/google-tag-manager-plugin-brightcove-player.html">Gestionnaire de balises Google</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/live-dvrux-plugin.html">DVRUX en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-overlay-plugin.html">Superposition</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/overview-brightcove-player-plugins.html">Vue d'ensemble : Plugins de joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/picture-picture-plugin-aka-floating-or-pinned.html">Image dans l'image</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/playerplugin-version-testing.html">Test de version du lecteur et du plugin</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/playlist-ui-plugin.html">Interface utilisateur de</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/changelog/index.html">Plugin Changelog</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/plugin-registry.html">Registre des plug-ins</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/plugin-version-reference.html">Référence de version du plugin</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/quality-selection-plugin.html">Sélection de qualité</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/social-sharing-plugin.html">Réseaux sociaux</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/tealium-plugin-brightcove-player.html">Gestionnaire de balise Tealium</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/video-seo-schema-generator-plugin.html">Générateur de schéma SEO vidéo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/advertising/index.html">Publicité <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/advertising/ad-events-and-ad-objects.html">Événements publicitaires et objets publicitaires</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/ad-only-plugin.html">Plugin publicitaire uniquement</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-freewheel-plugin.html">Publicité avec le plugin FreeWheel</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/advertising-ima3-plugin.html">Publicité avec le plugin IMA3</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/client-side-preroll-with-live-ssai.html">Publicités pré-roll côté client avec SSAI en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/displaying-ads-using-ad-cue-points.html">Affichage des annonces à l'aide de points de repère</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/flash-no-longer-valid-ima.html">Flash n'est plus valide avec IMA</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-ad-partner-integration.html">Guide : Intégration des partenaires publicitaires</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/guide-contrib-ads-migration.html">Guide : Migration contrib-ads</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/implementing-server-side-ads-brightcove-player.html">Implémentation de SSAI avec le lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-header-bidding-ad.html">Démarrer par saut : Annonce d'enchères d'en-tête</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-outstream-ad.html">Démarrer par saut : Publicités Outstream</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/jump-start-pre-roll-ad.html">Démarrer par saut : Publicités pré-roll</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/known-issues-server-side-ad-insertion-ssai.html">Problèmes connus : Insertion d'annonces côté serveur (SSAI)</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/learning-guide-video-advertising.html">Guide d'apprentissage : Publicité vidéo</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/step-step-implementing-advertising.html">Étape par étape : Implémentation</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/testing-pre-release-advertising-plugins.html">Test des plugins publicitaires pré-version</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/using-dfp-premium-brightcove-player.html">Utilisation de DFP Premium avec Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/using-player-enhancements-live-ssai-brightcove-player.html">Utilisation de SSAI Live et Advanced Player Toolkit</a></li>
+                  
+                
+                  
+                    <li><a href="/advertising/video-cloud-ssai-ad-tag-validation.html">Validation des balises publicitaires SSAI Video Cloud</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/publish/index.html">Publication de vidéos et de lecteurs <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/assigning-video-player-programmatically.html">Affectation d'une vidéo au lecteur par programme</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-advanced-page-embed-code.html">Options disponibles pour le code d'intégration avancé (dans la page)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/available-options-standard-iframe-embed-code.html">Options disponibles pour le code d'intégration standard (iframe)</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Chargeur de lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/bulk-updating-brightcove-default-player.html">Mise à jour en bloc du lecteur par défaut Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/choosing-correct-embed-code.html">Choix du bon code d'intégration</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/delaying-player-instantiation.html">Retarder l'instanciation du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/pre-release-player.html">Joueur pré-libération</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/syndication-strategies.html">Stratégies de syndication</a></li>
+                  
+                
+                  
+                    <li><a href="/publish/using-non-brightcove-player.html">Utilisation d'un lecteur non-Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/using-multiple-players-one-page.html">Utilisation de plusieurs joueurs sur une seule page</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/using-reference-ids.html">Utilisation des ID de référence</a></li>
+                  
+                
+                  
+                    <li><a href="">Inspecteur des formats associés vidéo</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/troubleshooting/index.html">Dépannage <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Application de technologie de lecture Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/brightcove-player-error-reference.html">Référence des erreurs du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-information-modal.html">Informations sur le lecteur Brightcove Modal</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-player-troubleshooting-guide.html">Guide de dépannage du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-charles-log.html">Création d'un journal Charles</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/creating-network-log.html">Création d'un journal réseau</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Messagerie Restrictions de domaine</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-error-messages-plugin.html">Afficher les messages d'erreur Plugin</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/manually-setting-player-version.html">Définition manuelle de la version du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/playerplugin-version-testing.html">Test de version du lecteur et du plugin</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/player-informational-properties.html">Propriétés informationnelles du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/brightcove-player-sample-live-custom-error-message.html">Exemple : Message d'erreur personnalisé en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/step-step-brightcove-player-debugger.html">Étape par étape : Débogueur Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/running-network-path-trace.html">Exécution d'une trace de chemin réseau</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/using-player-reference.html">Utilisation de la référence du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/vetting-brightcove-player-releases.html">Vetting Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">Affichage de la configuration du lecteur</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/styling/index.html">Style &amp; Apparence <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance.html">Personnalisation de l'apparence du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/customizing-player-appearance-legacy-skin.html">Personnalisation de l'apparence du joueur - Skin hérité</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/brightcove-player-sample-player-styling-playground.html">Player Styling Aire de jeux</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/quick-start-player-customization-legacy-skin.html">Brève introduction : Personnalisation du joueur - Skin hérité</a></li>
+                  
+                
+                  
+                    <li><a href="/getting-started/step-step-player-customization.html">Étape par étape : Personnalisation du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/responsive-sizing-brightcove-player.html">Dimensionnement réactif pour le lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/sizing-player.html">Dimensionnement du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/skins-and-player-versions.html">Skins et versions de lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/media/styling-captions.html">Légendes de style</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/styling-playlists.html">Listes de lecture de style</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/playback/index.html">Lecture <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/playback/autoplay-considerations.html">Considérations sur la lecture automatique</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/brightcove-playback-technology-app.html">Application de technologie de lecture Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/xdr-with-bcplayer.html">Reprise multi-appareils avec Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/deep-linking.html">Liaison profonde</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/delivering-hls-video.html">Livrer la vidéo HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/determining-which-rendition-will-play.html">Déterminer le format associé à jouer</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guide : Technologie de lecture</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/hls-plugin.html">Plugin HLS</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/ios-and-brightcove-player.html">iOS et Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/overview-https-support.html">Vue d'ensemble : Prise en charge HTTPS</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/quality-selection-plugin.html">Plugin de sélection de qualité</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/static-url-delivery.html">Livraison d'URL statique</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/streaming-playready-protected-content-dynamic-delivery.html">Contenu protégé PlayReady en streaming</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/using-brightcove-player-tve.html">Utilisation du lecteur Brightcove pour TVE</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/content-protection/index.html">Protection des DRM et du contenu <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/players/configuring-player-content-restrictions.html">Configuration des restrictions relatives au contenu du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/creating-dash-drm-manifest-brightcove-player.html">Création d'un manifeste DASH DRM pour le lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/domain-restrictions-messaging.html">Messagerie Restrictions de domaine</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/configuring-brightcove-player-drm.html">Plugin DRM</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/overview-content-protection.html">Vue d'ensemble : Protection du contenu</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/policy-keys.html">Clés de stratégie</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/restricting-video-playback-using-ip-address.html">Restriction de la lecture vidéo à l'aide d'une adresse IP</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">URL signées et authentification des jetons avec un flux en direct</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/coding-topics/index.html">Rubriques de codage <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/publish/brightcove-player-loader.html">Chargeur de lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/references/catalog-search-architecture.html">Mise à niveau de la recherche</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/brightcove-player-sample-trigger-rewind-custom-event.html">Événement personnalisé</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/guide-playback-technology.html">Guide : Technologie de lecture</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/programmatically-localizing-brightcove-player.html">Localisation du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/localizing-plugins.html">Localisation des plugins</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/player-events.html">Événements joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/overview-components.html">Vue d'ensemble : Composants</a></li>
+                  
+                
+                  
+                    <li><a href="/playback/overview-https-support.html">Vue d'ensemble : Prise en charge HTTPS</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/overview-player-api.html">Vue d'ensemble : API du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/pass-data-plugin.html">Transmettre les données au plugin</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/react-player-loader.html">React Player Loader</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/reporting-brightcove-player-configurations.html">Rapports sur les configurations du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/requirejs-and-brightcove-player.html">RequireJS et Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/step-step-plugin-development.html">Étape par étape : Développement de plug-in</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/step-step-videojs-plugin-generator.html">Étape par étape : Générateur de plug-in Video.js</a></li>
+                  
+                
+                  
+                    <li><a href="/coding-topics/using-bc-and-getplayer-methods.html">Utilisation des méthodes bc () et getPlayer ()</a></li>
+                  
+                
+                  
+                    <li><a href="/troubleshooting/viewing-player-configuration.html">Affichage de la configuration du lecteur</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/general/index.html">Informations générales <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/publish/adding-application-id-player-embed-code.html">Ajout d'un ID d'application au code d'intégration du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/general/adding-captions-videos-programmatically.html">Ajout de légendes aux vidéos par programme</a></li>
+                  
+                
+                  
+                    <li><a href="https://studio.support.brightcove.com/media/adding-chapters-video.html">Ajout de chapitres à une vidéo</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-6-now-default-version.html">Brightcove Player 6 Version par défaut</a></li>
+                  
+                
+                  
+                    <li><a href="/general/brightcove-player-accessibility.html">Accessibilité du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/custom-endscreen-plugin.html">Plugin d'écran d'extrémité personnalisé</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/display-overlay-plugin.html">Plugin de superposition d'affichage</a></li>
+                  
+                
+                  
+                    <li><a href="/references/guide-playlist-api.html">Guide : API Playlist</a></li>
+                  
+                
+                  
+                    <li><a href="/general/identify-and-delete-low-performing-videos.html">Identifier et supprimer des vidéos peu performantes</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-cue-points-programmatically.html">Implémentation des points de repère par programme</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-playlists.html">Mise en œuvre des playlists</a></li>
+                  
+                
+                  
+                    <li><a href="/general/implementing-modaldialog.html">Implémentation du ModalDialog</a></li>
+                  
+                
+                  
+                    <li><a href="/general/live-hls.html">HLS en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/general/live-stream-configuration.html">Configuration du flux en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/general/multiple-audio-tracks.html">Plusieurs pistes audio</a></li>
+                  
+                
+                  
+                    <li><a href="/general/player-configuration-guide.html">Guide de configuration du joueur</a></li>
+                  
+                
+                  
+                    <li><a href="/general/playing-live-streams.html">Lecture de flux en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/playlist-ui-plugin.html">Plug-in d'interface utilisateur</a></li>
+                  
+                
+                  
+                    <li><a href="/content-protection/signed-urls-and-token-auth-live-stream.html">URL signées et authentification des jetons avec un flux en direct</a></li>
+                  
+                
+                  
+                    <li><a href="/plugins/social-sharing-plugin.html">Plugin de médias sociaux</a></li>
+                  
+                
+                  
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html">Étape par étape : Gestion des joueurs</a></li>
+                  
+                
+                  
+                    <li><a href="/styling/styling-playlists.html">Listes de lecture de style</a></li>
+                  
+                
+                  
+                    <li><a href="/general/using-screen-reader-brightcove-player.html">Utilisation d'un lecteur d'écran avec le lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/general/versions-brightcove-player-documentation.html">Versions de la documentation de Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="/general/volume-control.html">Contrôle du volume</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/code-samples/index.html">Exemples de code <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/code-samples/index-thumb.html">Échantillons de code par groupe</a></li>
+                  
+                
+                  
+                    <li><a href="/code-samples/index.html">Index d'exemple de code</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/amp/index.html">AMP <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/amp/amp-using-video-cloud-video.html">AMP à l'aide d'une vidéo Video Cloud</a></li>
+                  
+                
+                  
+                    <li><a href="/amp/amp-using-external-video.html">AMP à l'aide d'une vidéo externe</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/training/index.html">Entraînement <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/training/online-training-courses.html">Tous les cours de formation en ligne</a></li>
+                  
+                
+                  
+                    <li><a href="/training/developer-basics-videos.html">Vidéos de base du développeur</a></li>
+                  
+                
+                  
+                    <li><a href="/training/player-development-training-videos.html">Vidéos de formation au développement du lecteur</a></li>
+                  
+                
+                  
+                    <li><a href="/training/register-training.html">S' inscrire à la formation dirigée par un instructeur</a></li>
+                  
+                
+                  
+                    <li><a href="/training/training-demand-developing-brightcove-player.html">Formation : Développer avec Brightcove Player</a></li>
+                  
+                
+                  
+                    <li><a href="https://apis.support.brightcove.com/player-management/getting-started/training-demand-quick-start-player-management.html">Formation : Démarrage rapide de la gestion des joueurs</a></li>
+                  
+                
+                  
+                    <li><a href="/training/brightcove-university.html">Cours de formation à l'Université de Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/release-notes/index.html">Notes de mise à jour <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-release-notes.html">Notes de mise à jour du lecteur Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/release-notes/brightcove-player-prerelease-notes.html">Notes de pré-version du lecteur Brightcove</a></li>
+                  
+                
+              </ul>
+            
+          
+            
+              <h5 class="submenu-header"><a href="/support/index.html">Support <strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    
+                  
+                
+                  
+                    <li><a href="/support/viewing-brightcove-system-status-page.html">Affichage de la page État du système Brightcove</a></li>
+                  
+                
+                  
+                    <li><a href="/support/contact-sales.html">Contacter les ventes</a></li>
+                  
+                
+                  
+                    <li><a href="/support/opening-case-with-brightcove-support.html">Ouverture d'un dossier de support</a></li>
+                  
+                
+              </ul>
+            
+          
+      </nav>
+    </div>
+    <div class="col-lg-7" style="background-color: white;color: #333333;margin-top: -1em;margin-bottom: -1em;padding-bottom:1em;">
+  <!-- bootstrap layout -->
+
+<p id="bc_veggie_burger_wrapper" style="display: none;"><img id="bc_veggie_burger" src="/assets/images/feather/menu.svg" alt="Menu de navigation"/></p>
+
+<!-- search bar -->
+<div id="nav-search-box" style="margin-top: 1rem;"></div>
+<!-- in-page navigation for narrow screens -->
+<details class="centered-inpage-nav" id="centered_inpage_nav">
+  <summary><h6 class="toc">Contenu de la page</h6></summary>
+  <nav id="centered_toc"></nav>
+  <ul id="centered_in_page_toc" class="list-none"></ul>
+</details>
+<!-- open in new tab/window -->
+<a id="open_new_tab" href="#" target="_blank" style="display: none;"><img src="/assets/images/feather/external-link.svg" alt="ouvrir dans un nouvel onglet" style="margin-top:4em;width: 1.5em;"/></a>
+
+
+
+  
+    
+
+
+<article class="bcls-article">
+  <h1>Utilisation de DFP Premium avec Brightcove Player</h1>
+  <summary>Cette rubrique vous montre comment créer une règle publicitaire DFP Premium qui lira des annonces vidéo pré, mid et post-roll dans Brightcove Player. On suppose que vous disposez déjà d'un compte DFP Premium et d'une certaine familiarité avec la plate-forme.</summary>
+  <section class="bcls-section">
+    <h2 id="Disclaimer">Avis de non-responsabilité</h2>
+    <p>DFP Premium propose des centaines d'options qui mènent à une quantité presque infinie de configurations possibles. Ce document montre une façon de créer une règle publicitaire qui est utilisée par un Brightcove Player. Ce document n'est pas un traitement exhaustif de la configuration et de la mise en œuvre de DFP Premium. Il s'agit d'un exercice de démarrage pour présenter aux clients Brightcove l'intégration de DFP Premium / Brightcove Player. Ce document n'est en aucun cas destiné à remplacer la documentation étendue de Google DFP.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Overview">Présentation</h2>
+    <aside class="bcls-aside bcls-aside--tip">Si vous êtes nouveau dans la publicité vidéo, il serait judicieux de lire <a href="/getting-started/learning-guide-video-advertising.html">Guide d'apprentissage: Publicité vidéo</a>.</aside>
+    <p>Les chances que vous ayez besoin de la configuration DFP Premium exacte détaillée dans ce document sont presque nulles. Cela étant dit, ce document vous présentera les termes, les concepts et les étapes de configuration nécessaires pour vous lancer sur la voie de l'intégration réussie de DFP et de Brightcove Player.</p>
+    <p>Vous devez créer une sorte de base de connaissances afin que les étapes détaillées qui suivent dans ce document puissent être utilisées en référence à une vue d'ensemble. Cette section de présentation du document vous aidera à vous familiariser avec les termes, les concepts de haut niveau et les étapes générales que vous devez comprendre avant de vous lancer "dans les mauvaises herbes" de la mise en œuvre.</p>
+    <h3>Établissement du vocabulaire</h3>
+    <p>Les termes suivants sont largement utilisés dans ce document. La connaissance de ceux-ci contribuera à la mise en œuvre réussie et à la compréhension du processus d'intégration détaillé dans les étapes ci-dessous. Les définitions ont une orientation publicitaire vidéo reflétée dans ce document et peuvent ne pas s'appliquer à toutes les utilisations de DFP.</p>
+    <ul>
+      <li><strong>Inventaire</strong>: Les espaces publicitaires vidéo disponibles à la vente.</li>
+      <li><strong>Annonceur</strong>: Une entreprise qui achète vos espaces publicitaires vidéo.</li>
+      <li><strong>Bloc d'annonces</strong>: Un conteneur pour organiser votre inventaire et détailler comment votre inventaire est défini.</li>
+      <li><strong>Ordre</strong>: Un accord entre le propriétaire de l'inventaire et un acheteur qui spécifie les détails d'une campagne publicitaire.</li>
+      <li><strong>Élément de campagne</strong>: Spécifie quand et où les annonces d'un annonceur seront diffusées. Spécifie également les annonces vidéo réelles et les images d'annonces associées.</li>
+      <li><strong>Ensemble créatif / créatif</strong>: La (les) vidéo (s) et / ou image (s) qui sont les annonces réelles et / ou les annonces compagnons. Avec la publicité vidéo, la combinaison d'une vidéo et d'une annonce compagnon constitue un ensemble créatif. Les créations sont associées aux éléments de campagne.</li>
+      <li><strong>Source de contenu vidéo</strong>: Dans ce cas, Brightcove Video Cloud.</li>
+      <li><strong>Règle publicitaire</strong>: Définissez comment les annonces s'affichent avec votre contenu vidéo. Par exemple, en pré-roll et en mid-roll toutes les 5 minutes.</li>
+      <li><strong>Balise publicitaire</strong>: Une URL qui pointe vers la définition de la manière dont les annonces doivent être utilisées lors de la lecture d'une vidéo. Le tag d'emplacement publicitaire est utilisé lors de la configuration de la publicité IMA avec Brightcove Player.</li>
+    </ul>
+    <h3>Présentation du processus</h3>
+    <p>Ce qui suit illustre les entités créées et leurs relations.</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="Diagramme de présentation de DFP" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/dfp-overview-diagram.png"/></figure>
+    <p>Ce qui suit fournit le niveau de détail suivant du processus.</p>
+    <ol>
+      <li><strong>Créez un annonceur.</strong> Dans DFP speak, il s'agit d'une entreprise de type <strong>Annonceur</strong>. Ceci est obligatoire car lorsqu'une commande est créée, elle doit être associée à un annonceur.</li>
+      <li><strong>Créez un bloc d'annonces.</strong> Il s'agit d'un organisateur pour votre inventaire et vous spécifierez la taille des annonces vidéo et des annonces compagnons que vous souhaitez de l'annonceur.</li>
+      <li><strong>Créez une commande.</strong> La commande détaillera qui est l'annonceur. Bien que cela puisse être fait plus tard, l'interface DFP permet également de créer les éléments de campagne dans le cadre de la commande, qui sera le processus suivi dans ces étapes.</li>
+      <li><strong>Créez un élément de campagne dans le cadre de la commande.</strong> L'élément de campagne indiquera en détail que vous souhaitez utiliser les annonces vidéo VAST, la taille des vidéos publicitaires, le moment où elles doivent démarrer et s'arrêter.</li>
+      <li><strong>Ciblez (associez) l'élément de campagne particulier à un bloc d'annonces.</strong> La campagne, via un élément de campagne, fait correspondre les annonces de l'annonceur à votre inventaire.</li>
+      <li><strong>Créez des ensembles de créations.</strong> Avant cette étape, vous avez des éléments de campagne qui ne contiennent aucune annonce vidéo réelle. Dans cet exercice, vous fournirez à la fois des annonces vidéo et des images d'annonces associées correspondantes (si vous souhaitez les afficher).</li>
+      <li><strong>Associez des ensembles de créations à un élément de campagne particulier.</strong></li>
+      <li><strong>Créez une règle relative aux annonces.</strong> Cela définit quand et comment les annonces doivent être diffusées. Dans le cadre de la création de la règle relative aux annonces, vous l'associez à un bloc d'annonces. Cela signifie que si l'inventaire d'un bloc d'annonces est utilisé, les définitions de la règle relative aux annonces seront utilisées pour spécifier les heures de lecture des annonces.</li>
+      <li><strong>Générez un tag d'emplacement publicitaire.</strong> Il s'agit de l'URL utilisée lors de la configuration du plugin IMA3. Notez que le tag d'emplacement publicitaire d'origine ne fonctionnera pas correctement. Trois paramètres de chaîne de requête doivent être ajoutés pour une configuration correcte.</li>
+      <li><strong>Connectez-vous à Video Cloud.</strong> Ceci est fait pour récupérer une valeur nécessaire pour l'un des paramètres de chaîne de requête susmentionnés.</li>
+      <li><strong>Utilisez l'inspecteur de la suite vidéo de Google</strong> pour vous assurer que le tag d'emplacement publicitaire fonctionne correctement.</li>
+      <li>Enfin (et enfin) <strong>utiliser le tag d'emplacement publicitaire avec Brightcove Player</strong>.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--warning">Les modifications apportées aux étapes de ce document ne modifient PAS nécessairement immédiatement la configuration de DFP. Certains changements peuvent prendre jusqu'à une heure pour être réalisés, comme détaillé dans Google <a href="https://support.google.com/dfp_premium/answer/177316?hl=en">Mettre à jour les périodes des modifications apportées dans DFP</a> document. Si quelque chose ne fonctionne pas comme prévu, la meilleure approche peut être d'attendre simplement un certain temps avant d'essayer de résoudre les problèmes que vous rencontrez.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_an_advertiser">Créer un annonceur</h2>
+    <p>Si vous utilisez un annonceur qui existe déjà, vous n'avez pas besoin de remplir cette section.</p>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>Nouvelle compagnie</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer vers les unités d'annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-advertiser.png"/></figure>
+      </li>
+      <li>Dans la liste déroulante, sélectionnez <strong>Annonceur</strong></li>
+      <li>Fournissez un nom d'annonceur.</li>
+      <li>Cliquez sur <strong>Save</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_an_ad_unit">Créer un bloc d'annonces</h2>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>Nouveau bloc d'annonces</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer vers les unités d'annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-adunits.png"/></figure>
+      </li>
+      <li>Parmi les sélections qui s'affichent, sélectionnez <strong>Niveau actuel</strong>.</li>
+      <li>Fournissez des valeurs appropriées pour <strong>Code</strong> , <strong>Nom</strong> et <strong>La description</strong>.</li>
+      <li>Sélectionnez le <strong>Tailles vidéo (VAST)</strong>.</li>
+      <li>En fonction de vos vidéos et de vos annonces compagnons, saisissez les tailles. Dans cet exemple, les vidéos sont de 1 280 x 720 et les annonces compagnons de 728 x 90. Vous pouvez soit sélectionner la taille si elles ont déjà été utilisées, soit entrer de nouvelles tailles.
+        <figure class="bcls-figure"><img class="bcls-image" alt="créer des tailles de blocs d'annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/create-adunit-sizes.png"/></figure>
+      </li>
+      <li>Aucune autre information ne doit être saisie, faites défiler vers le bas et cliquez sur <strong>sauver</strong>.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_an_order">Créer une commande</h2>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>nouvelle commande</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer vers la commande" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-order.png"/></figure>
+      </li>
+      <li>Entrez un <strong>Nom</strong> pour la commande.</li>
+      <li>Cliquez dans le <strong>Annonceur</strong> boîte. Sélectionnez un annonceur existant, soit celui créé précédemment dans ce document, soit celui qui existait auparavant.</li>
+      <li>le <strong>Trafiquant</strong> l'entrée sera pré-remplie avec votre nom et votre adresse e-mail.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_a_line_item">Créer un élément de campagne</h2>
+    <p>Un élément de campagne peut être soit créé en même temps qu'une nouvelle commande, soit créé plus tard puis associé à la commande. Dans cet exercice, vous allez créer l'élément de campagne au fur et à mesure que vous créez la commande.</p>
+    <ol class="bcls-tasklist">
+      <li>Entrez un <strong>Nom</strong> pour l'élément de campagne.</li>
+      <li>Pour le <strong>Tailles d'inventaire</strong> , Cliquez sur <strong>Vidéo VAST</strong>.</li>
+      <li>Saisissez les tailles des vidéos et des annonces complémentaires. Vous entrez très probablement les mêmes tailles que celles utilisées pour l'étape 9 ci-dessus.</li>
+      <li>Vérifier la <strong>Autoriser l'exception du même annonceur</strong>. Cela permet aux annonces du même annonceur d'être utilisées pour les annonces pré, mid et post-roll.</li>
+      <li>Vérifiez que votre formulaire est rempli de la même façon que ce qui suit :
+        <figure class="bcls-figure"><img class="bcls-image" alt="propriétés de l'élément de ligne" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/lineitem-properties.png"/></figure>
+      </li>
+      <li>Dans l'élément de campagne <strong>Réglages</strong> section, définissez les éléments suivants:
+        <ul>
+          <li><strong>Type</strong>: <strong>Parrainage</strong></li>
+          <li><strong>Heure de début</strong>: <strong>Immédiatement</strong></li>
+          <li><strong>Heure de fin</strong>: <strong>Illimité</strong></li>
+        </ul>
+      </li>
+      <li>Faites défiler vers le bas <strong>Ajouter un ciblage</strong> section.</li>
+      <li>S'il n'est pas sélectionné, cliquez sur <strong>Inventaire</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="ciblage d'un bloc d'annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/targeting-inventory.png"/></figure>
+      </li>
+      <li>Cliquez sur <strong>Blocs d'annonces</strong>.</li>
+      <li>Clique le <strong>comprendre</strong> à côté de votre bloc d'annonces pour associer cette commande à votre bloc d'annonces.</li>
+      <li>Cliquez sur <strong>sauver</strong> pour finaliser la configuration de la nouvelle commande et de l'élément de campagne.</li>
+      <li>Clique le <strong>Approuver</strong> bouton pour approuver votre commande nouvellement créée.
+        <figure class="bcls-figure"><img class="bcls-image" alt="approuver la commande" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/approve-order.png"/></figure>
+      </li>
+      <li>Clique le <strong>Approuver</strong> à nouveau pour confirmer l'avertissement de surréservation.
+        <figure class="bcls-figure"><img class="bcls-image" alt="avertissement de surréservation" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/overbook-warning.png"/></figure>
+      </li>
+    </ol>
+    <p>Vous avez maintenant créé une campagne et un élément de campagne associé.</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_creative_sets">Créer des ensembles de créations</h2>
+    <p>Vous répéterez les étapes de cette section une fois pour chaque ensemble de créations que vous souhaitez créer. La création d'un ensemble de créations se déroule en deux étapes: l'importation de la vidéo et l'importation de l'image pour l'annonce compagnon.</p>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>Nouvel ensemble créatif</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="créer-créatif" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/create-creative.png"/></figure>
+      </li>
+      <li>Sélectionnez un annonceur auquel associer le nouvel ensemble de créations.</li>
+      <li>Cliquez sur <strong>Vidéo VAST</strong>.</li>
+      <li>Saisissez les tailles des vidéos et des annonces complémentaires. Vous entrez très probablement les mêmes tailles que celles utilisées pour l'étape 9 ci-dessus.</li>
+      <li>Cliquez sur <strong>Continue</strong>.</li>
+      <li>Entrez un <strong>Nom</strong> pour l'ensemble de créations.</li>
+      <li>Quand demander à <strong>Sélectionnez un type d'ensemble de créations</strong> , Cliquez sur <strong>Linéaire</strong>.</li>
+      <li>Cliquez sur <strong>Vidéo</strong>.</li>
+      <li>Pour l'élément vidéo, définissez les éléments suivants:
+        <ul>
+          <li><strong>Nom de l'ensemble de créations</strong></li>
+          <li><strong>Nom</strong> (de l'élément vidéo)</li>
+          <li><strong>URL par clic</strong></li>
+          <li><strong>Durée</strong></li>
+        </ul>
+      </li>
+      <li>Vérifiez que votre formulaire est rempli de la même façon que ce qui suit :
+        <figure class="bcls-figure"><img class="bcls-image" alt="propriétés de l'élément de ligne" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/creativeset-video.png"/></figure>
+      </li>
+      <li>Fournissez la vidéo en faisant un glisser-déposer dans la zone en surbrillance ou recherchez le fichier.</li>
+      <li>Vous remarquerez que divers rendus de l'annonce vidéo seront créés.</li>
+      <li>Faites défiler vers le bas <strong>Création associée</strong> section.</li>
+      <li>Pour l'élément d'image de l'annonce compagnon, définissez les éléments suivants:
+        <ul>
+          <li><strong>Nom</strong> (de l'élément image)</li>
+          <li><strong>Fichier d'image</strong></li>
+          <li><strong>URL par clic</strong></li>
+        </ul>
+      </li>
+      <li>Cliquez sur <strong>sauver</strong> pour finaliser la configuration de cet ensemble de créations.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--tip">N'oubliez pas que vous devez effectuer les étapes de cette section une fois pour chaque ensemble de créations que vous souhaitez utiliser.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Task_section">Ajouter des créations à l'élément de campagne</h2>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et pour voir les commandes que vous avez créées.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer vers mes commandes" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-myorders.png"/></figure>
+      </li>
+      <li>Cliquez sur la commande que vous avez créée au cours de cet exercice.</li>
+      <li>Cliquez sur le nom de votre élément de campagne pour lancer le processus d'ajout de créations à l'élément de campagne.
+        <figure class="bcls-figure"><img class="bcls-image" alt="ajouter des créations à l'élément de campagne" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/add-creatives-to-lineitem.png"/></figure>
+      </li>
+      <li>Clique le <strong>Ajouter des ensembles de créations</strong> déroulant et sélectionnez <strong>utiliser des ensembles de créations existants</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="Ajouter des créations au bouton d'élément de campagne" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/add-creativesets-to-lineitem-button.png"/></figure>
+      </li>
+      <li>Clique le <strong>Créatifs</strong> dossier dans la boîte de dialogue qui apparaît.
+        <figure class="bcls-figure"><img class="bcls-image" alt="cliquez sur les créations" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/click-creatives.png"/></figure>
+      </li>
+      <li>Clique le <strong>comprendre</strong> bouton correspondant aux ensembles de créations que vous souhaitez inclure.</li>
+      <li>Cliquez sur <strong>sauver</strong> dans le <strong>Utiliser des créations existantes</strong> dialogue.</li>
+      <li>Faites défiler vers le bas et cliquez <strong>sauver</strong> pour finaliser les modifications apportées à l'élément de campagne.</li>
+      <li>Cliquer sur <strong>Mes commandes</strong> à nouveau, et vous verrez que l'élément de campagne de votre commande est désormais libellé <strong>Prêt</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="élément de campagne prêt" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/lineitem-ready.png"/></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Create_an_ad_rule">Créer une règle relative aux annonces</h2>
+    <p>Dans une règle relative aux annonces, vous configurez le moment où vous souhaitez que vos annonces soient diffusées. Vous aurez des options pour chacun des rôles pré, moyen et postérieur, comme suit:</p>
+    <figure class="bcls-figure"><img class="bcls-image" alt="exemple de règle publicitaire" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/adrule-example.png"/></figure>
+    <p>En fonction de votre sélection dans la liste déroulante et du type de rouleau, vous serez alors présenté avec d'autres options.</p>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>Nouvelle règle relative aux annonces</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="accéder à la règle relative aux annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-adrule.png"/></figure>
+      </li>
+      <li>Fournir un <strong>Nom</strong> pour la règle relative aux annonces.</li>
+      <li>Pour le <strong>Statut</strong> , clique le <strong>actif</strong> bouton.</li>
+      <li>Configurez les annonces pré, mid et post-roll comme vous le souhaitez. Un exemple de configuration suit:
+        <figure class="bcls-figure"><img class="bcls-image" alt="formulaire de règle d'annonce" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/adrule-form.png"/></figure>
+      </li>
+      <li>Dans la règle relative aux annonces <strong>Réglages</strong> section, définissez les éléments suivants:
+        <ul>
+          <li><strong>Heure de début</strong>: <strong>Immédiatement</strong></li>
+          <li><strong>Heure de fin</strong>: <strong>Illimité</strong></li>
+        </ul>
+      </li>
+      <li>Faites défiler vers le bas <strong>Ciblage</strong> section.</li>
+      <li>Cliquez sur <strong>Inventaire</strong> puis <strong>Blocs d'annonces</strong> pour voir tous les blocs d'annonces disponibles.
+        <figure class="bcls-figure"><img class="bcls-image" alt="ciblage des règles relatives aux annonces" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/adrule-targeting.png"/></figure>
+      </li>
+      <li>Clique le <strong>comprendre</strong> bouton du bloc d'annonces créé précédemment dans cet exercice. Cela demande à votre bloc d'annonces d'utiliser cette règle relative aux annonces.
+        <figure class="bcls-figure"><img class="bcls-image" alt="formulaire de règle d'annonce" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/include-adunit-in-adrule.png"/></figure>
+      </li>
+      <li>Cliquez sur <strong>sauver</strong> pour finaliser la configuration de votre règle relative aux annonces.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Generate_an_ad_tag">Générer un tag d'emplacement publicitaire</h2>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées pour inclure votre bloc d'annonces, puis cliquez sur <strong>Générer des balises</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer pour générer des balises" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-generatetags.png"/></figure>
+      </li>
+      <li>Clique le <strong>Continuer</strong> bouton pour accepter <strong>Google Publisher Tag</strong> comme type de balise.</li>
+      <li>Clique le <strong>Continuer</strong> à nouveau pour accepter le ciblage et les tailles.</li>
+      <li>Cliquez dans le <strong>Unités vidéo</strong> zone de texte et copiez l'intégralité du tag d'emplacement publicitaire.
+        <figure class="bcls-figure"><img class="bcls-image" alt="copier le tag d'emplacement publicitaire" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/copy-ad-tag.png"/></figure>
+      </li>
+      <li>Collez l'URL copiée dans un navigateur, parcourez-la et vous verrez le XML VAST associé à votre tag d'emplacement publicitaire. REMARQUE, ce n'est pas la version finale de la balise nécessaire.</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Connect_to_Video_Cloud">Connectez-vous à Video Cloud</h2>
+    <p>La seule raison pour laquelle les étapes de cette section du document doivent être effectuées pour cet exercice est de générer un ID source qui indique une connexion à Video Cloud. Cet identifiant est requis dans la section suivante.</p>
+    <ol class="bcls-tasklist">
+      <li>Suivez les étapes numérotées et cliquez sur <strong>Nouvelle source</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="naviguer vers la source" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/navigate-to-source.png"/></figure>
+      </li>
+      <li>Fournir un <strong>Nom</strong> pour la source et définissez le <strong>Type</strong> à <strong>Brightcove</strong>.</li>
+      <li>Suivez les étapes du <a href="https://studio.support.brightcove.com/admin/managing-api-authentication-credentials.html">Gestion des informations d'identification d'authentification API</a> document pour obtenir un <strong>identité du client</strong> et <strong>Secret du client</strong>. Vous sélectionnerez les éléments suivants pour les autorisations API:
+        <figure class="bcls-figure">&lt;img class = "bcls-image" alt = "correct &lt;span translate =" No "&gt; API CMS</span> autorisations "src =" // learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/cms-api-permissions.png "/&gt;</figure>
+      </li>
+      <li>Entrez, puis validez, le <strong>identité du client</strong> , <strong>Secret du client</strong> et <strong>identifiant de compte</strong>. Lorsque vous validez les informations d'identification, vous verrez une liste de vidéos de votre compte Video Cloud.</li>
+      <li>Vérifiez que votre formulaire est rempli de la même façon que ce qui suit :
+        <figure class="bcls-figure"><img class="bcls-image" alt="formulaire source" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/source-cms-api.png"/></figure>
+      </li>
+      <li>Cliquez sur <strong>Save</strong>.</li>
+      <li>Après l'enregistrement, vous verrez des informations similaires aux suivantes. Enregistrez votre source <strong>ID</strong> car il sera utilisé plus tard dans cet exercice.
+        <figure class="bcls-figure"><img class="bcls-image" alt="source créée" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/source-cms-api-confirm-screen.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information">Remarque : Vous verrez le <strong>Nombre de vidéos</strong> sera <strong>0</strong> jusqu'à ce que vous synchronisiez cette source.</aside>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Testing_the_ad_tag">Testez le tag d'emplacement publicitaire</h2>
+    <ol class="bcls-tasklist">
+      <li>Juste au-dessus du tag d'emplacement publicitaire, vous verrez un lien vers le <strong>Inspecteur de la suite vidéo</strong>. Ouvrez ce lien dans un autre navigateur ou onglet.
+        <figure class="bcls-figure"><img class="bcls-image" alt="lien vsi" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/vsi-link.png"/></figure>
+      </li>
+      <li>Collez votre tag d'emplacement publicitaire dans la zone de texte du <strong>Balise VAST</strong>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="test vsi" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/vsi-test1.png"/></figure>
+      </li>
+      <li>Clique le <strong>TEST ANNONCE</strong> et vous verrez SEULEMENT le pré-roll sera lu.</li>
+      <li>Encore une fois, collez le tag d'emplacement publicitaire dans un navigateur, mais avant de naviguer, ajoutez le paramètre de chaîne de requête <strong> ad_rule = 1</strong> à la fin du tag d'emplacement publicitaire. Vous verrez que le XML affiché a changé pour refléter le fait qu'un pré-roll et un post-roll sont définis. Ce paramètre de chaîne de requête active l'utilisation des règles relatives aux annonces. Il est possible que les règles relatives aux annonces soient activées pour l'ensemble du compte, auquel cas vous n'aurez pas à utiliser ce paramètre de chaîne de requête.
+        <figure class="bcls-figure"><img class="bcls-image" alt="parcourir le tag d'emplacement publicitaire, avant et après la diffusion" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/browser-pre-and-post.png"/></figure>
+      </li>
+      <li>Ajoutez le paramètre de chaîne de requête au tag d'emplacement publicitaire dans Video Suite Inspector et vous verrez les annonces pré et post-roll maintenant jouer.</li>
+      <li>Localisez l'ID source enregistré à partir de l'étape 72 ci-dessus.</li>
+      <li>Recherchez également un ID vidéo à partir d'un élément multimédia Video Cloud.</li>
+      <li>Ajoutez une autre chaîne de requête au tag d'emplacement publicitaire, cette fois en utilisant le champ à <strong>cmsid</strong> et la valeur associée doit être l'ID source récupéré.
+        <pre class="line-numbers">
+      <code class="language-javascript" translate="No">cmsid=1111</code></pre>
+      </li>
+      <li>Ajoutez une autre chaîne de requête au tag d'emplacement publicitaire, cette fois en utilisant le champ to be <strong>vid</strong> et la valeur associée doit être l'ID de l'élément vidéo.
+        <pre class="line-numbers">
+      <code class="language-javascript" translate="No">&amp;vid=4825296720001</code></pre>
+      </li>
+      <li>La chaîne de requête entière ajoutée doit ressembler à ce qui suit:
+        <pre class="line-numbers">
+      <code class="language-javascript" translate="No">&amp;ad_rule=1&amp;cmsid=1111&amp;vid=1234567891234</code></pre>
+      </li>
+      <li>Encore une fois, collez le tag d'emplacement publicitaire dans un navigateur et ajoutez la chaîne de requête complète au tag d'emplacement publicitaire. Vous verrez maintenant que le mid-roll a été ajouté au XML généré.
+        <figure class="bcls-figure"><img class="bcls-image" alt="parcourir le tag d'emplacement publicitaire, avant, milieu et post-roll" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/browser-pre-mid-and-post.png"/></figure>
+      </li>
+      <li>Ajoutez le paramètre de chaîne de requête au tag d'emplacement publicitaire dans Video Suite Inspector et vous verrez les annonces pré, mid et post-roll maintenant jouer.</li>
+    </ol>
+    <p>Vous disposez désormais d'un tag d'emplacement publicitaire fonctionnel et êtes (enfin) prêt à l'utiliser avec Brightcove Player.</p>
+    <aside class="bcls-aside bcls-aside--information">
+      <p>Les documents Google suivants fournissent plus de détails sur les tags d'emplacement publicitaire:</p>
+      <ul>
+        <li><a href="//support.google.com/dfp_premium/answer/1068325?hl=en&amp;ref_topic=2480647">Créer un tag de vidéo maître manuellement</a></li>
+        <li><a href="//support.google.com/dfp_premium/answer/1080597?hl=en&amp;ref_topic=2480647">Ajouter des paires valeur / clé à un tag d'emplacement publicitaire de vidéo maître</a></li>
+      </ul>
+    </aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Using_the_ad_tag_with_Brightcove_Player">Utilisez le tag d'emplacement publicitaire avec Brightcove Player</h2>
+    <p>Des étapes assez larges seront utilisées ici pour configurer le plugin IMA3 de Brightcove Player pour utiliser le tag d'emplacement publicitaire que vous avez construit. Si vous avez besoin d'instructions plus détaillées, consultez le <a href="/plugins/advertising-ima3-plugin.html#Implement_using_Players_module_advertising_section">Implémenter à l'aide du module Players</a> section de la <strong>Publicité avec le guide du plugin IMA3</strong> document.</p>
+    <ol class="bcls-tasklist">
+      <li>Dans les studios <strong>JOUEURS</strong> module, créez un nouveau lecteur ou utilisez un lecteur existant et affichez ses propriétés.</li>
+      <li>Faites défiler vers le bas <strong>LA PUBLICITÉ</strong> et cliquez sur le <strong>Éditer</strong> bouton.</li>
+      <li>Cliquez sur <strong>Oui</strong> pour <strong>Activer les annonces IMA</strong>.</li>
+      <li>Pour le <strong>URL du serveur</strong> , saisissez le tag d'emplacement publicitaire qui inclut les trois paramètres de chaîne de requête.</li>
+      <li>Laissez le reste des valeurs identiques et cliquez sur <strong>sauver</strong>.</li>
+      <li>Publiez votre lecteur.</li>
+      <li>Accédez au <strong>MÉDIAS</strong> module et cliquez sur la vidéo dont vous avez utilisé l'ID dans le <strong>vid</strong> paramètre de chaîne de requête.</li>
+      <li>Publiez cette vidéo à l'aide du lecteur auquel vous avez ajouté de la publicité IMA3.</li>
+      <li>Utilisez le <strong>la norme</strong> ou <strong>Avancée</strong> code et testez votre configuration.</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--warning">Vous devrez peut-être faire preuve de patience lors du test, car Brightcove Player doit terminer la publication et la configuration DFP doit être terminée, comme indiqué en haut de ce document.</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Display_companion_ads">Afficher des annonces compagnons</h2>
+    <p>Afficher des annonces compagnons est aussi simple que de copier du code à partir de l'endroit où le tag d'emplacement publicitaire a été généré. Les étapes suivantes détaillent le processus.</p>
+    <ol class="bcls-tasklist">
+      <li>Revenez aux résultats de la génération du tag d'emplacement publicitaire (ou générez à nouveau le tag).</li>
+      <li>Localisez le <strong>En-tête de document</strong> et copiez le code indiqué.
+        <figure class="bcls-figure"><img class="bcls-image" alt="code compagnon pour l'en-tête" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/companion-code-for-header.png"/></figure>
+      </li>
+      <li>Collez ce code dans le <strong>tête</strong> section de votre page HTML.</li>
+      <li>De retour dans les résultats de la génération du tag d'emplacement publicitaire, copiez le code indiqué.
+        <figure class="bcls-figure"><img class="bcls-image" alt="code compagnon pour le corps" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/dfp/companion-code-for-body.png"/></figure>
+      </li>
+      <li>Collez le code dans le <strong>corps</strong> de votre page HTML sur laquelle vous souhaitez que l'annonce associée soit affichée</li>
+      <li>Testez votre page HTML et vous verrez le changement d'annonce compagnon avec l'annonce vidéo.</li>
+    </ol>
+  </section>
+</article>
+
+<!-- complete bootstrap layout -->
+    </div>
+    <div class="col-sm-2 right-side-bar">
+      
+      <nav class="right-side-nav" id="right_side_nav">
+        <h6 class="toc">Contenu de la page</h6>
+        <ul id="in_page_nav" class="list-none"></ul>
+      </nav>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+<footer class="bcls-footer" role="contentinfo">  <div class="row">
+    <div class="region region-footer-top-center col-md-12">
+      <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
+
+        <h2>Assistance Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://status.brightcove.com">État du système</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contacter le support</a>
+          </li>
+          <li>
+            <a href="https://support.brightcove.com/">Documentation</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-training-menu" id="block-training" class="footer-menu">
+
+        <h2>Formation</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://studio.support.brightcove.com/training/online-training-courses.html">Cours en ligne</a>
+          </li>
+          <li>
+            <a href="https://studio.support.brightcove.com/training/register-training.html">S' inscrire à un cours</a>
+          </li>
+          <li>
+            <a href="https://university.brightcove.com/">Université de Brightcove</a>
+          </li>
+        </ul>
+
+      </nav>
+      <nav role="navigation" aria-labelledby="block-brightcove-menu" class="footer-menu">
+
+        <h2>Brightcove</h2>
+
+        <ul class="menu">
+          <li>
+            <a href="https://www.brightcove.com">BrightCove.com</a>
+          </li>
+          <li>
+            <a href="https://supportportal.brightcove.com/s/login/?">Contactez-nous</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="region region-footer-bottom-center col-md-12">
+      <div class="bcls-copyright footer-menu">
+        <table>
+          <tr>
+            <td>
+              <div id="bc_copyright" class="field field--name-field-copyright-year field--type-string field--label-hidden field--item" style="float: left;"> Brightcove, Inc. Tous droits réservés.</div>
+            </td>
+            <td><a href="https://www.brightcove.com/en/legal/privacy">Confidentialité</a> | <a href="https://www.brightcove.com/en/terms-and-conditions">Termes et conditions</a></td>
+            <td>
+              <div class="gf-links-cols footer-menu">
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</div>
+<script>
+      
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+
+</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/https-fix.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/setDate.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/prism.js"></script>
+  
+  <script src="https://support.brightcove.com/site-assets/js/site/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/tabs.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/toc.js"></script>
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/bcls-utils.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/site/local-link-fix.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/js/sajari-search-foot.js"></script>
+  
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <style>
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+</body>
+
+</html>
