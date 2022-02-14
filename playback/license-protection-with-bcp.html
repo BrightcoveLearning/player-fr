@@ -1,0 +1,179 @@
+---
+title: Description de la "Protection des clés / licences avec le lecteur Brightcove": "Dans cette rubrique, vous apprendrez à configurer Brightcove Player pour utiliser la protection par clé/licence associée aux restrictions de lecture Brightcove."
+parent: Playback
+layout: staging
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  
+  <br/>
+  <aside class="bcls-aside bcls-aside--tip">Cette fonctionnalité est disponible pour un ensemble spécifique de clients ayant accès à la phase de disponibilité limitée des restrictions de lecture Brightcove.</aside>
+  
+  <section class="bcls-section">
+    <h2 id="Introduction">introduction</h2>
+
+    <p>La protection par clé/licence offre un niveau de sécurité supplémentaire lors de l'utilisation de Dynamic Delivery avec un contenu protégé par DRM ou HTTP Live Streaming Encryption (HLSe). Les demandes de licence peuvent être authentifiées à l'aide d'un jeton Web <a href="https://general.support.brightcove.com/developer/create-json-web-token.html">JSON (JWT) signé</a>. Le jeton est utilisé lors de la demande de licence vidéo, une fois que la vidéo a été chargée sur le lecteur et que la source a été sélectionnée.</p>
+    <p>Si vous n'êtes pas familier avec cette fonctionnalité, reportez-vous à l' <a href="https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html">aperçu : </a> Document sur les restrictions de lecture Brightcove.</p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Vue d'ensemble</h2>
+    <p>Pour configurer Brightcove Player pour la protection des clés / licences, vous passerez un paramètre de jeton lors de la demande de catalogue pour la vidéo. Pour vous aider à comprendre le code dans la section suivante, passez en revue les concepts contenus dans les documents suivants :</p>
+    <ul>
+      <li><a href="https://general.support.brightcove.com/developer/create-json-web-token.html">Création d'un <span translate="No">jeton Web JSON</span> (JWT)</a></li>
+      <li><a href="https://support.brightcove.com/concepts-using-javascript-promises">Concepts : Utilisation de JavaScript Promises</a></li>
+      <li><a href="https://support.brightcove.com/player-catalog#Catalog_parameters_object">Paramètres du catalogue</a></li>
+      <li><a href="https://support.brightcove.com/configuring-brightcove-player-drm">Configuration du lecteur Brightcove pour DRM</a></li>
+    </ul>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_an_auth_token">Utilisation d'un jeton d'authentification</h2>
+    <p>Pour utiliser la protection par clé / licence, transmettez un jeton de chaîne dans le cadre du <a href="https://player.support.brightcove.com/references/player-catalog.html">catalogue de joueurs</a> objet, en utilisant le nom de la propriété <code translate="No">bcovAuthToken</code>.</p>
+    <p>Cette approche fonctionne à la fois pour le contenu DRM et HLSE. Le lecteur détecte le type de source chargé à partir de l'API Playback et fournira la bonne implémentation pour cette source.</p>
+    <aside class="bcls-aside bcls-aside--information">Cette implémentation nécessite la version Player <strong>6.33.0</strong> ou plus tard. Si vous utilisez DRM, vous aurez besoin du <a href="https://support.brightcove.com/configuring-brightcove-player-drm#Changelog">Plugin DRM</a> version <strong>5.5.0</strong> ou plus tard.</aside>
+
+    <h3>Étapes</h3>
+    <ol class="bcls-tasklist">
+      <li>Créez un <a href="https://general.support.brightcove.com/developer/create-json-web-token.html">jeton Web JSON (JWT) signé</a>.</li>
+      <li>
+        <p>Incluez ce jeton avec la demande vidéo.</p>
+        <p>Cet exemple de code d'implémentation utilise le <a href="https://player.support.brightcove.com/references/player-catalog.html#get_method">catalogue.get()</a> méthode pour demander la vidéo tout en fournissant le jeton.</p>
+    <aside class="bcls-aside bcls-aside--information">Veillez à NE PAS inclure le <code translate="No">data-video-id</code> paramètre dans la <code translate="No">&lt;video-js&gt;</code> balise.</aside>
+<pre class="line-numbers">
+  <code class="language-html" translate="No">&lt;video-js id=&quot;myPlayerID&quot;
+    data-account=&quot;1507807800001&quot;
+    data-player=&quot;default&quot;
+    data-embed=&quot;default&quot;
+    controls
+    data-application-id&gt;&lt;/video-js&gt;
+  &lt;script src=&quot;//players.brightcove.net/1507807800001/default_default/index.min.js&quot;&gt;&lt;/script&gt;
+  
+  &lt;script&gt;
+    (function() {
+      var myPlayer = videojs.getPlayer('myPlayerID');
+  
+      myPlayer.catalog.get({
+        type: 'video',
+        id: '6015247091001',
+        <span class="bcls-highlight">bcovAuthToken:</span> '<span class="bcls-input">your jwt token</span>'
+      })
+        .then(function(videoReturned){
+          myPlayer.catalog.load(videoReturned);
+        })
+        .catch(function(err){
+          console.log('err:', err);
+        });
+    })();
+  &lt;/script&gt;</code></pre>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="configuring_server_side_ads_SSAI">Configuration des annonces côté serveur (SSAI)</h2>
+    <p>Si vous utilisez la protection de clé / licence avec SSAI, vous devez inclure un paramètre supplémentaire à l'objet de paramètres de catalogue, nommé <code translate="No">adConfigId</code>. </p>
+    <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;video-js id=&quot;myPlayerID&quot;
+  data-account=&quot;1507807800001&quot;
+  data-player=&quot;default&quot;
+  data-embed=&quot;default&quot;
+  controls
+  data-application-id&gt;&lt;/video-js&gt;
+&lt;script src=&quot;//players.brightcove.net/1507807800001/default_default/index.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  (function() {
+    var myPlayer = videojs.getPlayer('myPlayerID');
+
+    myPlayer.catalog.get({
+      type: 'video',
+      id: '6015247091001',
+      bcovAuthToken: '<span class="bcls-input">your jwt token</span>',
+      <span class="bcls-highlight">adConfigId:</span> '<span class="bcls-input">your ad configuration id</span>'
+    })
+      .then(function(videoReturned){
+        myPlayer.catalog.load(videoReturned);
+      })
+      .catch(function(err){
+        console.log('err:', err);
+      });
+  })();
+&lt;/script&gt;</code></pre>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Using_a_custom_implementation">Utilisation d'une implémentation personnalisée</h2>
+    <p>Vous utilisez peut-être une implémentation personnalisée où vous n'avez pas le <code translate="No">bcovAuthToken</code> pour régler la valeur avec le <a href="https://support.brightcove.com/player-catalog#get_method">catalogue.get()</a> demande de méthode. Si vous utilisez votre propre lecteur ou un joueur tiers, vous pouvez utiliser l'une des approches suivantes pour transmettre votre jeton à la demande de licence :</p>
+    <ul>
+      <li>
+        En-tête HTTP : <code translate="No">BCOV-Auth</code>(Non pris en charge pour HLSE)
+      </li>
+      <li>
+        Cookie : <code translate="No">bcov-auth</code>(Non pris en charge pour HLSE)
+      </li>
+      <li>
+        Paramètre de requête : <code translate="No">bcov-auth</code>(Prise en charge uniquement pour HLSE) Doit être ajouté à l'URL du manifeste principal, au lieu de l'URL de la licence
+      </li>
+    </ul>
+    <p>
+      Voici un exemple montrant comment définir l' <code translate="No">source.emeHeaders['BCOV-Auth']</code> attribut de l'objet vidéo sur le jeton. Cette opération insère le <code translate="No">emeHeader</code> sur chaque source APRÈS la demande de catalogue.
+    </p>
+    <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;video-js id=&quot;myPlayerID&quot;
+  data-account=&quot;1507807800001&quot;
+  data-player=&quot;default&quot;
+  data-embed=&quot;default&quot;
+  controls
+  data-application-id&gt;&lt;/video-js&gt;
+&lt;script src=&quot;//players.brightcove.net/1507807800001/default_default/index.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  (function() {
+    var myPlayer = videojs.getPlayer('myPlayerID');
+
+    myPlayer.catalog.get({
+      type: 'video',
+      id: '6015247091001'
+    })
+    .then(function(video){
+      sources=video.sources;
+
+      for (let i = 0; i &lt; sources.length; i++) {
+        const source = sources[i];
+
+        // Only add the auth token as an eme header for DRM content
+        if (<span class="bcls-input">your jwt token</span> &amp;&amp; source.key_systems) {
+          source.emeHeaders = {
+              'BCOV-Auth': <span class="bcls-input">your jwt token</span>
+            };
+        }
+      }
+        myPlayer.catalog.load(video);
+      })
+      .catch(function(err){
+        console.log('err:', err);
+      });
+  })();
+&lt;/script&gt;</code></pre>
+    <!-- <p>
+      For more details about working with MPEG-DASH, see the <a href="https://support.brightcove.com/creating-dash-drm-manifest-brightcove-player">Creating a DASH DRM Manifest for the Brightcove Player</a> document.
+    </p> -->
+
+  </section>
+
+  <!-- <section class="bcls-section">
+    <h2 id="Related_topics">Related topics</h2>
+
+    <ul>
+      <li><a href="http://docs.brightcove.com/en/staging/pas/overview-playback-authorization-service.html">Overview: DRM with Playback Authorization Service</a></li>
+      <li><a href="/playback-authorization/getting-started/technical-workflow-pas.html">Implementing DRM with Playback Authorization Service</a></li>
+      <li><a href="/playback-authorization/guides/using-pas-with-sdks.html">Using Playback Authorization DRM with the Native SDKs</a></li>
+      <li>
+        <a href="/playback-authorization/guides/additional-apis-for-pas.html">Additional APIs for Playback Authorization Service</a>
+      </li>
+    </ul>
+  </section> -->
+
+</article>

@@ -1,0 +1,128 @@
+---
+title: Description du plug-in Brightcove AirPlay : Dans cette rubrique, vous apprendrez à utiliser le plug-in Brightcove AirPlay pour diffuser du contenu depuis Brightcove Player vers votre Apple TV.
+parent: Plugins
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+  <section class="bcls-section">
+    <h2 id="Overview">Présentation</h2> 
+    <p>Le plugin Brightcove AirPlay vous permet de diffuser des vidéos depuis votre Brightcove Player vers des écrans haute définition avec Apple TV. Appuyez simplement sur l'icône AirPlay de Brightcove Player pour partager des films et des vidéos sur votre Apple TV ou votre Smart TV compatible AirPlay 2.</p> 
+    
+    <p>Notez que l'icône AirPlay dans la barre de contrôle du lecteur, comme illustré ci-dessous, n'apparaîtra que si les conditions suivantes s'appliquent :</p>
+    <ul>
+      <li>Votre Brightcove Player est dans le navigateur Safari</li>
+      <li>Ce plugin Brightcove AirPlay a été ajouté à votre lecteur</li>
+      <li>Le Webkit Safari intégré pour AirPlay est disponible</li>
+    </ul>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="AirPlay icon" src="/assets/images/plugins/airplay/airplay-icon.png" />
+      <figcaption class="bcls-caption--image">Icône AirPlay</figcaption>
+      </figure>
+
+  
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="Requirements">Exigences</h2> 
+    <p>Les conditions suivantes sont requises pour utiliser le plug-in Brightcove AirPlay :</p>
+    <ul>
+      <li>Brightcove Player v6.51.4 et plus récent</li> 
+    </ul>
+  </section>
+
+  <!-- <section class="bcls-section">
+    <h2 id="Implement_using_Players_module">Implement using Players module</h2> 
+    <p>Playlist end screens can be implemented using Video Cloud Studio's <strong>Players</strong> module. For details, see the <a href="https://studio.support.brightcove.com/players/configuring-playlist-endscreen-using-plugin.html">Configuring a Playlist Endscreen Using the playlist-endscreen Plugin</a> document.</p>
+  </section> -->
+
+  <section class="bcls-section">
+    <h2 id="Implement_using_code">Implémenter à l'aide</h2> 
+    <p>Pour implémenter un plugin, le lecteur doit connaître l'emplacement du code du plugin, une feuille de style si nécessaire, le nom du plugin et les options de configuration du plugin. L'emplacement du code et de la feuille de style du plugin est le suivant :</p>
+    <ol class="bcls-tasklist-restart">
+      <li>
+        <p>Inclure le code du plugin :</p>
+        <pre>
+<code class="language-javascript" translate="No">https://players.brightcove.net/videojs-bc-airplay/1/videojs-bc-airplay.js</code></pre>
+      </li>
+      <li>
+        <p>Incluez les styles de plugins :</p>
+        <pre>
+<code class="language-javascript" translate="No">https://players.brightcove.net/videojs-bc-airplay/1/videojs-bc-airplay.css</code></pre>
+      </li>
+      <li>Utilisez le nom du plugin pour le charger dans le lecteur : <code translate="No">bcAirplay</code></li> 
+      <!-- <li>
+        <p>An example set of options is:</p>
+        <pre class="line-numbers">
+<code class="language-html" translate="No">{
+  &quot;playlistId&quot;: &quot;4602525726001&quot;,
+  &quot;title&quot;: &quot;Watch More&quot;
+}</code></pre>
+      </li> -->
+      <li>
+        <p>Voici un exemple d'utilisation de l'implémentation Advanced Embed pour associer le plugin Playlist Endscreen à une seule instance d'un lecteur.</p>
+        <pre class="line-numbers">
+<code class="language-html" translate="No">&lt;link href=&quot;https://players.brightcove.net/videojs-bc-airplay/1/videojs-bc-airplay.css&quot; rel=&quot;stylesheet&quot;&gt;
+  
+  &lt;div style=&quot;max-width: 960px;&quot;&gt;
+  &lt;video-js id=&quot;myPlayerID&quot;
+    data-account=&quot;<span class="bcls-input">your account ID</span>&quot;
+    data-player=&quot;<span class="bcls-input">your player ID</span>&quot;
+    data-embed=&quot;default&quot;
+    controls=&quot;&quot;
+    data-video-id=&quot;<span class="bcls-input">your video ID</span>&quot;
+    data-playlist-id=&quot;&quot;
+    data-application-id=&quot;&quot;
+    class=&quot;vjs-fluid&quot;&gt;
+  &lt;/video-js&gt;
+&lt;/div&gt;
+&lt;script src=&quot;https://players.brightcove.net/<span class="bcls-input">your account ID</span>/<span class="bcls-input">your player ID</span>_default/index.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- script for the Brightcove AirPlay plugin --&gt;
+&lt;script src=&quot;https://players.brightcove.net/videojs-bc-airplay/1/videojs-bc-airplay.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- custom script --&gt;
+&lt;script&gt;
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+
+    // initialize the Brightcove AirPlay plugin
+    myPlayer.bcAirplay(); 
+  });
+&lt;/script&gt;</code></pre>
+      </li>
+    </ol>
+  </section>
+
+  <!-- <section class="bcls-section">
+    <h2 id="Options">Options</h2> 
+    <p>You may pass in an options object to the plugin upon initialization. This object may contain any of the following options:</p>
+
+    <h3>playlistId</h3>
+    <code translate="No">playlistId</code>
+    <ul>
+      <li>The string representing the playlist ID to be displayed in the end screen.</li>
+      <li>Type: <code translate="No">string</code></li>
+      <li>Default: <code translate="No">""</code></li>
+    </ul>
+
+    <h3>title</h3>
+    <code translate="No">title</code>
+    <ul>
+      <li>The string to customize the end screen title, this will also modify the button tooltip.</li>
+      <li>Type: <code translate="No">string</code></li>
+      <li>Default: <code translate="No">"Related videos"</code></li>
+    </ul>
+  </section> -->
+  
+  <!-- <section class="bcls-section">
+    <h2 id="Known_issues">Known issues</h2>
+    <ul>
+      <li></li>
+    </ul>
+  </section> -->
+  <section class="bcls-section"> 
+    <h2 id="changelog">Journal des changements</h2>
+    <p>Voir le <a href="http://players.brightcove.net/release-notes/brightcove-player-airplay/index.html">Notes de version du plug-in Brightcove AirPlay</a>.</p>
+  </section>
+</article>
