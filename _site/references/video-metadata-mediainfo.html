@@ -1241,7 +1241,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 &lt;/script&gt;</code></pre>
     <p>Un exemple d'affichage de la console est présenté ici:</p>
     <aside class="bcls-aside bcls-aside--information">Dans cette capture d'écran, les anciens noms de propriété de cas de serpent (account_id) sont affichés avec les noms actuels de cas de chameau (accountId).</aside>
-    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/console-display.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console" src="/assets/images/references/mediainfo/console-display.png"/></figure>
   </section>
   <section id="populatetheobject" class="bcls-section player-only">
     <h2>Remplir l'objet</h2>
@@ -1288,7 +1288,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="displaytagsfields">Afficher les balises et les champs personnalisés</h2>
     <aside class="bcls-aside bcls-aside--information player-only">Bien qu'il soit peu probable que vous remplissiez manuellement le <strong translate="No">custom fields</strong> et <strong translate="No">tags</strong> objets, c'est possible, donc ce contenu est inclus.</aside>
     <p>Les balises et les champs personnalisés sont stockés dans des structures de données complexes. le <strong translate="No">customFields</strong> dans un objet et <strong translate="No">tags</strong> dans un tableau. La capture d'écran suivante montre les champs personnalisés et les balises mis en évidence dans le <code translate="No">mediainfo</code> objet.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="balises et champs personnalisés dans l'affichage de la console" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/tags-custom-fields.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="balises et champs personnalisés dans l'affichage de la console" src="/assets/images/references/mediainfo/tags-custom-fields.png"/></figure>
     <p>Pour afficher les données de ces structures de données complexes, vous avez besoin de deux types de boucles. UNE <code translate="No">for</code> boucle est utilisée pour parcourir le tableau de balises (lignes 16-20) et injecter la liste non ordonnée HTML construite dynamiquement dans un <code translate="No">&lt;div&gt;</code> (défini à la ligne 9). UNE <code translate="No">for-in</code> boucle est utilisée pour parcourir l'objet de champs personnalisés (lignes 24-27) et injecter la liste non ordonnée HTML construite dynamiquement dans le <code translate="No">&lt;div&gt;</code>.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">&lt;video-js id="myPlayerID"
@@ -1323,7 +1323,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   });
 &lt;/script&gt;</code></pre>
     <p>Le HTML rendu apparaît comme indiqué dans cette capture d'écran.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="balises et affichage personnalisé en HTML" src="//learning-services-media.brightcove.com/doc-assets/player-development/references/mediainfo/html-display.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="balises et affichage personnalisé en HTML" src="/assets/images/references/mediainfo/html-display.png"/></figure>
     <aside class="bcls-aside bcls-aside--information video-cloud-only">Remarque : Les clés de champ personnalisées, <strong translate="No">customfield1</strong> et <strong translate="No">customfield2</strong> , ne sont que des noms de démonstration. Vous choisiriez des noms de clé qui reflètent les données stockées dans le champ personnalisé.</aside>
   </section>
 </article>

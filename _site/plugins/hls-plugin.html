@@ -1413,7 +1413,7 @@ https://players.api.brightcove.com/v2/accounts/YOUR_ACCOUNT_ID/players/YOUR_PLAY
     <h2 id="In-manifest_WebVTT">WebVTT via manifeste</h2>
     <p>Le plug-in HLS prend en charge WebVTT dans le manifeste. Il n'y a rien à faire pour activer cette fonctionnalité car elle est standard dans le plugin. Les vidéos doivent être intégrées à WebVTT dans le manifeste. Par exemple, le Brightcove <span translate="No">Dynamic Ingest API</span> peut ingérer des vidéos et configurer des sous-titres comme in-manifest Voir le <a href="https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-ingest-api-dynamic-delivery.html#ingest_captions">Aperçu: <span translate="No">Dynamic Ingest API</span> pour la livraison dynamique</a> document pour plus de détails.</p>
     <p>Le lecteur ci-dessous lit une vidéo avec des légendes WebVTT dans le manifeste. Vous pouvez sélectionner les légendes via l'icône des légendes, comme indiqué ici:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="afficher l'icône des légendes" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/in-manifest-webvtt-example.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="afficher l'icône des légendes" src="/assets/images/playback/HLS-plugin/in-manifest-webvtt-example.png"/></figure>
     <p>Après avoir démarré la vidéo, vous pourrez choisir les légendes que vous souhaitez voir.</p>
     <iframe src="https://players.brightcove.net/1752604059001/default_default/index.html?videoId=5427617218001" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" width="640" height="360"></iframe>
     <p>Simplement pour voir, comme c'est quelque chose que vous ne construiriez pas vous-même, voici le manifeste de la vidéo affichée dans le lecteur ci-dessus:</p>
@@ -1466,13 +1466,13 @@ https://players.api.brightcove.com/v2/accounts/YOUR_ACCOUNT_ID/players/YOUR_PLAY
     <h3>Méthode: videojs.log.history ()</h3>
     <p>le <code translate="No">history()</code> La méthode renvoie un tableau contenant tout ce qui a été enregistré dans l'historique.</p>
     <p>Tout message enregistré via le <code translate="No">videojs.log</code> L'API sera ajoutée à la <code translate="No">history</code> tableau. Les informations placées dans ce tableau dépendent des plugins utilisés qui utilisent l'API et de l'état du lecteur. Cela signifie que l'historique peut facilement contenir des informations non HLS. Un exemple d'affichage de la console du <code translate="No">history</code> tableau suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console du tableau d'historique" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/history-array.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console du tableau d'historique" src="/assets/images/playback/HLS-plugin/history-array.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">Les deux <code translate="No">level()</code> et <code translate="No">history()</code> les méthodes appartiennent au <code translate="No">log</code> classe, dont le document de référence se trouve <a href="https://docs.brightcove.com/brightcove-player/current-release/module-create-logger-createLogger-log.html">ici</a>.</aside>
     <p>Si vous devez envoyer le <code translate="No">history</code> array à prendre en charge, la meilleure chose à faire est de taper sur la console ce qui suit:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">JSON.stringify(videojs.log.history())</code></pre>
     <p>Vous obtiendrez des informations similaires à celles présentées ici:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="affichage sur console de l'historique stringifié" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/stringify.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="affichage sur console de l'historique stringifié" src="/assets/images/playback/HLS-plugin/stringify.png"/></figure>
     <p>Copiez le JSON qui est généré et qui peut ensuite être envoyé au support.</p>
     <h3>Propriété: player.tech (). Hls.stats</h3>
     <p>Cet objet contient un résumé du HLS et des statistiques relatives aux joueurs. Les propriétés disponibles sont présentées dans le tableau suivant:</p>
@@ -1579,7 +1579,7 @@ https://players.api.brightcove.com/v2/accounts/YOUR_ACCOUNT_ID/players/YOUR_PLAY
     </table>
     <aside class="bcls-aside bcls-aside--warning">Si vous utilisez la version 5 de Brightcove Player, vous devez utiliser <code translate="No">player.tech_.hls.stats</code> pour obtenir les informations HLS indiquées dans le tableau. De plus, certaines propriétés ne sont pas disponibles dans l'implémentation de la version 5.</aside>
     <p>Un exemple d'affichage de la console du <code translate="No">stats</code> l'objet suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console de l'objet de statistiques" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/stats-object.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="affichage de la console de l'objet de statistiques" src="/assets/images/playback/HLS-plugin/stats-object.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">Dans la console, pour afficher réellement une valeur de propriété, vous devez cliquer sur les points de suspension (...).</aside>
     <h3>Exemple de code</h3>
     <p>Si vous souhaitez expérimenter ces fonctionnalités de débogage, un code basé sur les éléments suivants peut servir de point de départ:</p>

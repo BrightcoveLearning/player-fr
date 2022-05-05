@@ -1093,9 +1093,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section id="includelanguage" class="bcls-section">
     <h2>Inclure la (les) langue (s)</h2>
     <p>La première tâche de localisation consiste à inclure la ou les langues que vous souhaitez utiliser pour la localisation. Vous pouvez voir les langues disponibles sur le <a href="//github.com/videojs/video.js/tree/master/lang">Page de langue de Video.js</a> , montré ici.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="localisation de la langue" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-languages.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="localisation de la langue" src="/assets/images/playback/localization/localization-languages.png"/></figure>
     <p>Le contenu du fichier allemand (de) est indiqué ci-dessous. Le fichier affiche les mots / phrases qui seront traduits automatiquement.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="fichier github allemand" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-deutsch-github-file.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="fichier github allemand" src="/assets/images/playback/localization/localization-deutsch-github-file.png"/></figure>
     <p>Une fois que vous avez décidé des langues à prendre en charge pour la localisation, vous devez configurer votre lecteur pour les inclure. Vous faites cela en utilisant le <a href="https://apis.support.brightcove.com/player-management/">API de gestion des joueurs</a>. Vous pouvez utiliser un code basé sur l'instruction curl suivante pour ajouter la prise en charge de la langue lors de la création du lecteur:</p>
     <aside class="bcls-aside bcls-aside--information">Remarque : Si vous n'avez aucune expérience de l'utilisation des instructions curl avec l'API Player Management, il est suggéré de commencer par le <a href="https://apis.support.brightcove.com/player-management/getting-started/step-step-player-management.html">Pas à pas: Gestion des joueurs.</a></aside>
     <pre class="line-numbers">
@@ -1140,7 +1140,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 --request POST \
 https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish</code></pre>
     <p>Un exemple de configuration de lecteur avec des langues définies apparaît comme suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="configuration du lecteur" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-player-config.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="configuration du lecteur" src="/assets/images/playback/localization/localization-player-config.png"/></figure>
   </section>
   <section id="setlanguage" class="bcls-section">
     <h2>Définir la langue</h2>
@@ -1153,20 +1153,20 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/pu
     </ol>
     <h4>paramètre de requête iframe</h4>
     <p>Si vous utilisez l'implémentation iframe du lecteur, vous pouvez définir la langue de ce lecteur en incluant un paramètre de requête dans le <code translate="No">src</code> attribut. Ajouté au paramètre de requête existant qui a l'ID vidéo, par exemple <code translate="No">?videoId=4607746980001</code> , vous pouvez définir la langue en utilisant <code translate="No">&amp;language=</code> suivi du code de langue. Par exemple, voici une implémentation du lecteur iframe définissant la langue sur l'allemand:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="paramètre de localisation iframe" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/iframe-language-parameter.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="paramètre de localisation iframe" src="/assets/images/playback/localization/iframe-language-parameter.png"/></figure>
   </section>
   <section id="results" class="bcls-section">
     <h2>Résultats</h2>
     <p>Comme mentionné dans le premier paragraphe de ce document, les résultats d'un lecteur localisé ne sont pas facilement visibles. Pour vérifier la localisation réussie, vous pouvez inspecter le gros bouton de lecture. Utilisez les outils de débogage d'un navigateur pour inspecter le bouton.</p>
     <aside class="bcls-aside bcls-aside--information">
       <p>Remarque : Si vous êtes à l'aise avec jQuery, vous pouvez voir rapidement le texte localisé en utilisant la console du navigateur et l'expression <code translate="No">$(".vjs-big-play-button").firstChild</code>. Tu verras <strong>Lire la vidéo</strong> a été localisé, comme le montre cette capture d'écran de la console:</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="inspecter le bouton de lecture" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/console-video-abspielen.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="inspecter le bouton de lecture" src="/assets/images/playback/localization/console-video-abspielen.png"/></figure>
     </aside>
-    <figure class="bcls-figure"><img class="bcls-image" alt="inspecter le bouton de lecture" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-inspect-play-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="inspecter le bouton de lecture" src="/assets/images/playback/localization/localization-inspect-play-button.png"/></figure>
     <p>Explorez le code HTML jusqu'à ce que vous voyiez le texte du bouton, qui dans la version non localisée est <strong>Lire la vidéo</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="localisation en anglais" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-english.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="localisation en anglais" src="/assets/images/playback/localization/localization-english.png"/></figure>
     <p>Après avoir suivi les étapes indiquées ci-dessus, le lecteur sera localisé. Dans la capture d'écran suivante, le bouton est localisé pour l'allemand.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="localisation allemande" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-deutsch.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="localisation allemande" src="/assets/images/playback/localization/localization-deutsch.png"/></figure>
   </section>
   <section id="iframeimplementation" class="bcls-section">
     <h2>implémentation iframe</h2>
@@ -1184,7 +1184,7 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/pu
   "Goodbye": "Auf Wiedersehen"
 });  </code></pre>
     <p>Ce JavaScript pourrait être dans la page HTML elle-même, inclus comme source dans <code translate="No">&lt;script&gt;</code> , mais la meilleure approche consiste simplement à ajouter le script à la configuration du lecteur à l'aide de Studio. L'URL du fichier est ajoutée dans le <strong>Plugins</strong> section des propriétés du joueur. Utilisez le <strong>Ajouter un fichier</strong> bouton pour ajouter le fichier JavaScript, comme indiqué ici:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un script dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-studio-add-script.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un script dans Studio" src="/assets/images/playback/localization/localization-studio-add-script.png"/></figure>
     <p>Une fois que le vocabulaire ajouté est dans le fichier de langue, vous pouvez utiliser le lecteur <code translate="No">localize()</code> méthode pour y accéder. L'extrait de code suivant montre le mot localisé pour <strong>Bonjour</strong> utilisé dans la page HTML, suivi d'une capture d'écran des résultats.</p>
     <pre class="line-numbers">
 <code class="language-html" translate="No">  &lt;p id="textTarget"&gt;In here: &lt;/p&gt;
@@ -1195,7 +1195,7 @@ https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/pu
       <span class="bcls-highlight">document.getElementById("textTarget").innerHTML += myPlayer.localize("Hello");</span>
     });
   &lt;/script&gt;</code></pre>
-    <figure class="bcls-figure"><img class="bcls-image" alt="localisation du texte de la page" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/localization/localization-page-text.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="localisation du texte de la page" src="/assets/images/playback/localization/localization-page-text.png"/></figure>
   </section>
 </article>
 

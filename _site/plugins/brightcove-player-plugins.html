@@ -1110,14 +1110,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="brightcoveplugins">Plugins Brightcove</h2>
     <p>le <a href="/plugins/overview-brightcove-player-plugins.html">Aperçu: Plugins de lecteur</a> document répertorie les plugins fournis par Brightcove et les plugins chargés par défaut.</p>
     <p>Les plugins fournis par Brightcove peuvent être utilisés de différentes manières. Bien que tout puisse être implémenté en utilisant le <strong>Plugins</strong> section dans les studios <strong>JOUEURS</strong> module, certains ont une section dédiée pour charger les fonctionnalités, comme la publicité, les écrans finaux et les réseaux sociaux. Vous pouvez également obtenir une aide supplémentaire pour certains plugins dans le <strong>Plugins</strong> section comme indiqué dans ces captures d'écran:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/add-brightcove.png"/></figure>
-    <figure class="bcls-figure"><img class="bcls-image" alt="plugin fourni par brightcove" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/chromecast.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="/assets/images/plugins/plugin-guide/add-brightcove.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="plugin fourni par brightcove" src="/assets/images/plugins/plugin-guide/chromecast.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="Adding_plugins_in_Studio">Ajouter des plugins dans Studio</h2>
     <p>Si vous choisissez de ne pas le faire ou s'il n'y a aucun moyen d'ajouter un plugin d'une autre manière, utilisez le formulaire suivant. Comme indiqué, sélectionnez d'abord <strong>Plugin personnalisé</strong> , le formulaire semblera être rempli.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/add-custom.png"/></figure>
-    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-guide/manually-add-plugin-form.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="/assets/images/plugins/plugin-guide/add-custom.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="ajouter un plugin dans Studio" src="/assets/images/plugins/plugin-guide/manually-add-plugin-form.png"/></figure>
     <p>Vous voyez que vous ajoutez le nom du plugin, un lien accessible sur Internet vers le fichier JavaScript, vers le fichier CSS (si nécessaire) et des options.</p>
     <aside class="bcls-aside bcls-aside--information">Dans certains cas, vous souhaiterez peut-être ajouter un lien vers du code JavaScript, mais n'exécuter aucun code d'initialisation. Dans ce cas, vous ajoutez le lien sous le <strong>Les scripts</strong> languette. De même, vous pouvez faire de même si vous n'avez que CSS en utilisant <strong>CSS</strong> languette.</aside>
   </section>
@@ -1161,9 +1161,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration</code></pre>
     <h3>Comment détecter si un plugin par défaut est chargé?</h3>
     <p>Vous pouvez déterminer si un plugin par défaut est chargé en accédant à la console d'un navigateur lors de l'utilisation de l'URL ou des implémentations embed_in_page d'un lecteur et en vérifiant si l'objet plugin correspondant est présent. La capture d'écran suivante montre la présence du plugin.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="plugin-par défaut avec hls" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-overview/default-plugin-with-hls.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="plugin-par défaut avec hls" src="/assets/images/plugins/plugin-overview/default-plugin-with-hls.png"/></figure>
     <p>Si vous avez défini un plugin par défaut particulier à NE PAS charger, son objet ne sera pas présent dans la page. Dans la capture d'écran suivante, vous voyez que l'objet plugin HLS n'est PAS présent:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="default-plugin-no-hls" src="//learning-services-media.brightcove.com/doc-assets/player-development/plugins/plugin-overview/default-plugin-no-hls.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="default-plugin-no-hls" src="/assets/images/plugins/plugin-overview/default-plugin-no-hls.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="passdata">Passer les données</h2>

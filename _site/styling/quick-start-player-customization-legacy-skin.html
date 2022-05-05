@@ -1105,10 +1105,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Parcourez la page nouvellement créée. Par défaut, le lecteur sera dimensionné avec des dimensions par défaut de 300 x 150 pixels.</li>
       <li>Ouvrez les outils de développement de votre navigateur et explorez le code HTML pour trouver le <code translate="No">div</code> balise qui entoure le lecteur. Vous verrez le <code translate="No">div</code> tag a une classe de <code translate="No">video-js</code>. le <code translate="No">div</code> qui contient le joueur aura toujours une classe de <code translate="No">video-js</code> . <code translate="No">video-js</code> est le nom de classe dont nous aurons besoin lors du stylisme du lecteur</li>
       <li>Vérifiez la capture d'écran ci-dessous pour voir la classe en surbrillance en rouge. La balise vidéo, qui est Brightcove Player, est surlignée en vert.
-        <figure class="bcls-figure"><img class="bcls-image" alt="lecteur-div-avec-vidéo" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/player-div-with-video.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="lecteur-div-avec-vidéo" src="/assets/images/player-customization/1x-customize-quick-start/player-div-with-video.png"/></figure>
         <aside class="bcls-aside bcls-aside--tip language-editable">
           <p>Remarque : Selon le système d'exploitation et le navigateur utilisés, la version de secours Flash du lecteur peut s'afficher. Si votre lecteur utilise la version de secours Flash du lecteur, vous ne verrez pas <code translate="No">video</code> marque. Au lieu de cela, vous verrez le <code translate="No">div</code> entourant un <code translate="No">object</code>comme indiqué ci-dessous.</p>
-          <figure class="bcls-figure"><img class="bcls-image" alt="joueur-div-avec-objet" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/player-div-with-object.png"/></figure>
+          <figure class="bcls-figure"><img class="bcls-image" alt="joueur-div-avec-objet" src="/assets/images/player-customization/1x-customize-quick-start/player-div-with-object.png"/></figure>
         </aside>
       </li>
       <li>Maintenant que vous connaissez la classe correcte à utiliser pour un sélecteur CSS, nous pouvons utiliser ce sélecteur de classe pour modifier la taille du lecteur. le <code translate="No">style</code> le bloc ci-dessous doit être placé juste au-dessus de l'extrémité du <code translate="No">head</code> section de votre page HTML. Dans la terminologie CSS, ceci est un exemple d'utilisation d'un <strong>sélecteur de classe</strong>.
@@ -1131,7 +1131,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Parcourez votre page HTML.</li>
       <li>Faites un clic droit sur le bouton de lecture qui superpose le joueur et sélectionnez <strong>Inspecter l'élément</strong>.</li>
       <li>Notez que le <code translate="No">div</code> La balise en surbrillance représente le bouton de lecture et a une classe <code translate="No">vjs-big-play-button</code>.
-        <figure class="bcls-figure"><img class="bcls-image" alt="big-play-button-div" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/big-play-button-div.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="big-play-button-div" src="/assets/images/player-customization/1x-customize-quick-start/big-play-button-div.png"/></figure>
       </li>
       <li>Modifiez vos styles pour inclure du CSS qui change la couleur et l'opacité du bouton de lecture (lignes 17-18) et centre le bouton à l'intérieur du lecteur (lignes 19-23).
         <pre class="line-numbers">
@@ -1152,15 +1152,15 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         &lt;/style&gt;  </code></pre>
       </li>
       <li>Parcourez votre page et vous verrez que tous les styles n'ont pas été utilisés. Le bouton n'est pas rouge.
-        <figure class="bcls-figure"><img class="bcls-image" alt="bouton-pas-rouge" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/button-not-red.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="bouton-pas-rouge" src="/assets/images/player-customization/1x-customize-quick-start/button-not-red.png"/></figure>
       </li>
       <li>Regardez à droite de vos outils de développement et vous verrez un résumé de vos styles. Vous pouvez regarder vers le bas et voir que changer l'arrière-plan en rouge est remplacé, représenté par le fait qu'il est barré.
-        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-overridden" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/styles-background-overridden.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-overridden" src="/assets/images/player-customization/1x-customize-quick-start/styles-background-overridden.png"/></figure>
         <aside class="bcls-aside bcls-aside--information language-editable">Remarque : Dans Safari, le style peut ne pas être barré même s'il est remplacé.</aside>
         <p>Ce qui s'est passé, c'est que de nombreux changements sont apportés à la couleur d'arrière-plan. Le style que vous définissez a été remplacé dans la partie « cascade » de CSS. Vous pouvez changer cela en utilisant la fonctionnalité de CSS appelée <strong>spécificité</strong>. La spécificité détermine quelle règle CSS est appliquée par les navigateurs et est un type de pondération qui a une incidence sur la façon dont vos règles de feuille de style en cascade (CSS) sont affichées. En utilisant la spécificité, vous pouvez rendre votre style plus important que d'autres, en le forçant à être utilisé. Il y a une brève introduction à la spécificité CSS dans le <a href="/styling/customizing-player-appearance-legacy-skin.html#specificity">Personnaliser l'apparence du joueur - Legacy Skin</a> doc, et de nombreuses références dans toute recherche.</p>
       </li>
       <li>Notez que le <code translate="No">div</code> tag entoure le joueur a de nombreuses classes qui lui sont associées.
-        <figure class="bcls-figure"><img class="bcls-image" alt="classes multiples" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/multiple-classes.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="classes multiples" src="/assets/images/player-customization/1x-customize-quick-start/multiple-classes.png"/></figure>
       </li>
       <li>Dans ce cas, en utilisant la combinaison de <code translate="No">video-js</code> et <code translate="No">vjs-mouse</code> "boostera" vos styles pour qu'ils priment. Modifiez vos styles pour utiliser le nouveau sélecteur de combinaison. Notez qu'il n'y a pas d'espace entre les deux premières classes, mais il y en a un avant la dernière classe (des détails sur les raisons peuvent être trouvés dans les règles de spécificité).
         <pre class="line-numbers">
@@ -1175,10 +1175,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
           }</code></pre>
       </li>
       <li>Parcourez votre page et voyez que tous les styles sont maintenant appliqués.
-        <figure class="bcls-figure"><img class="bcls-image" alt="styles-arrière-plan-travail" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/styles-background-working.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-arrière-plan-travail" src="/assets/images/player-customization/1x-customize-quick-start/styles-background-working.png"/></figure>
       </li>
       <li>Encore une fois, regardez à droite de vos outils de développement et vous verrez un résumé de vos styles. Maintenant, vous voyez que votre changement de couleur d'arrière-plan n'est pas remplacé.
-        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-NOT-overridden" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/styles-background-NOT-overridden.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-NOT-overridden" src="/assets/images/player-customization/1x-customize-quick-start/styles-background-NOT-overridden.png"/></figure>
       </li>
     </ol>
   </section>
@@ -1313,7 +1313,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Dans Studio, allez dans le module <strong>Players</strong> et modifiez le lecteur que vous utilisez pour ce démarrage rapide.</li>
       <li>Localisez le <strong>PLUGINS</strong> et cliquez sur le <strong>Éditer</strong> bouton.</li>
       <li>Clique le <strong>CSS</strong> et entrez le chemin d'accès à votre fichier CSS, comme indiqué ici:
-        <figure class="bcls-figure"><img class="bcls-image" alt="studio-enter-css" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-quick-start/studio-enter-css.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="studio-enter-css" src="/assets/images/player-customization/1x-customize-quick-start/studio-enter-css.png"/></figure>
       </li>
       <li>Cliquez sur <strong>sauver</strong> pour enregistrer vos modifications dans le <strong>PLUGINS</strong> section.
         <aside class="bcls-aside bcls-aside--information language-editable">Le lecteur de prévisualisation en haut de la page sera mis à jour pour afficher les styles CSS appliqués au bouton.</aside>

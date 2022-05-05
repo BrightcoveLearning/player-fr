@@ -1095,13 +1095,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Ces étapes vous permettent de définir manuellement une version de lecteur.</p>
     <ol class="bcls-tasklist">
       <li>Tout d'abord, vous voudrez définir le lecteur pour qu'il soit mis à jour manuellement. Cela empêchera une modification de version d'un joueur d'être remplacée par une mise à jour du joueur. Pour ce faire, allez dans Studio, <strong>JOUEURS</strong> module et dans le <strong>Informations sur le joueur</strong> section définir le <strong>Mode de mise à jour</strong> à <strong>Manuel.</strong>
-        <figure class="bcls-figure"><img class="bcls-image" alt="studio ui set manuel" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/studio-ui-set-manual.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="studio ui set manuel" src="/assets/images/troubleshooting/manually-change-player-version/studio-ui-set-manual.png"/></figure>
         Bien sûr, enregistrez vos modifications.</li>
       <li>Vous allez maintenant définir manuellement la version du lecteur à l'aide du <strong>Éditeur JSON</strong> dans le <strong>JOUEURS</strong> module. Ceci est un exemple de configuration d'un lecteur regarde avant tout changement de version est effectué :
-        <figure class="bcls-figure"><img class="bcls-image" alt="configuration du joueur avant la modification" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/json-editor-before.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="configuration du joueur avant la modification" src="/assets/images/troubleshooting/manually-change-player-version/json-editor-before.png"/></figure>
         <aside class="bcls-aside bcls-aside--tip language-editable">Noter la <code translate="No">"locked": true</code> L'attribut est le résultat de l'étape 1.</aside>
         dans le <strong>Éditeur JSON</strong> , modifiez le <strong>version</strong> attribuer à la version souhaitée.
-        <figure class="bcls-figure"><img class="bcls-image" alt="configuration du joueur après modification" src="//learning-services-media.brightcove.com/doc-assets/player-development/troubleshooting/manually-change-player-version/json-editor-after.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="configuration du joueur après modification" src="/assets/images/troubleshooting/manually-change-player-version/json-editor-after.png"/></figure>
         Assurez-vous d'enregistrer vos modifications, puis de publier votre lecteur.</li>
     </ol>
     <p>N'oubliez pas une fois le problème corrigé pour changer votre joueur pour être automatiquement mis à jour.</p>

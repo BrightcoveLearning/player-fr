@@ -1088,7 +1088,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <section id="Overview" class="bcls-section">
         <h2>Présentation</h2>
         <p>Le plugin de messages d'erreur permet au lecteur d'afficher des messages conviviaux lorsqu'il rencontre une erreur. La feuille de style par défaut affiche les messages sous forme de superposition semi-transparente au-dessus de l'élément vidéo lui-même. Vous pouvez modifier le texte du message existant et ajouter vos propres styles. Vous pouvez même créer des messages personnalisés qui sont déclenchés quand vous le souhaitez.</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="plugin de message d'erreur" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/error-message-plugin.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="plugin de message d'erreur" src="/assets/images/playback/troubleshooting/errors-plugin/error-message-plugin.png"/></figure>
         <p>Le message d'erreur affiché dans l'image ci-dessus a été créé en mettant à jour le lecteur avec un <code translate="No">src</code> valeur dans le <code translate="No">sources</code> propriété.</p>
         <p>Le plugin des messages d'erreur est un plugin par défaut et est automatiquement chargé avec le Brightcove Player. Cependant, vous pouvez choisir de ne pas le charger. Sans ce plugin, vous verrez un ensemble limité de messages d'erreur et certaines erreurs n'apparaîtront que dans la console du navigateur. Pour plus de détails sur la façon de ne pas charger un plugin par défaut lorsque vous créez un lecteur, consultez le <a href="/plugins/overview-brightcove-player-plugins.html">Présentation du plugin Player</a> document.</p>
         <aside class="bcls-aside bcls-aside--warning language-editable">Pour personnaliser un message d'erreur, vous pouvez utiliser l'une des deux méthodes présentées dans ce document:
@@ -1174,7 +1174,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <li><code translate="No">type</code>: C'est le <strong>Code d'erreur:</strong> texte.</li>
             <li><code translate="No">message</code>: C'est le <strong>Détails techniques:</strong> texte.</li>
         </ul>
-        <figure class="bcls-figure"><img class="bcls-image" alt="plugin de message d'erreur" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/error-message-plugin2.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="plugin de message d'erreur" src="/assets/images/playback/troubleshooting/errors-plugin/error-message-plugin2.png"/></figure>
         <!-- <p>Once your player is created, in Studio edit the <strong>Plugins</strong> section of the <strong>Players</strong> module with a JSON object to set property values.</p> -->
         <p>L'exemple ci-dessous montre comment remplacer le texte du message pour l'erreur standard avec une valeur de code d'erreur de <code translate="No">4</code>. Les propriétés sont définies comme suit:</p>
         <ul>
@@ -1304,7 +1304,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             </li>
         </ul>
         <aside class="bcls-aside bcls-aside--information">Pour ces erreurs sans code, le message sera utilisé pour le code. Par exemple, une erreur de restriction de domaine est affichée ici:
-            <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur de restriction de domaine" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/domain-restriction-error.png"/></figure>
+            <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur de restriction de domaine" src="/assets/images/playback/troubleshooting/errors-plugin/domain-restriction-error.png"/></figure>
         </aside>
     </section>
     <section class="bcls-section">
@@ -1345,18 +1345,18 @@ myPlayer.on("loadstart", function () {
 });</code></pre>
         <p>Ici le <code translate="No">age_appropriate</code> la variable est définie sur <code translate="No">false</code> , mais vous ajouteriez votre propre code pour déterminer quand afficher vos messages d'erreur personnalisés.</p>
         <p>L'erreur serait affichée à l'utilisateur comme suit:</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur personnalisé de l'utilisateur" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/user-custom-error-message.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur personnalisé de l'utilisateur" src="/assets/images/playback/troubleshooting/errors-plugin/user-custom-error-message.png"/></figure>
         <aside class="bcls-aside bcls-aside--tip">Remarque: tout code pour lancer des erreurs personnalisées doit attendre le chargement de la vidéo. Utilisez le <code translate="No">loadstart</code> événement pour le déterminer. Si vous essayez d'afficher votre message sans attendre, votre message disparaîtra après le chargement de la vidéo.</aside>
     </section>
     <section class="bcls-section">
         <h2 id="Making_custom_errors_non_dismissible">Rendre les erreurs personnalisées non supprimables</h2>
         <p>Par défaut, un message d'erreur personnalisé est ignoré par le visionneur vidéo. Comme le montre la capture d'écran suivante, il y a un <strong>D'accord</strong> bouton pour cliquer pour fermer la fenêtre, ainsi qu'un <strong>X</strong> dans le coin supérieur droit.</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur rejetable" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/dismissible.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur rejetable" src="/assets/images/playback/troubleshooting/errors-plugin/dismissible.png"/></figure>
         <p>Si vous ne souhaitez PAS autoriser le spectateur vidéo à ignorer le message d'erreur, vous pouvez le faire. Lorsque vous appelez le <code translate="No">error()</code> méthode, vous pouvez définir la <code translate="No">dismiss</code> propriété à <code translate="No">false</code>.</p>
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">myPlayer.error({code:'age-gate-error', <span class="bcls-highlight">dismiss: false</span>});</code></pre>
         <p>Lorsque vous effectuez cette opération, le message d'erreur apparaîtra comme suit, sans aucun moyen de rejeter l'erreur.</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur non rejetable" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/not-dismissible.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="message d'erreur non rejetable" src="/assets/images/playback/troubleshooting/errors-plugin/not-dismissible.png"/></figure>
     </section>
     <section class="bcls-section">
         <h2 id="getAll_method">méthode getAll ()</h2>
@@ -1364,7 +1364,7 @@ myPlayer.on("loadstart", function () {
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">console.log('myPlayer.errors.getAll()',myPlayer.errors.getAll());</code></pre>
         <p>Un exemple d'affichage de la console, avec quelques erreurs développées pour plus de détails, est:</p>
-        <figure class="bcls-figure"><img class="bcls-image" alt="Affichage de la console getAll" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/getAll-method.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Affichage de la console getAll" src="/assets/images/playback/troubleshooting/errors-plugin/getAll-method.png"/></figure>
     </section>
     <section id="dispatcherror" class="bcls-section">
         <h2>Erreurs d'envoi</h2>

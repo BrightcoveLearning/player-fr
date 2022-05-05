@@ -1115,7 +1115,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Remplacez les valeurs d'entrée par défaut par votre propre compte, lecteur et vidéo.</li>
     </ol>
     <p>Votre sortie doit ressembler à ceci:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="application technique de lecture" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/tech/playback-tech-app.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="application technique de lecture" src="/assets/images/architecture/tech/playback-tech-app.png"/></figure>
   </section>
   <section class="bcls-section">
     <h2 id="viewTechManually" class="bcls-expander-head">Affichage manuel de la technologie de lecture</h2>
@@ -1127,13 +1127,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <code class="language-javascript" translate="No">videojs.getPlayers().video_1.currentSrc()</code></pre>
       <aside class="bcls-aside bcls-aside--information">Remarque : le <code translate="No">video_1</code> La section de l'entrée représente l'ID du joueur dans ce cas. Si vous expérimentez et avez un joueur avec un ID, cet ID remplacera <code translate="No">video_1</code>.</aside>
       <p>Vous devriez voir que le fichier source actuel a une valeur d'extension de <strong>m3u8</strong>.</p>
-      <figure class="bcls-figure"><img class="bcls-image" alt="nom de la technologie" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/tech/hls-rendition.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="nom de la technologie" src="/assets/images/architecture/tech/hls-rendition.png"/></figure>
       <p>Vous ne vous attendez peut-être pas à ce que le rendu hls soit lu dans ce navigateur, car Chrome ne prend pas en charge nativement hls. Mais, le Brightcove Player lit hls en utilisant MSE (Media Source Extensions) dans le navigateur Chrome.</p>
       <h3>classe vjs-tech</h3>
       <p>Ensuite, vérifions que HTML5 est utilisé pour lire le rendu hls. Dans l'invite de commande de la console, entrez ce qui suit pour renvoyer le premier élément player qui utilise la classe nommée <code translate="No">vjs-tech</code>:</p>
       <pre class="line-numbers">
 <code class="language-javascript" translate="No">document.getElementsByClassName("vjs-tech")[0]</code></pre>
-      <figure class="bcls-figure"><img class="bcls-image" alt="nom de la technologie" src="//learning-services-media.brightcove.com/doc-assets/player-development/architecture/tech/tech-details.png"/></figure>
+      <figure class="bcls-figure"><img class="bcls-image" alt="nom de la technologie" src="/assets/images/architecture/tech/tech-details.png"/></figure>
       <p>Ici, vous pouvez voir que le HTML5 <code translate="No">video</code> élément est utilisé.</p>
     </div>
   </section>

@@ -1198,7 +1198,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <pre class="line-numbers">
 <code class="language-html" translate="No">https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css</code></pre>
     <p>Ajoutez ensuite les informations de configuration comme suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="créer un point de repère dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/overlay-plugin-studio.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="créer un point de repère dans Studio" src="/assets/images/player-customization/cue-points/cue-points-cta/overlay-plugin-studio.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">Non <strong>contenu</strong> est fourni dans la configuration Overlay car il sera dynamiquement construit et injecté dans la superposition.</aside>
     <p>Les vidéos publiées avec le lecteur doivent contenir des points de repère configurés dans Studio. Les informations pour le CTA sont stockées dans le <strong>Métadonnées</strong> champ. Dans une liste séparée par des points-virgules, stockez les éléments suivants:</p>
     <ul>
@@ -1206,7 +1206,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>Texte de la balise d'ancrage</li>
       <li>URL de la balise d'ancrage</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image" alt="créer un point de repère dans Studio" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/make-cp-in-studio.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="créer un point de repère dans Studio" src="/assets/images/player-customization/cue-points/cue-points-cta/make-cp-in-studio.png"/></figure>
     <h3>Autres HTML</h3>
     <p>Aucun autre élément HTML n'est ajouté à la page.</p>
   </section>
@@ -1227,7 +1227,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <pre>
 <code class="language-javascript" translate="No">// ### Listen for cue change then pass data to be displayed ###</code></pre>
     <p>Après avoir extrait les informations de point de repère du <code translate="No">mediainfo</code> objet, vous utilisez du JavaScript <code translate="No">oncuechange</code> gestionnaire d'événements pour écouter les débuts des points de repère. Vous extrayez ensuite les informations de point de repère pour le point de repère actuel et appelez le <code translate="No">displayCTA()</code> méthode. Les informations sur les points de repère passés à la fonction personnalisée apparaissent comme suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="info sur le point de repère" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/cue-points/cue-points-cta/console-cp-info.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="info sur le point de repère" src="/assets/images/player-customization/cue-points/cue-points-cta/console-cp-info.png"/></figure>
     <aside class="bcls-aside bcls-aside--tip">le <code translate="No">endTime</code> n'est pas utile dans cette application car il s'agit de l'heure du prochain point de repère ou de la fin de la vidéo. N'oubliez pas que la durée d'affichage de la superposition est stockée dans le point de repère <strong>Métadonnées</strong>.</aside>
     <!-- UPDATE task 2 -->
     

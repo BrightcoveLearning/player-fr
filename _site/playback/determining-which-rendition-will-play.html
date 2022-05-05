@@ -1135,16 +1135,16 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>Le processus est illustré ci-dessous :</p>
     <ol>
       <li>Chaque fois qu'un nouveau segment est téléchargé, le débit de téléchargement est calculé en fonction de la taille du segment et du temps nécessaire au téléchargement :
-        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition1" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-1.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition1" src="/assets/images/playback/HLS-plugin/HLS-rendition-1.png"/></figure>
       </li>
       <li>Tous les formats associés ayant un débit binaire supérieur à la nouvelle mesure sont filtrés :
-        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition2" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-2.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition2" src="/assets/images/playback/HLS-plugin/HLS-rendition-2.png"/></figure>
       </li>
       <li>Tous les formats associés qui sont plus grands que les dimensions du lecteur actuel sont filtrés :
-        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition3" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-3.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition3" src="/assets/images/playback/HLS-plugin/HLS-rendition-3.png"/></figure>
       </li>
       <li>Une baisse de qualité significative n'est pas souhaitée simplement parce que votre joueur est un pixel trop petit, donc nous ajoutons à la prochaine résolution la plus élevée. Le rendu de débit le plus élevé qui reste est celui qui est utilisé :
-        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition4" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/HLS-plugin/HLS-rendition-4.png"/></figure>
+        <figure class="bcls-figure"><img class="bcls-image" alt="Rendition4" src="/assets/images/playback/HLS-plugin/HLS-rendition-4.png"/></figure>
       </li>
     </ol>
     <p>S'il s'avère qu'aucun format associé n'est acceptable sur la base du filtrage décrit ci-dessus, le premier codage répertorié dans la liste de lecture principale sera utilisé.</p>

@@ -1096,7 +1096,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="player">Lecteur</h2>
     <aside class="bcls-aside bcls-aside--information">Remarque : Ce document suppose une certaine connaissance du CSS et l'utilisation des outils de développement d'un navigateur pour afficher les classes des éléments HTML et examiner les CSS applicables. Si vous ne possédez pas les connaissances de base requises, il serait préférable que vous <a href="/styling/quick-start-player-customization-legacy-skin.html">Démarrage rapide: Personnalisation du joueur - Legacy Skin</a>.</aside>
     <p>Vous pouvez modifier l'apparence du joueur, mais vous devez d'abord avoir un moyen d'y remédier. Pour voir cela, parcourez une page HTML avec le code du lecteur embed_in_page inséré. dans le <strong>Éléments</strong> section des outils de développement localiser le premier <code translate="No">&lt;div&gt;</code> et vous verrez qu'il a une classe avec la valeur <code translate="No">video-js</code> assigné, entre autres.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="personnaliser les éléments du joueur" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/player-elements.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="personnaliser les éléments du joueur" src="/assets/images/player-customization/1x-customize-appearance/player-elements.png"/></figure>
     <p>Une fois que vous savez cela, vous pouvez utiliser des styles pour modifier le lecteur lui-même. Par exemple, pour changer la taille du lecteur, vous pouvez utiliser ce style:</p>
     <pre class="line-numbers">
 <code class="language-css" translate="No">&lt;style&gt;
@@ -1109,7 +1109,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="iframeplayer">lecteur iframe</h2>
     <p>Si vous utilisez l'implémentation iframe du lecteur, la situation est différente. Vous verrez toujours le joueur avec le <code translate="No">video-js</code> class, mais ce sera bien sûr à l'intérieur de l'iframe.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="iframe-player-elements" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/iframe-elements.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="iframe-player-elements" src="/assets/images/player-customization/1x-customize-appearance/iframe-elements.png"/></figure>
     <p>Les styles que vous créez fonctionneront toujours avec le lecteur dans l'iframe, mais un fichier CSS devra être créé et associé au lecteur à l'aide de Studio. Vous faites cela en vous rendant au <strong>Joueurs</strong> module, puis cliquez sur la vidéo à laquelle vous souhaitez associer le CSS, puis dans le <strong>Plugins</strong> section ajoutez le chemin de votre fichier CSS.</p>
     <p>Si vous souhaitez personnaliser l'iframe lui-même, vous pouvez le faire en ajoutant un <code translate="No">class</code> attribut au <code translate="No">iframe</code> élément (ligne 27). Dans ce cas, la valeur de la classe est <code translate="No">videoFrame</code>. Ensuite, utilisez un <code translate="No">&lt;style&gt;</code> balise à modifier à volonté. Dans l'exemple ci-dessous, le <code translate="No">width</code> et <code translate="No">height</code> sont modifiés.</p>
     <pre class="line-numbers" data-start="10">
@@ -1138,9 +1138,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="button">Bouton jouer</h2>
     <p>Si vous souhaitez modifier l'apparence du bouton de lecture, vous devez d'abord savoir comment y remédier. Dans Chrome, assurez-vous que <strong>Outils de développement</strong> sont ouverts puis faites un clic droit sur le bouton. Parmi les sélections qui apparaissent, choisissez <strong>Inspecter l'élément</strong>.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="bouton d'inspection" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/inspect-button-1x.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="bouton d'inspection" src="/assets/images/player-customization/1x-customize-appearance/inspect-button-1x.png"/></figure>
     <p>dans le <strong>Éléments</strong> section des outils de développement, vous verrez le code HTML qui correspond à l'élément bouton.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="gros bouton de lecture" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/big-play-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="gros bouton de lecture" src="/assets/images/player-customization/1x-customize-appearance/big-play-button.png"/></figure>
     <p>À partir du code en surbrillance ci-dessus, vous pouvez voir que la classe attribuée au bouton est <code translate="No">vjs-big-play-button</code>. La couleur et l'opacité du bouton de lecture (pour correspondre au tigre) seront modifiées avec ces styles:</p>
     <pre class="line-numbers" data-start="36">
 <code class="language-css" translate="No">  &lt;style&gt;
@@ -1177,7 +1177,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     }
   &lt;/style&gt;</code></pre>
     <p>Voici le résultat du passage du bouton du gris foncé à l'orange:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="bouton de lecture orange" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/orange-play-button-1x.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="bouton de lecture orange" src="/assets/images/player-customization/1x-customize-appearance/orange-play-button-1x.png"/></figure>
     <h3>Bouton de lecture central</h3>
     <p>Vous pouvez centrer le bouton de lecture horizontalement et verticalement en utilisant les styles suivants:</p>
     <pre class="line-numbers" data-start="199">
@@ -1197,10 +1197,10 @@ margin: auto;</code></pre>
   <section class="bcls-section">
     <h2 id="progressvolume">Progrès et volume</h2>
     <p>La dernière personnalisation de l'apparence que nous examinerons dans ce document sera de changer la couleur des indicateurs de progression et de volume. La couleur par défaut pour les deux est le fuchsia, comme indiqué ici:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="progrès-et-volume" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/progress-and-volume-1x.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="progrès-et-volume" src="/assets/images/player-customization/1x-customize-appearance/progress-and-volume-1x.png"/></figure>
     <p>Le défi ici est de trouver les noms de classe des éléments. En utilisant la même technique que ci-dessus, un clic droit sur un élément en choisissant <strong>Inspecter l'élément</strong> , vous pouvez accéder à l'ensemble de l'indicateur de progression, puis en explorant vers le bas, vous verrez le <code translate="No">vjs-play-progress</code> classe.</p>
     <p>Dans le Chrome <strong>Éléments</strong> panneau, passez la souris sur le <code translate="No">div</code> élément avec un nom de classe de <code translate="No">vjs-play-progress</code> pour voir ce qui suit dans le lecteur:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="contrôle des progrès" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/progress-control.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="contrôle des progrès" src="/assets/images/player-customization/1x-customize-appearance/progress-control.png"/></figure>
     <p>Un outil dans Chrome est utile lors de la vérification de l'élément de niveau de volume. Notez que vous ne voyez le niveau de volume que lorsque vous passez la souris sur le bouton de volume. Pour afficher le niveau de volume lors de l'inspection et de la recherche du bon élément, procédez comme suit:</p>
     <ul>
       <li>Faites un clic droit sur le bouton de volume et inspectez-le</li>
@@ -1208,7 +1208,7 @@ margin: auto;</code></pre>
       <li>Vérifier la <strong>:flotter</strong> (surligné en rouge dans le <strong>modes</strong> section) pour simuler le survol de la souris pendant que vous inspectez les éléments</li>
       <li>Explorez jusqu'à ce que vous trouviez l'élément de niveau de volume (surligné en rouge dans le <strong>Éléments</strong> section)</li>
     </ul>
-    <figure class="bcls-figure"><img class="bcls-image" alt="inspect-bouton-audio" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/inspect-audio-button.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="inspect-bouton-audio" src="/assets/images/player-customization/1x-customize-appearance/inspect-audio-button.png"/></figure>
     <p>Maintenant le <code translate="No">background-color</code> de ces deux éléments doit être stylisé. Vous voulez qu'ils aient la même couleur que le bouton, alors modifiez vos styles comme indiqué ici:</p>
     <pre class="line-numbers" data-start="94">
 <code class="language-html" translate="No">  &lt;style&gt;
@@ -1227,7 +1227,7 @@ margin: auto;</code></pre>
   &lt;/style&gt;</code></pre>
     <p>Notez que nous préfixons chaque classe avec l'identifiant du joueur <code translate="No">div</code> élément. Cela fournit de la pertinence pour les changements de classe en ce qui concerne la spécificité CSS. Cela sera discuté dans la section suivante.</p>
     <p>Les résultats apparaissent comme suit:</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="progress-volume-style" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/progress-volume-styled-1x.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="progress-volume-style" src="/assets/images/player-customization/1x-customize-appearance/progress-volume-styled-1x.png"/></figure>
     <p>Cette introduction vous a donné un aperçu du style du lecteur. Comme vous l'avez vu, l'approche consiste à trouver le nom de classe qui correspond à l'élément que vous souhaitez modifier, puis à le styliser. Rappelez-vous comme mentionné dans le <strong>iframe</strong> section de ce document, si vous utilisez le lecteur iframe, vous devez mettre les styles dans un fichier puis utiliser une instruction curl pour associer les styles au lecteur.</p>
     <p>N'oubliez pas qu'il est recommandé d'ajouter les personnalisations à la configuration de votre lecteur afin qu'elles puissent être optimisées et voyager avec votre lecteur partout où il est intégré.</p>
   </section>
@@ -1267,7 +1267,7 @@ margin: auto;</code></pre>
     <h2 id="specificity">Spécificité CSS</h2>
     <p>La spécificité CSS fait référence à la façon dont les navigateurs déterminent les valeurs de propriété à appliquer à un élément en fonction de leur pertinence. Pour plus de détails sur ce concept, consultez le <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">Spécificité</a> article.</p>
     <p>Dans Chrome, inspectez le gros bouton de lecture. Notez que le <code translate="No">background</code> La propriété est définie à l'aide de plusieurs classes. Cela signifie que nous ne pouvons pas utiliser uniquement celui <code translate="No">.vjs-big-play-button</code> class pour remplacer cette propriété.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="play-button-classes" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/play-button-classes.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="play-button-classes" src="/assets/images/player-customization/1x-customize-appearance/play-button-classes.png"/></figure>
     <p>Voici trois approches pour personnaliser le gros bouton de lecture:</p>
     <ul>
       <li>Faites référence à un identifiant attribué au joueur.</li>
@@ -1296,7 +1296,7 @@ margin: auto;</code></pre>
     }
   &lt;/style&gt;</code></pre>
     <p>Vous devriez voir que le gros bouton de lecture est maintenant orange.</p>
-    <figure class="bcls-figure"><img class="bcls-image" alt="bouton de lecture orange" src="//learning-services-media.brightcove.com/doc-assets/player-development/player-customization/1x-customize-appearance/orange-play-button-1x.png"/></figure>
+    <figure class="bcls-figure"><img class="bcls-image" alt="bouton de lecture orange" src="/assets/images/player-customization/1x-customize-appearance/orange-play-button-1x.png"/></figure>
     <h3>Utiliser plusieurs classes</h3>
     <p>Depuis le <code translate="No">background</code> La propriété du gros bouton de lecture est définie à l'aide de deux classes, vous aurez besoin d'au moins deux classes dans le sélecteur CSS pour remplacer cette propriété.</p>
     <p>Ajouter le <code translate="No">.video-js</code> classe à la <code translate="No">.vjs-big-play-button</code> sélecteur de classe. N'oubliez pas que le <code translate="No">.video-js</code> la classe est définie sur le conteneur vidéo.</p>
