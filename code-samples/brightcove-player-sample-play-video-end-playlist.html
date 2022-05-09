@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Lire la vidéo à la fin de la liste de lecture'
-description: 'Dans cette rubrique, vous apprendrez comment attribuer une vidéo à lire à la fin d'une liste de lecture, qui n'est PAS dans la liste de lecture.'
+title: 'Exemple de lecteur Brightcove: Lire la vidéo à la fin de la liste de lecture'
+description: "Dans cette rubrique, vous apprendrez comment attribuer une vidéo à lire à la fin d'une liste de lecture, qui n'est PAS dans la liste de lecture."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -22,11 +22,11 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -39,7 +39,7 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Development_sequence">Séquence de développement</h2></summary> 
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -47,15 +47,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -106,7 +106,7 @@ parent: Code Samples
   </section>
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>La logique de base derrière cette application est :</p>
+    <p>La logique de base derrière cette application est:</p>
     <ul>
       <li>Écoutez la dernière vidéo de la liste de lecture à lire. Cela se fait en vérifiant si la vidéo qui vient de se terminer est la dernière vidéo du tableau contenant les vidéos de la playlist.</li>
       <li>Lorsque la dernière vidéo est lue, obtenez une vidéo avec un identifiant fourni, puis chargez-la dans le lecteur et lancez-la.</li>
@@ -117,7 +117,7 @@ parent: Code Samples
 <code class="language-javascript" translate="No">// +++ Check for loadedmetadata before acting on the playlist +++</code></pre>
     <p>Notez que le <code translate="No">ready()</code> n'est pas utilisée, mais le code attend le <code translate="No">loadedmetadata</code> événement à envoyer. En effet, le lecteur lui-même peut être prêt à communiquer avec, mais la vidéo ou la liste de lecture chargée dans le lecteur ne sera PAS prête à interagir. Attendre <code translate="No">loadedmetadata</code> garantit que la vidéo ou la liste de lecture peut être lancée. Ce problème peut être difficile à voir car il dépend à la fois du navigateur et de la vitesse de téléchargement.</p>
     <h3>Vérifiez si la dernière vidéo est lue et, le cas échéant, chargez la vidéo souhaitée</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">// +++ Define on event handler +++</code></pre>
     <p>Lorsque la lecture de chaque vidéo est terminée, la fonction anonyme qui est le gestionnaire d'événements sera appelée. Pour vérifier s'il s'agit de la dernière vidéo, vous comparez la longueur du tableau contenant les vidéos de la playlist à la position de la dernière vidéo lue. Notez que <code translate="No">currentItem()</code> renvoie la valeur indexée zéro du tableau, vous devez donc ajouter 1 à la valeur. Vous utilisez ensuite le standard <code translate="No">catalog</code> méthodes pour obtenir et charger la vidéo souhaitée.</p>
@@ -134,13 +134,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   ...
 });</code></pre>
-    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
   var myPlayer = this;

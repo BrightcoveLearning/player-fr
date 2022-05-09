@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Télécharger le plugin vidéo'
-description: 'Dans cette rubrique, vous apprendrez à créer un lien pour permettre le téléchargement de la meilleure qualité MP4 d'une vidéo lue dans un Brightcove Player. Le code sera écrit et expliqué, puis plus tard dans le document converti en plugin pour une utilisation facile avec différents joueurs.'
+title: 'Exemple de lecteur Brightcove: Télécharger le plugin vidéo'
+description: "Dans cette rubrique, vous apprendrez à créer un lien pour permettre le téléchargement de la meilleure qualité MP4 d'une vidéo lue dans un Brightcove Player. Le code sera écrit et expliqué, puis plus tard dans le document converti en plugin pour une utilisation facile avec différents joueurs."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -21,7 +21,7 @@ parent: Code Samples
         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
         <br/>
         <aside class="bcls-aside bcls-aside--tip">
-            <p>COMPORTEMENT DE TÉLÉCHARGEMENT DU NAVIGATEUR : Les navigateurs ont modifié la façon dont ils traitent les téléchargements de fichiers. Safari, Firefox et Chrome ouvrent tous la vidéo téléchargée dans une nouvelle fenêtre ou un nouvel onglet, ce qui n'est généralement pas le comportement souhaité. Pour cette raison, cet exemple utilise un outil JavaScript côté client pour forcer les navigateurs à télécharger correctement la vidéo. Pour obtenir des informations détaillées sur cet outil, voir <a href="https://www.npmjs.com/package/downloadjs">https://www.npmjs.com/package/downloadjs</a>.</p>
+            <p>COMPORTEMENT DE TÉLÉCHARGEMENT DU NAVIGATEUR: Les navigateurs ont modifié la façon dont ils traitent les téléchargements de fichiers. Safari, Firefox et Chrome ouvrent tous la vidéo téléchargée dans une nouvelle fenêtre ou un nouvel onglet, ce qui n'est généralement pas le comportement souhaité. Pour cette raison, cet exemple utilise un outil JavaScript côté client pour forcer les navigateurs à télécharger correctement la vidéo. Pour obtenir des informations détaillées sur cet outil, voir <a href="https://www.npmjs.com/package/downloadjs">https://www.npmjs.com/package/downloadjs</a>.</p>
         </aside>
        
         <h3>Code source</h3>
@@ -45,11 +45,11 @@ parent: Code Samples
     <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -62,7 +62,7 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Development_sequence">Séquence de développement</h2></summary> 
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -70,15 +70,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -127,7 +127,7 @@ parent: Code Samples
 
     <section class="bcls-section">
         <h2 id="Application_flow">Flux d'application</h2>
-        <p>La logique de base derrière cette application est :</p>
+        <p>La logique de base derrière cette application est:</p>
         <ul>
             <li>Obtenez le nom de la vidéo et extrayez les rendus MP4 du tableau des sources vidéo.</li>
             <li>Faites une boucle sur tous les rendus vidéo et extrayez les versions MP4.</li>
@@ -139,14 +139,14 @@ parent: Code Samples
         <!-- UPDATE task 1 -->
 
         <h3>Obtenez le nom de la vidéo et extrayez les rendus MP4 du tableau des sources vidéo</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Get video name and the MP4 renditions ###</code></pre>
         <p>Tout d'abord, la <code translate="No">videoName</code> variable se voit attribuer le nom de la vidéo&nbsp;(avec les espaces supprimés) à utiliser dans la balise d'ancrage HTML générée dynamiquement ultérieurement dans le code. Ensuite, la <code translate="No">renditionsAra</code> variable reçoit tous les formats associés possibles pour la vidéo.</p>
         <!-- UPDATE task 2 -->
 
         <h3>Boucle sur tous les rendus vidéo et extraire les versions MP4</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Loop over videos and extract only MP4 versions ###</code></pre>
         <p>Boucle sur la baie et assignez les rendus des <code translate="No">mp4Ara</code> variables où le <code translate="No">container</code> format est <strong>MP4</strong>, ET le restitué a une <code translate="No">src</code> propriété. Les rendus MP4 apparaissent deux fois dans la <code translate="No">sources</code> baie, une fois avec une <code translate="No">src</code> propriété et une fois avec un <code translate="No">stream_name</code> propriété. Le premier concerne le téléchargement progressif et le second pour le streaming.</p>
@@ -160,29 +160,29 @@ parent: Code Samples
         <!-- UPDATE task 3 -->
 
         <h3>Triez le tableau MP4 sur l' <code translate="No">size</code> attribut, de la plus grande à la plus petite</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Sort the renditions from highest to lowest on size ###</code></pre>
         <p>Trier le <code translate="No">mp4Ara</code> en utilisant JavaScript <code translate="No">sort()</code> méthode</p>
         <!-- UPDATE task 3 -->
 
         <h3>Attribuer la plus grande vidéo à une variable</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Extract the highest rendition ###</code></pre>
         <p>Attribuez à la <code translate="No">highestQuality</code> variable la valeur d'index zéro à partir du tableau de formats associés MP4 triés.</p>
         <!-- UPDATE task 3 -->
 
         <h3>Créer un élément contenant une image cliquable à l'intérieur d'un <code translate="No">div</code> élément HTML</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Build the download image element ###</code></pre>
-        <p>En haut du code JavaScript HTML <code translate="No">div</code> et les <code translate="No">img</code> éléments sont créés et stockés dans des variables. Ces éléments sont ensuite manipulés pour créer dynamiquement un élément HTML qui fonctionne comme un bouton de téléchargement. Voici un exemple de la façon dont l'élément créé dynamiquement peut apparaître :</p>
+        <p>En haut du code JavaScript HTML <code translate="No">div</code> et les <code translate="No">img</code> éléments sont créés et stockés dans des variables. Ces éléments sont ensuite manipulés pour créer dynamiquement un élément HTML qui fonctionne comme un bouton de téléchargement. Voici un exemple de la façon dont l'élément créé dynamiquement peut apparaître:</p>
         <figure class="bcls-figure"><img class="bcls-image" alt="dynamically built download element" src="/assets/images/code-samples/brightcove-player-sample-download-video-plugin/download-element.png" /></figure>
         <!-- UPDATE task 3 -->
 
         <h3>Placez l'élément bouton de téléchargement dans le DOM</h3>
-        <p>Trouvez le code qui est étiqueté :</p>
+        <p>Trouvez le code qui est étiqueté:</p>
         <pre>
 <code class="language-javascript" translate="No">// ### Place the download button ###</code></pre>
         <p>Dans ce cas, le bouton de téléchargement est placé dans l'entretoise de la barre de contrôle. Tout d'abord, une référence à l'élément d'espacement est obtenue, puis un jeu d'attributs pour positionner le nouvel élément dans l'entretoise est défini, puis le nouvel élément placé dans l'entretoise.</p>
@@ -196,13 +196,13 @@ parent: Code Samples
     <section class="bcls-section">
         <h2 id="Plugin_code">Code du plugin</h2>
         <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-        <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+        <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   ...
 });</code></pre>
-        <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+        <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
         <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
   var myPlayer = this;
@@ -210,7 +210,7 @@ parent: Code Samples
 });</code></pre>
         <!-- UPDATE path to plugin's JavaScript -->
 
-        <aside class="bcls-aside bcls-aside--tip">Puisque le plugin ne fonctionne pas avec iOS, vous pouvez ajouter ce code au plugin pour empêcher même le plugin d'essayer de télécharger sur iOS :
+        <aside class="bcls-aside bcls-aside--tip">Puisque le plugin ne fonctionne pas avec iOS, vous pouvez ajouter ce code au plugin pour empêcher même le plugin d'essayer de télécharger sur iOS:
             <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('downloadVideo', function() {
   if (videojs.browser.IS_IOS) {
@@ -253,7 +253,7 @@ myPlayer.el().appendChild(overlay);</code></pre>
     <section class="bcls-section">
         <h2 id="HTML_page_implementation">Implémentation de la page HTML</h2>
         <p>Pour remplacer l'icône dans la barre de contrôle et définir un emplacement dans votre page HTML pour un lien de téléchargement, vous devez apporter quelques modifications.</p>
-        <aside class="bcls-aside bcls-aside--warning">Remarque : Cette implémentation ne fonctionnera PAS comme un plugin lors de l'utilisation de l'implémentation du lecteur iframe. C'est parce que le <code translate="No">&lt;p&gt;</code> La balise définie comme point d'insertion est externe au code du lecteur, et donc inaccessible par le plugin, dont le contexte est le lecteur qui se trouve dans l'iframe.</aside>
+        <aside class="bcls-aside bcls-aside--warning">Remarque: Cette implémentation ne fonctionnera PAS comme un plugin lors de l'utilisation de l'implémentation du lecteur iframe. C'est parce que le <code translate="No">&lt;p&gt;</code> La balise définie comme point d'insertion est externe au code du lecteur, et donc inaccessible par le plugin, dont le contexte est le lecteur qui se trouve dans l'iframe.</aside>
         <p>Tout d'abord, dans votre page HTML, déterminez où vous souhaitez insérer le lien et placez-y le code HTML suivant.</p>
         <pre class="line-numbers" data-start="1">
 <code class="language-html" translate="No">&lt;p id="insertionPoint"&gt;&lt;/p&gt;</code></pre>
@@ -266,25 +266,25 @@ document.getElementById('insertionPoint').innerHTML = downloadString;</code></pr
         <h2 id="Version_5_backwards_compatibility">Compatibilité descendante de la version 5</h2>
         <p>Si vous souhaitez que le plugin fonctionne avec les versions 5 et 6, quelques modifications doivent être apportées au JavaScript. Les modifications seront répertoriées, puis un squelette du JavaScript s'affiche.</p>
         <ol>
-            <li>Ajoutez la déclaration de variable suivante en haut du fichier JavaScript. La variable définit comment enregistrer un plugin pour la version 5 et la version 6 :
+            <li>Ajoutez la déclaration de variable suivante en haut du fichier JavaScript. La variable définit comment enregistrer un plugin pour la version 5 et la version 6:
                 <pre class="line-numbers">
 <code class="language-javascript" translate="No">var registerPlugin = videojs.registerPlugin || videojs.plugin;</code></pre>
             </li>
-            <li>Modifiez l'ancienne première ligne du JavaScript à partir de :
+            <li>Modifiez l'ancienne première ligne du JavaScript à partir de:
                 <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {</code></pre>
                 à
                 <pre class="line-numbers">
 <code class="language-javascript" translate="No">registerPlugin("downloadButton", function() {</code></pre>
             </li>
-            <li>Créez une fonction sous tout le code existant qui appelle le plugin maintenant défini :
+            <li>Créez une fonction sous tout le code existant qui appelle le plugin maintenant défini:
                 <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var player = this;
   player.downloadButton();
 });</code></pre>
             </li>
-            <li>Vérifiez que la structure du code apparaît comme suit :
+            <li>Vérifiez que la structure du code apparaît comme suit:
                 <pre class="line-numbers">
 <code class="language-javascript" translate="No">var registerPlugin = videojs.registerPlugin || videojs.plugin;
 

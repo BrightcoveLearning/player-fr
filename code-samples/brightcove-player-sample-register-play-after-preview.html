@@ -1,11 +1,10 @@
 ---
-title: 'Exemple de lecteur Brightcove : Inscrivez-vous pour jouer après l'aperçu'
-description: 'Dans cette rubrique, vous apprendrez à utiliser un Brightcove Player où l'utilisateur doit remplir un formulaire pour visionner la vidéo. Il s'agit d'une variante du <a href="/code-samples/brightcove-player-sample-register-play.html">S'inscrire pour jouer</a> sample - dans cet exemple, le spectateur a un aperçu de 3 secondes de la vidéo avant d'être invité à s'inscrire.'
+title: "Exemple de lecteur Brightcove: Inscrivez-vous pour jouer après l'aperçu"
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
 <article class="bcls-article">
-  <summary>{{ page.description }}</summary>
+  <summary>Dans cette rubrique, vous apprendrez à utiliser un Brightcove Player où l'utilisateur doit remplir un formulaire pour visionner la vidéo. Il s'agit d'une variante du <a href="/code-samples/brightcove-player-sample-register-play.html">S'inscrire pour jouer</a> sample - dans cet exemple, le spectateur a un aperçu de 3 secondes de la vidéo avant d'être invité à s'inscrire.</summary>
 
   <section class="bcls-section">
     <h2 id="Player_example">Exemple de lecteur</h2>
@@ -26,11 +25,11 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -43,7 +42,7 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Development_sequence">Séquence de développement</h2></summary> 
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -51,15 +50,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -133,10 +132,10 @@ parent: Code Samples
   
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>Avant de plonger dans le code, regardons la logique de l'application :</p>
+    <p>Avant de plonger dans le code, regardons la logique de l'application:</p>
     <figure class="bcls-figure"><img class="bcls-image" alt="logic-diagram" src="/assets/images/code-samples/brightcove-player-sample-register-play-after-preview/register-to-play.png" /></figure>
-    <aside class="bcls-aside bcls-aside--information">Remarque : L'exemple ici n'implémente pas la communication entre le plugin et les services backend pour l'enregistrement et l'authentification. <span class="video-cloud-only">Pour avoir une idée de la façon de procéder, vous pouvez consulter certains de nos exemples qui accèdent aux API Brightcove à partir d'un client (voir l' <a href="https://apis.support.brightcove.com/cms/">aperçu : API CMS</a> par exemple).</span> Si les services backend nécessitent une authentification, vous devez acheminer les demandes via un proxy, afin de ne pas exposer les informations d'identification côté client.</aside>
-    <p>La logique de base derrière cette application est la suivante :</p>
+    <aside class="bcls-aside bcls-aside--information">Remarque: L'exemple ici n'implémente pas la communication entre le plugin et les services backend pour l'enregistrement et l'authentification. <span class="video-cloud-only">Pour avoir une idée de la façon de procéder, vous pouvez consulter certains de nos exemples qui accèdent aux API Brightcove à partir d'un client (voir l' <a href="https://apis.support.brightcove.com/cms/">aperçu: API CMS</a> par exemple).</span> Si les services backend nécessitent une authentification, vous devez acheminer les demandes via un proxy, afin de ne pas exposer les informations d'identification côté client.</aside>
+    <p>La logique de base derrière cette application est la suivante:</p>
     <ul>
       <li>Configurez la superposition.</li>
       <li>Mettre la vidéo en pause après trois secondes de lecture.</li>
@@ -146,28 +145,28 @@ parent: Code Samples
     <!-- UPDATE task 1 -->
     
     <h3>Configurer la superposition</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Configure the Overlay ###</code></pre>
     <p>La superposition est configurée pour s'afficher à 3 secondes (provoquant l'affichage du formulaire). Le formulaire est construit dans une longue chaîne utilisée par la superposition comme <code translate="No">overlayContent</code>.</p>
     <!-- UPDATE task 2 -->
     
     <h3>Vérifier et agir si l'heure de prévisualisation est dépassée</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Act if preview time is passed ###</code></pre>
     <p>Le code utilise le <code translate="No">timeupdate</code> event pour appeler en permanence le gestionnaire d'événements qui vérifie si 3 secondes se sont écoulées. Notez que les commandes du lecteur sont masquées afin que l'utilisateur ne puisse pas lire la vidéo sous le formulaire. De plus, l'écouteur d'événement est supprimé de sorte que la vérification de l'heure n'est plus effectuée.</p>
     <!-- UPDATE task 3 -->
     
     <h3>Traiter le formulaire</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Process the form ###</code></pre>
     <p>Le code HTML et JavaScript standard sont utilisés pour traiter le formulaire.</p>
     <!-- UPDATE task 3 -->
     
     <h3>Lire la vidéo lorsque le formulaire est rempli</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Plays video when form filled out ###</code></pre>
     <p>Lorsque le formulaire est rempli, le formulaire superposé est masqué, les contrôles sont affichés et la vidéo reprend la lecture.</p>
@@ -181,13 +180,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   ...
 );</code></pre>
-    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options)    var myPlayer = this;
    ...

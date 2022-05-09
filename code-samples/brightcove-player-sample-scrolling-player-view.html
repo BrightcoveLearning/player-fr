@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Défilement du lecteur dans la vue'
-description: 'Dans cette rubrique, vous apprendrez à utiliser un Brightcove Player qui démarre la lecture de la vidéo dès que vous faites défiler complètement le lecteur et met la vidéo en pause lorsque vous la faites défiler hors de vue. Nous appelons l'API Brightcove Player <code translate="No">play()</code> et <code translate="No">pause()</code> méthodes pour démarrer et arrêter la vidéo en fonction de la position du lecteur.'
+title: "Exemple de lecteur Brightcove: Défilement du lecteur dans la vue"
+description: "Dans cette rubrique, vous apprendrez à utiliser un Brightcove Player qui démarre la lecture de la vidéo dès que vous faites défiler complètement le lecteur et met la vidéo en pause lorsque vous la faites défiler hors de vue. Nous appelons l'API Brightcove Player play() et pause() méthodes pour démarrer et arrêter la vidéo en fonction de la position du lecteur."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -13,7 +13,7 @@ parent: Code Samples
     
     <aside class="bcls-aside bcls-aside--information">Cet exemple et le code associé sont fournis comme guide pour le développement de votre production. Le code n'est pas certifié pour une utilisation en production ni officiellement pris en charge.</aside>
     <p>Faites défiler le lecteur vers l'extérieur et vers l'extérieur. Lorsque le lecteur est entièrement défilé vers la vue, la vidéo commence à être lue. Lorsque vous faites défiler le lecteur hors de la vue, la lecture de la vidéo s'arrête.</p>
-    <aside class="bcls-aside bcls-aside--information">Si vous comptez utiliser des publicités avec votre vidéo et que vous souhaitez utiliser cette fonctionnalité de défilement, consultez le <a href="/code-samples/brightcove-player-sample-scrolling-player-view-ads.html">Exemple de lecteur Brightcove : Faire défiler le lecteur dans la vue avec des publicités</a></aside>
+    <aside class="bcls-aside bcls-aside--information">Si vous comptez utiliser des publicités avec votre vidéo et que vous souhaitez utiliser cette fonctionnalité de défilement, consultez le <a href="/code-samples/brightcove-player-sample-scrolling-player-view-ads.html">Exemple de lecteur Brightcove: Faire défiler le lecteur dans la vue avec des publicités</a></aside>
     <!-- UPDATE codepen here -->
     
     <p data-height="498" data-theme-id="34967" data-slug-hash="MrWZRW" data-default-tab="result" data-user="rcrooks1969" data-embed-version="2" data-pen-title="18202-scrolling-player-view" class="codepen">Voir le stylo <a href="https://codepen.io/team/rcrooks1969/pen/MrWZRW/">18202-vue-joueur-avec-défilement</a> par Brightcove Learning Services (<a href="https://codepen.io/rcrooks1969"> rcrooks1969</a> ) sur <a href="https://codepen.io">CodePen</a>.</p>
@@ -26,11 +26,11 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -62,7 +62,7 @@ parent: Code Samples
     <p>Un événement JavaScript clé utilisé dans ce code est <code translate="No">onscroll</code>. Cet événement est distribué et dans ce code est géré chaque fois que l' <code translate="No">window</code> élément fait défiler.</p>
     <aside class="bcls-aside bcls-aside--warning">
       <h4>Bibliothèques tierces utilisées dans cet exemple</h4>
-      <p>Remarque : Cet exemple utilise des bibliothèques tierces pour simplifier le code JavaScript. Ces bibliothèques ne sont pas prises en charge par Brightcove. Toutes les fonctionnalités peuvent être reproduites en JavaScript ordinaire.</p>
+      <p>Remarque: Cet exemple utilise des bibliothèques tierces pour simplifier le code JavaScript. Ces bibliothèques ne sont pas prises en charge par Brightcove. Toutes les fonctionnalités peuvent être reproduites en JavaScript ordinaire.</p>
       <ul>
         <li><a href="https://jquery.org">jQuery</a></li>
       </ul>
@@ -82,7 +82,7 @@ parent: Code Samples
   
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>La logique de base derrière cette application est :</p>
+    <p>La logique de base derrière cette application est:</p>
     <ul>
       <li>Écoutez les événements Scroll.</li>
       <li>Lorsqu'un événement de défilement est géré, vérifiez si le lecteur se trouve dans la fenêtre d'affichage ou non.</li>
@@ -91,21 +91,21 @@ parent: Code Samples
     <!-- UPDATE task 1 -->
     
     <h3>Écoutez les événements de défilement sur le <strong>la fenêtre</strong> élément</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Execute every time page is scrolled ###</code></pre>
     <p>Cette ligne de code appelle la <code translate="No">checkIfVideoInView()</code> méthode à chaque envoi <code translate="No">window.onscroll</code> d'événements.</p>
     <!-- UPDATE task 2 -->
     
     <h3>Gérer les événements Scroll</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Called on scroll, check if in view and the play/pause ###</code></pre>
     <p>le <code translate="No">checkIfVideoInView()</code> La fonction de gestionnaire d'événements vérifie si le lecteur est dans la fenêtre, puis lit ou met la vidéo en pause. La <code translate="No">isScrolledIntoView()</code> méthode est utilisée dans une instruction if pour vérifier si le lecteur se trouve dans la fenêtre d'affichage. Naturellement, la <code translate="No">isScrolledIntoView()</code> méthode renvoie une valeur booléenne.</p>
     <!-- UPDATE task 3 -->
     
     <h3>Vérifiez si le lecteur est entièrement dans la fenêtre d'affichage</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// ### Checks if player is in view ###</code></pre>
     <p>Cette fonction, qui renvoie une valeur booléenne, utilise jQuery pour déterminer si le lecteur se trouve entièrement dans la fenêtre d'affichage.</p>
@@ -119,13 +119,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   ...
 });</code></pre>
-    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
   var myPlayer = this;

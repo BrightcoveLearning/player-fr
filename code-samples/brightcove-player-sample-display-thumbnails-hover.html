@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Afficher les vignettes au survol'
-description: 'Dans cette rubrique, vous apprendrez à afficher un ensemble de quatre images miniatures lorsque l'utilisateur survole le Brightcove Player. Ces images sont prises à différents moments de la vidéo pour donner à l'utilisateur une idée de ce à quoi s'attendre dans la vidéo.'
+title: 'Exemple de lecteur Brightcove: Afficher les vignettes au survol'
+description: "Dans cette rubrique, vous apprendrez à afficher un ensemble de quatre images miniatures lorsque l'utilisateur survole le Brightcove Player. Ces images sont prises à différents moments de la vidéo pour donner à l'utilisateur une idée de ce à quoi s'attendre dans la vidéo."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -26,11 +26,11 @@ parent: Code Samples
       <summary>
         <h2 id="Using_the_CodePen">Utilisation du CodePen</h2>
       </summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -45,7 +45,7 @@ parent: Code Samples
       <summary>
         <h2 id="Development_sequence">Séquence de développement</h2>
       </summary>
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -53,15 +53,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -103,7 +103,7 @@ parent: Code Samples
   </section>
   <section class="bcls-section">
     <h2 id="Modal_advantages">Les avantages modaux</h2>
-    <p>Quelques avantages à utiliser le <strong>Boîte de dialogue Modale</strong> composant comprend les éléments suivants :</p>
+    <p>Quelques avantages à utiliser le <strong>Boîte de dialogue Modale</strong> composant comprend les éléments suivants:</p>
     <ul>
       <li>Il couvre l'ensemble du joueur par défaut.</li>
       <li>Il dispose de méthodes permettant d'ouvrir et de fermer facilement la fenêtre modale</li>
@@ -146,7 +146,7 @@ parent: Code Samples
 
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>La logique de base derrière cette application est :</p>
+    <p>La logique de base derrière cette application est:</p>
     <ul>
       <li>Obtenez l'élément DOM du lecteur.</li>
       <li>Obtenez le tableau de vignettes.</li>
@@ -158,24 +158,24 @@ parent: Code Samples
     <!-- UPDATE task 1 -->
 
     <h3>Obtenir l'élément DOM du lecteur</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Get the player DOM element +++</code></pre>
     <p>Obtenez une référence à l'élément DOM du joueur. Nous allons l'utiliser pour ajouter le ModalDialog au lecteur.</p>
     <!-- UPDATE task 2 -->
 
     <h3>Obtenez le tableau de vignettes</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Get the thumbnail array +++</code></pre>
     <p>Obtenez le tableau d'URL des vignettes à partir de la propriété Description longue de la vidéo. Pour plus d'informations sur l'ajout de ces métadonnées à votre vidéo, consultez le <a href="#Video_configuration">Configuration vidéo</a> section.</p>
     <!-- UPDATE task 3 -->
 
     <h3>Formater le contenu de superposition</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Format the overlay content +++</code></pre>
-    <p>Pour formater le contenu de superposition, procédez comme suit :</p>
+    <p>Pour formater le contenu de superposition, procédez comme suit:</p>
     <ol class="bcls-tasklist">
       <li>Obtenez les URL des miniatures dans le champ Description longue de la vidéo et ajoutez-les au contenu de la boîte de dialogue modale.</li>
       <li>Configurez et créez la boîte de dialogue modale.</li>
@@ -184,21 +184,21 @@ parent: Code Samples
     <!-- UPDATE task 4 -->
 
     <h3>Afficher les miniatures</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Show the thumbnails +++</code></pre>
     <p>Écoutez le <code translate="No">mouseover</code> événement sur le joueur. Lorsqu'il est déclenché, affichez la boîte de dialogue modale avec les images miniatures de la section vidéo.</p>
     <!-- UPDATE task 5 -->
 
     <h3>Masquer les vignettes</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Hide the thumbnails +++</code></pre>
     <p>Écoutez le <code translate="No">mouseout</code> événement sur le joueur. Lorsqu'il est déclenché, masquez la boîte de dialogue modale avec les images miniatures de la section vidéo.</p>
     <!-- UPDATE task 6 -->
 
     <h3>Lire la vidéo</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
 <code class="language-javascript" translate="No">// +++ Play the video +++</code></pre>
     <p>Lorsque vous cliquez sur la miniature ModalDialog, supprimez les écouteurs d'événements, fermez et supprimez ModalDialog et démarrez la lecture vidéo.</p>
@@ -212,13 +212,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
   var myPlayer = this;
   ...
 });</code></pre>
-    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
   var myPlayer = this;

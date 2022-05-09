@@ -1,12 +1,13 @@
 ---
 title: Localisation des plugins
 parent: Coding Topics
-description: 'In this topic you will learn how a plugin developer can localize a Brightcove Player plugin. Note that this is NOT the same as using the built-in localization for the player itself. As is suggested in the <a href="/coding-topics/step-step-plugin-development.html">Démarrage rapide du développement de plugins</a> , l'application sera développée localement puis convertie en plugin.'
+description: 'In this topic you will learn how a plugin developer can localize a Brightcove Player plugin. '
 ---
 
 <article class="bcls-article">
   <h1>Localisation des plugins</h1>
   <summary>{{ page.description }}</summary>
+  <p>Note that this is NOT the same as using the built-in localization for the player itself. As is suggested in the <a href="/coding-topics/step-step-plugin-development.html">Démarrage rapide du développement de plugins</a> , l'application sera développée localement puis convertie en plugin.</p>
   <section id="addlanguage" class="bcls-section">
     <h2>Ajouter une ou plusieurs langues</h2>
     <p>Vous pouvez choisir les langues à prendre en charge dans un plugin. Pour chaque langue que vous souhaitez prendre en charge, vous devez disposer d'un ensemble de paires clé-valeur avec la langue anglaise comme clé et la langue localisée correspondante comme valeur. Pour ce faire, utilisez Videojs' <code translate="No">addLanguage()</code> méthode. Le code suivant montre l'ajout de traductions allemandes à une page:</p>

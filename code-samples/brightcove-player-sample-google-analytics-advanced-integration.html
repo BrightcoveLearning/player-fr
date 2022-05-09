@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Intégration avancée de Google Analytics'
-description: 'Dans cette rubrique, vous apprendrez à définir dynamiquement l'ID de suivi Google Analytics lors de l'exécution lors de l'utilisation d'un lecteur Brightcove.'
+title: 'Exemple de lecteur Brightcove: Intégration avancée de Google Analytics'
+description: "Dans cette rubrique, vous apprendrez à définir dynamiquement l'ID de suivi Google Analytics lors de l'exécution lors de l'utilisation d'un lecteur Brightcove."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -45,12 +45,12 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
 <h2 id="Using_the_CodePen" class="bcls-expander-head">Utilisation du CodePen</h2>
 
 <div class="bcls-expander-content">
-<p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+<p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
 
 <ul>
 	<li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong>Résultat</strong> bouton.</li>
 	<li>Clique le <strong>HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-	<li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront abordés dans les sections <a href="#Player/HTML_configuration">Configuration lecteur/HTML</a>, <a href="#Applicaton_flow">Flux d'</a> <a href="#Application_styling">application et Style</a> de l'application. La meilleure façon de suivre les informations contenues dans ces sections est de :
+	<li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront abordés dans les sections <a href="#Player/HTML_configuration">Configuration lecteur/HTML</a>, <a href="#Applicaton_flow">Flux d'</a> <a href="#Application_styling">application et Style</a> de l'application. La meilleure façon de suivre les informations contenues dans ces sections est de:
 	<ol>
 		<li>Clique le <strong>MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
 		<li>Dans CodePen, ajustez le code que vous souhaitez afficher. Vous pouvez modifier la largeur des différentes sections de code dans CodePen.</li>
@@ -65,7 +65,7 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
 <h2 id="developmentsequence" class="bcls-expander-head">Séquence de développement</h2>
 
 <div class="bcls-expander-content">
-<p>Voici la séquence de développement recommandée :</p>
+<p>Voici la séquence de développement recommandée:</p>
 
 <ol>
 	<li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
@@ -75,19 +75,19 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
 	<li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
 </ol>
 
-<p>Pour plus de détails sur ces étapes, consultez la section <a href="https://player.support.brightcove.com/coding-topics/step-step-plugin-development.html">étape par étape : Guide de développement de plug-in</a> .</p>
+<p>Pour plus de détails sur ces étapes, consultez la section <a href="https://player.support.brightcove.com/coding-topics/step-step-plugin-development.html">étape par étape: Guide de développement de plug-in</a> .</p>
 
 <h3>iframe ou incorporer dans la page</h3>
 
-<p>Lors du développement d'améliorations pour le lecteur Brightcove, vous devrez décider si le code convient le mieux à l'implémentation de l'iframe ou de l'encart intégré. La meilleure pratique est de construire un plugin pour une utilisation avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+<p>Lors du développement d'améliorations pour le lecteur Brightcove, vous devrez décider si le code convient le mieux à l'implémentation de l'iframe ou de l'encart intégré. La meilleure pratique est de construire un plugin pour une utilisation avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
 
 <ul>
 	<li>Aucune collision avec JavaScript et/ou CSS existants</li>
 	<li>Réactif automatiquement</li>
-	<li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+	<li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
 </ul>
 
-<p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+<p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
 
 <ul>
 	<li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
@@ -158,7 +158,7 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
 <section class="bcls-section">
 <h2 id="Application_flow">Flux d'application</h2>
 
-<p>La logique de base derrière cette application est :</p>
+<p>La logique de base derrière cette application est:</p>
 
 <ul>
 	<li>Créez un lecteur Brightcove sans configurer le plugin Google Analytics</li>
@@ -257,7 +257,7 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
 
 <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
 
-<p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+<p>Voici le code de début de JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
 
 <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
@@ -265,7 +265,7 @@ Un autre avantage de cette approche est que notre intégration d'API ne créera 
   ...
 });</code></pre>
 
-<p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+<p>Vous allez modifier la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
 
 <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {

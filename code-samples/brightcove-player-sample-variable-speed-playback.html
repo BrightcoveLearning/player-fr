@@ -1,7 +1,7 @@
 ---
-title: 'Exemple de lecteur Brightcove : Lecture à vitesse variable'
-description: '<aside class="bcls-aside bcls-aside--warning">Cet exemple n'est plus nécessaire car la lecture à vitesse variable est désormais une partie standard du lecteur, comme documenté ici : <a href="/general/player-configuration-guide.html#playback_rates">Configuration du lecteur - playback_rate</a>.</aside>
-    <p>Dans cette rubrique, vous apprendrez comment ajouter un bouton de vitesse de lecture à la barre de contrôle Brightcove Player, ce qui permettra aux utilisateurs de modifier la vitesse de lecture vidéo.</p>'
+title: 'Exemple de lecteur Brightcove: Lecture à vitesse variable'
+description: "Cet exemple n'est plus nécessaire car la lecture à vitesse variable est désormais une partie standard du lecteur, comme documenté ici: Configuration du lecteur - playback_rate.
+    <p>Dans cette rubrique, vous apprendrez comment ajouter un bouton de vitesse de lecture à la barre de contrôle Brightcove Player, ce qui permettra aux utilisateurs de modifier la vitesse de lecture vidéo.</p>"
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -22,7 +22,7 @@ parent: Code Samples
     <h3>Code source</h3>
           <p>Voir le <a href="https://github.com/BrightcoveLearning/18451-variable-speed-playback">solution complète sur GitHub</a>.</p>
     <aside class="bcls-aside bcls-aside--information">
-      <p>Le taux de lecture pour la plupart des navigateurs est <code translate="No">0.0625</code> à <code translate="No">16</code>. Pour plus de détails, reportez-vous à ce qui suit :</p>
+      <p>Le taux de lecture pour la plupart des navigateurs est <code translate="No">0.0625</code> à <code translate="No">16</code>. Pour plus de détails, reportez-vous à ce qui suit:</p>
       <ul>
         <li><a href="https://cs.chromium.org/chromium/src/third_party/blink/renderer/core/html/media/html_media_element.cc?l=170&amp;gsn=kMinRate">Plage de lecture pour Chrome</a></li>
         <li><a href="https://dxr.mozilla.org/mozilla-central/source/dom/html/HTMLMediaElement.cpp#158">Plage de lecture pour Firefox</a></li>
@@ -32,11 +32,11 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -49,7 +49,7 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Development_sequence">Séquence de développement</h2></summary> 
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -57,15 +57,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -115,7 +115,7 @@ parent: Code Samples
     <h2 id="Player/HTML_configuration">Configuration du lecteur/HTML</h2>
     <p>Cette section détaille toute configuration spéciale nécessaire lors de la création du lecteur. En outre, d'autres éléments HTML qui doivent être ajoutés à la page, au-delà du code d'implémentation du lecteur intégré dans la page, sont décrits.</p>
     <h3>Configuration du joueur</h3>
-    <p>Facultatif : Lorsque vous publiez votre vidéo dans le module Média de Video Cloud Studio, définissez le <strong>Dimensionnement</strong> propriété à <strong>Sensible</strong>.</p>
+    <p>Facultatif: Lorsque vous publiez votre vidéo dans le module Média de Video Cloud Studio, définissez le <strong>Dimensionnement</strong> propriété à <strong>Sensible</strong>.</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Responsive player setting" src="/assets/images/code-samples/brightcove-player-sample-variable-speed-playback/responsive.png" /></figure>
     <h3>Autre HTML</h3>
     <p>N'oubliez pas d'ajouter l' <code translate="No">id</code> attribut à la <code translate="No">video-js</code> balise dans le code d'intégration du joueur.</p>
@@ -127,7 +127,7 @@ parent: Code Samples
   
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>La logique de base derrière cette application est :</p>
+    <p>La logique de base derrière cette application est:</p>
     <ul>
       <li>Définissez les taux de lecture que vous souhaitez voir apparaître dans le menu de taux de lecture.</li>
       <li>Désactivez l'ordre des sources par défaut pour le lecteur.</li>
@@ -137,28 +137,28 @@ parent: Code Samples
     <!-- UPDATE task 1 -->
     
     <h3>Définir les taux de lecture</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
   <code class="language-javascript" translate="No">// +++ Define the playback rate options +++</code></pre>
     <p>Définissez les taux de lecture qui seront ajoutés au menu de taux de lecture.</p>
     <!-- UPDATE task 2 -->
     
     <h3>Désactiver la commande source par défaut</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
   <code class="language-javascript" translate="No">// +++ Turn off the default source order +++</code></pre>
     <p>La définition de sourceOrder sur false signifie que les anciens navigateurs prenant en charge HLS dans Flash mais pas HTML5 / MSE utiliseront MP4.</p>
     <!-- UPDATE task 3 -->
     
     <h3>Mettre à jour le menu de taux de lecture</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
   <code class="language-javascript" translate="No">// +++ Update the existing playback rate menu +++</code></pre>
     <p>Si le bouton / menu de vitesse de lecture existe dans la barre de contrôle, mettez-le à jour avec vos taux de lecture définis.</p>
     <!-- UPDATE task 4 -->
     
     <h3>Ajouter le menu de taux de lecture</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
   <code class="language-javascript" translate="No">// +++ Add the playback rate menu +++</code></pre>
     <p>S'il n'existe pas déjà, ajoutez le bouton de vitesse de lecture et le menu à la barre de contrôle.</p>
@@ -187,13 +187,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
 	var myPlayer = this;
 	...
 });</code></pre>
-    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
 <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
 	var myPlayer = this;
@@ -205,10 +205,10 @@ parent: Code Samples
     <h3>Utilisation du plugin avec un lecteur</h3>
     <p>Une fois que les fichiers CSS et JavaScript du plugin sont stockés dans un emplacement accessible à Internet, vous pouvez utiliser le plugin avec un lecteur. Dans les studios <strong>JOUEURS</strong> module, vous pouvez choisir un joueur, puis dans le <strong>PLUGINS</strong> section ajouter les URL aux fichiers CSS et JavaScript, et également ajouter le <strong>Nom</strong> et <strong>Options</strong> , si des options sont nécessaires.</p>
     <aside class="bcls-aside bcls-aside--tip">Pour plus d'informations sur l'utilisation de Studio pour attribuer des plugins aux lecteurs, consultez le <a href="https://studio.support.brightcove.com/players/configuring-player-plugins.html">Configuration des plugins de lecteur</a> document.</aside>
-    <p>Après avoir ajouté le fichier JavaScript, ajoutez votre plugin <strong>Nom</strong>. Il devrait être similaire à ceci :</p>
+    <p>Après avoir ajouté le fichier JavaScript, ajoutez votre plugin <strong>Nom</strong>. Il devrait être similaire à ceci:</p>
     <pre class="line-numbers">
 <code class="language-json" translate="No">variableSpeedPlayback</code></pre>
-    <p>Pour le <strong>options du plugin</strong> , entrez les taux de lecture que vous souhaitez afficher dans le menu de taux de lecture. Il devrait ressembler à ceci :</p>
+    <p>Pour le <strong>options du plugin</strong> , entrez les taux de lecture que vous souhaitez afficher dans le menu de taux de lecture. Il devrait ressembler à ceci:</p>
     <pre class="line-numbers">
 <code class="language-json" translate="No">{"playbackRates":
   [0.5,1,2]

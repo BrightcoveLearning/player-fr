@@ -1,6 +1,6 @@
 ---
-title: 'Exemple de lecteur Brightcove : Vidéos associées via des balises (API CMS)' la
-description: Dans cette rubrique, vous apprendrez comment récupérer des vidéos portant les mêmes balises que la vidéo actuelle et les afficher en superposition. Cet exemple utilise l'API CMS pour récupérer les vidéos.
+title: 'Exemple de lecteur Brightcove: Vidéos associées via des balises (API CMS)'
+description: "Dans cette rubrique, vous apprendrez comment récupérer des vidéos portant les mêmes balises que la vidéo actuelle et les afficher en superposition. Cet exemple utilise l'API CMS pour récupérer les vidéos."
 parent: Code Samples
 ---
  <h1>{{ page.title }}</h1>
@@ -31,7 +31,7 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Overview">Présentation</h2>
     <p>Cet exemple utilise un <a href="/getting-started/learning-guide-using-rest-apis.html#Proxy_code">proxy construit en PHP</a> appeler le <span translate="No">API CMS</span> et recherchez des vidéos similaires dans le même compte qui ont la même valeur de balise que la vidéo chargée dans le lecteur.</p>
-    <aside class="bcls-aside bcls-aside--information">Afin de créer votre propre version de l'exemple d'application sur cette page, vous devez créer et héberger votre propre proxy. (Les proxys utilisés par Brightcove Learning Services n'acceptent que les demandes des domaines Brightcove.) Vous pouvez télécharger deux versions de notre code proxy :
+    <aside class="bcls-aside bcls-aside--information">Afin de créer votre propre version de l'exemple d'application sur cette page, vous devez créer et héberger votre propre proxy. (Les proxys utilisés par Brightcove Learning Services n'acceptent que les demandes des domaines Brightcove.) Vous pouvez télécharger deux versions de notre code proxy:
       <ul>
         <li><a href="https://apis.support.brightcove.com/assets/downloads/bcls-proxy-for-distribution.php.zip">Il s'agit d'une version générale qui s'attend à ce que les informations d'identification du client soient transmises avec la demande</a></li>
         <li><a href="https://apis.support.brightcove.com/assets/downloads/doc-samples-proxy.php.zip">Cette version vous permet d'enregistrer vos identifiants client dans le proxy lui-même sur les lignes 25-26 (recommandé)</a></li>
@@ -46,11 +46,11 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Using_the_CodePen">Utilisation du CodePen</h2></summary>
-      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus :</p>
+      <p>Voici quelques conseils pour utiliser efficacement le CodePen ci-dessus:</p>
       <ul>
         <li>Basculez l'affichage réel du lecteur en cliquant sur le bouton <strong translate="No">Résultat</strong> bouton.</li>
         <li>Clique le <strong translate="No">HTML/CSS/JS</strong> pour afficher UN des types de code.</li>
-        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de :
+        <li>Plus loin dans ce document, la logique, le flux et le style utilisés dans l'application seront discutés dans la configuration <a href="#Player/HTML_configuration">Plateur/HTML</a>, le flux <a href="#Application_flow">d'application</a> et le style de <a href="#Application_styling">l'application.</a> sections. La meilleure façon de suivre les informations contenues dans ces sections est de:
           <ol>
             <li>Clique le <strong translate="No">MODIFIER SUR CODEPEN</strong> dans le CodePen et avoir le code disponible dans un navigateur/onglet de navigateur.</li>
             <li>Dans CodePen, réglez le code que vous souhaitez afficher. Vous pouvez modifier la largeur de différentes sections de code dans CodePen.</li>
@@ -63,7 +63,7 @@ parent: Code Samples
   <section class="bcls-section">
     <details>
       <summary><h2 id="Development_sequence">Séquence de développement</h2></summary>
-      <p>Voici la séquence de développement recommandée :</p>
+      <p>Voici la séquence de développement recommandée:</p>
       <ol>
         <li>Utilisez l'implémentation du lecteur intégré In-Page pour tester les fonctionnalités de votre lecteur, de votre plugin et de votre CSS (si CSS est nécessaire)</li>
         <li>Placez le JavaScript et le CSS du plugin dans des fichiers séparés pour des tests locaux</li>
@@ -71,15 +71,15 @@ parent: Code Samples
         <li>Utilisez Studio pour ajouter le plugin et le CSS à votre lecteur</li>
         <li>Remplacez l'implémentation du lecteur intégré dans la page si vous déterminez que l'implémentation iframe est mieux adaptée (détaillée dans la section suivante)</li>
       </ol>
-      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape : </a> Guide de développement de plug-ins.</p>
+      <p>Pour plus de détails sur ces étapes, consultez la section <a href="/coding-topics/step-step-plugin-development.html">étape par étape: </a> Guide de développement de plug-ins.</p>
       <h3>Intégrer iFrame ou In-Page</h3>
-      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants :</p>
+      <p>Lorsque vous développez des améliorations pour Brightcove Player, vous devrez décider si le code convient le mieux à l'implémentation intégrée iframe ou In-Page. La recommandation des meilleures pratiques consiste à créer un plugin à utiliser avec une implémentation iframe. Les avantages de l'utilisation du lecteur iframe sont les suivants:</p>
       <ul>
         <li>Aucune collision avec JavaScript et/ou CSS existants</li>
         <li>Réactif automatiquement</li>
-        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra « voyager » dans d'autres applications)</li>
+        <li>L'iframe facilite l'utilisation dans les applications de médias sociaux (ou lorsque la vidéo devra «voyager» dans d'autres applications)</li>
       </ul>
-      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples :</p>
+      <p>Bien que l'intégration du lecteur d'intégration dans la page puisse être plus complexe, il y a des moments où vous planifiez votre code autour de cette implémentation. Pour généraliser, cette approche est préférable lorsque la page contenante doit communiquer avec le lecteur. En particulier, voici quelques exemples:</p>
       <ul>
         <li>Le code dans la page contenant doit écouter et agir sur les événements du joueur</li>
         <li>Le lecteur utilise des styles de la page contenante</li>
@@ -135,7 +135,7 @@ parent: Code Samples
 
   <section class="bcls-section">
     <h2 id="Application_flow">Flux d'application</h2>
-    <p>La logique de base derrière cette application est la suivante :</p>
+    <p>La logique de base derrière cette application est la suivante:</p>
     <ul>
       <li>Créer des variables qui définissent des valeurs pour la base <span translate="No">API CMS</span> URL et l'URL du code proxy.</li>
       <li>Attendez que la vidéo commence à se charger pour récupérer les métadonnées vidéo.</li>
@@ -151,31 +151,31 @@ parent: Code Samples
     <!-- UPDATE task 2 -->
 
     <h3>Attendez les métadonnées chargées</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
     <code class="language-javascript" translate="No">// +++ Wait for loadedmetadata +++</code></pre>
     <p>Attendez que le chargement de la vidéo commence en écoutant l' <code translate="No">loadedmetadata</code> événement. Cela garantit que les métadonnées vidéo, telles que l'ID de compte, le nom et les valeurs de balise, seront disponibles dans l' <code translate="No">mediainfo</code> objet.</p>
     <!-- UPDATE task 3 -->
 
     <h3>Configuration de la demande d'API</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
     <code class="language-javascript" translate="No">// +++ Setup the API request +++</code></pre>
     <p>En utilisant les informations de la vidéo actuellement chargée dans le lecteur, créez un <span translate="No">API CMS</span> demande de recherche de vidéos dans le même compte. La recherche recherche les vidéos ayant la même valeur que la première balise de la vidéo en cours. Il exclut toute vidéo portant le même nom que la vidéo actuelle et limitera le nombre de vidéos renvoyées à 9. C'est le nombre qui s'insèrent dans notre mise en page de superposition.</p>
     <!-- UPDATE task 4 -->
 
     <h3>Faire le <span translate="No">API CMS</span> demander</h3>
-    <p>Trouvez le code étiqueté :</p>
+    <p>Trouvez le code étiqueté:</p>
     <pre>
     <code class="language-javascript" translate="No">// +++ Make the <span translate="No">CMS API</span> request +++</code></pre>
     <p>Utilisez le code proxy pour envoyer une requête HTTP GET au <span translate="No">API CMS</span> Webservice RESTful. Analyse les données renvoyées au format JSON. Si une erreur se produit, affichez un message d'erreur.</p>
     <!-- UPDATE task 5 -->
 
     <h3>Formater le contenu de la superposition</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
     <code class="language-javascript" translate="No">// +++ Format the overlay content +++</code></pre>
-    <p>Pour formater le contenu de superposition, procédez comme suit :</p>
+    <p>Pour formater le contenu de superposition, procédez comme suit:</p>
     <ul>
       <li>Extrayez l'ID, le nom et la vignette de chaque vidéo associée renvoyée par l'API CMS et stockez-les dans un tableau.</li>
       <li>En boucle dans le tableau vidéo associé, créez un <code translate="No">&lt;div&gt;</code> wrapper de liste vidéo contenant un <code translate="No">&lt;div&gt;</code> élément pour chaque vidéo associée. Cela deviendra le contenu de superposition.</li>
@@ -184,7 +184,7 @@ parent: Code Samples
     <!-- UPDATE task 4 -->
 
     <h3>Charger et lire des vidéos associées</h3>
-    <p>Trouvez le code qui est étiqueté :</p>
+    <p>Trouvez le code qui est étiqueté:</p>
     <pre>
     <code class="language-javascript" translate="No">// +++ Load and play related video +++</code></pre>
     <p>Créez une fonction qui charge et démarre la lecture de la vidéo associée sélectionnée par l'utilisateur.</p>
@@ -198,13 +198,13 @@ parent: Code Samples
   <section class="bcls-section">
     <h2 id="Plugin_code">Code du plugin</h2>
     <p>Normalement, lors de la conversion du JavaScript en plugin Brightcove Player, des modifications nominales sont nécessaires. Une modification requise consiste à remplacer l'utilisation standard de la <code translate="No">ready()</code> méthode par le code qui définit un plugin.</p>
-    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur :</p>
+    <p>Voici le code JavaScript très couramment utilisé qui fonctionnera avec le lecteur:</p>
     <pre class="line-numbers">
     <code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
       ...
     });</code></pre>
-    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player :</p>
+    <p>Vous allez changer la première ligne pour utiliser la syntaxe standard pour démarrer un plugin Brightcove Player:</p>
     <pre class="line-numbers">
     <code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
       var myPlayer = this;

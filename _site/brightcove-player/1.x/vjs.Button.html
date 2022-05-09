@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+  <!-- change title to match the h1 heading -->
+  <title>Bouton VJS</title>
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.css" />
+  <script src="//use.edgefonts.net/source-code-pro.js"></script>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/en/styles/bcls-doc-site.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/atelier-forest.light.min.css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
+
+  <script>
+  (fonction (i, s, o, g, r, a, m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)}, i [r] .l=1*nouvelle date () ; a=S.createElement (o), m=S.getElementsByTagName (o) [0] ; a.async=1 ; a.src=g ; m.ParentNode.InsertBefore (a, m)}) (fenêtre, document, 'script', '//www.google-analytics.com/analytics.js', 'ga') ; ga ('créer', 'UA-2728311- 23', 'auto') ; ga ('envoyer', 'pageview') ;
+
+</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  </head>
+
+<body>
+	<!-- header navbar -->
+	<div id="navWrapper" class="fixed"></div>
+	<!-- breadcrumbs -->
+	<nav id="breadCrumbWrapper" class="breadcrumbs show-for-medium-up"></nav>
+	<!-- search -->
+	<div id="searchModal" class="reveal-modal" data-reveal></div>
+	<!-- content -->
+    <div class="row">
+        <div class="sidebar large-2 columns show-for-large-up">
+            <div id="sidenav" class="side-nav"></div>
+        </div>
+        <div id="main" class="large-10 small-12 columns">
+      <div id="top" class="section">
+
+<!-- GENERATED FROM SOURCE -->
+<h1>Bouton VJS</h1>
+<div class="right"><a href="./index.html">Index API</a></div>
+
+<p><strong>EXTENDS</strong> : <a href="vjs.Component.html">VJS. Component</a><br>
+<strong>DÉFINI DANS</strong> : <a href="https://github.com/videojs/video.js/blob/master/src/js/button.js#L10">src/js/button.js #L10</a>  </p>
+
+<p>Classe de base pour tous les boutons</p>
+
+<hr>
+
+<div class="section" id="index">
+<h2>INDEX</h2>
+
+<ul>
+<li><p><a href="#methods">MÉTHODES</a></p>
+
+<ul>
+<li><a href="#init-player-options-ready-">initier</a></li>
+<li><a href="#addchild-child-options-">Ajouter un enfant</a> <em><code>hérité</code></em></li>
+<li><a href="#addclass-classtoadd-">Ajouter une classe</a> <em><code>hérité</code></em></li>
+<li><a href="#buildcssclass">Construire la classe CSS</a> <em><code>hérité</code></em></li>
+<li><a href="#children">enfants</a> <em><code>hérité</code></em></li>
+<li><a href="#contentel">ContenTel</a> <em><code>hérité</code></em></li>
+<li><a href="#createel-tagname-attributes-">Créer : EL</a> <em><code>hérité</code></em></li>
+<li><a href="#dimensions-width-height-">dimensions</a> <em><code>hérité</code></em></li>
+<li><a href="#disable">désactiver</a> <em><code>hérité</code></em></li>
+<li><a href="#dispose">jetez</a> <em><code>hérité</code></em></li>
+<li><a href="#el">el</a> <em><code>hérité</code></em></li>
+<li><a href="#getchild-name-">GetChild</a> <em><code>hérité</code></em></li>
+<li><a href="#getchildbyid-id-">Obtenir un enfant par ID</a> <em><code>hérité</code></em></li>
+<li><a href="#height-num-skiplisteners-">hauteur</a> <em><code>hérité</code></em></li>
+<li><a href="#hide">masquer</a> <em><code>hérité</code></em></li>
+<li><a href="#id">ID</a> <em><code>hérité</code></em></li>
+<li><a href="#initchildren">Enfants InIT</a> <em><code>hérité</code></em></li>
+<li><a href="#name">nom</a> <em><code>hérité</code></em></li>
+<li><a href="#off-type-fn-">hors tension</a> <em><code>hérité</code></em></li>
+<li><a href="#on-type-fn-">sur</a> <em><code>hérité</code></em></li>
+<li><a href="#one-type-fn-">un</a> <em><code>hérité</code></em></li>
+<li><a href="#options-obj-">options</a> <em><code>hérité</code></em></li>
+<li><a href="#player">joueur</a> <em><code>hérité</code></em></li>
+<li><a href="#ready-fn-">prêt</a> <em><code>hérité</code></em></li>
+<li><a href="#removechild-component-">Supprimer un enfant</a> <em><code>hérité</code></em></li>
+<li><a href="#removeclass-classtoremove-">Supprimer la classe</a> <em><code>hérité</code></em></li>
+<li><a href="#show">spectacle</a> <em><code>hérité</code></em></li>
+<li><a href="#trigger-type-event-">déclencheur</a> <em><code>hérité</code></em></li>
+<li><a href="#triggerready">Prêt pour la gâchette</a> <em><code>hérité</code></em></li>
+<li><a href="#width-num-skiplisteners-">largeur</a> <em><code>hérité</code></em></li>
+</ul></li>
+<li><p><a href="#events">ÉVÉNEMENTS</a></p>
+
+<ul>
+<li><a href="#resize-event">redimensionner</a> <em><code>hérité</code></em></li>
+</ul></li>
+</ul>
+
+<hr>
+
+</div>
+<div class="section" id="methodsSection">
+<h2 id="methods">LES MÉTHODES</h2>
+
+<h3 id="init-player-options-ready-">AddChild (enfant, [options])</h3>
+
+<blockquote>
+<p>Ajoute un composant enfant à l'intérieur de ce composant</p>
+
+<pre><code>MyComponent.el () ;//-&gt; &lt;div class='my-component'&gt;&lt;/div &gt; MyComonent.Children () ;//[tableau vide] var MyButton = MyComponent.AddChild ('MyButton') ;//-&gt; &lt;div class='my-component'&gt;&lt;div class="mon-bouton"&gt;MyButton&lt;div&gt;&lt;/div &gt;//-&gt; MyButton === MyComonent. enfants () [0] ; </code></pre>
+
+<p>Transmettez les options pour les constructeurs enfants et les options pour les enfants de l'enfant</p>
+
+<pre><code>var MyButton = MyComponent.AddChild ('MyButton', { text: 'Press Me', children: { buttonChildExample: { buttonChildOption: true }}}) ; </code></pre>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>child</strong> <code>string|VJS.Component</code> Le nom de classe ou l'instance d'un enfant à ajouter</li>
+<li><strong></strong> <code>objets options</code> <em>(FACULTATIF)</em> Options, y compris les options à transmettre aux enfants de l'enfant.</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS.Component</code> Le composant enfant (créé par ce processus si une chaîne a été utilisée)</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L343">src/js/component.js #L343</a></p>
+
+<hr>
+
+<h3 id="addchild-child-options-">Ajouter une classe (classe à ajouter)</h3>
+
+<blockquote>
+<p>Ajouter un nom de classe CSS à l'élément du composant</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>ClassToAdd</strong> <code>String</code> Classname à ajouter</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L628">src/js/component.js #L628</a></p>
+
+<hr>
+
+<h3 id="buildcssclass">Construire la classe CSS ()</h3>
+
+<blockquote>
+<p>Permet aux sous-composants d'empiler les noms de classes CSS</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Chaîne</code> Le nom de la classe construite</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L471">src/js/component.js #L471</a></p>
+
+<hr>
+
+<h3 id="children">enfants ()</h3>
+
+<blockquote>
+<p>Obtenez un tableau de tous les composants enfants</p>
+
+<pre><code>var kids = MyComponent.Children () ; </code></pre>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Array</code> Les enfants</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L277">src/js/component.js #L277</a></p>
+
+<hr>
+
+<h3 id="contentel">ContenTel ()</h3>
+
+<blockquote>
+<p>Renvoie l'élément DOM du composant pour incorporer du contenu. Ce sera soit el_, soit un nouvel élément défini dans CreateEl.</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Element</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L220">src/js/component.js #L220</a></p>
+
+<hr>
+
+<h3 id="createel-tagname-attributes-">CreaTeel ([TagName], [attributs])</h3>
+
+<blockquote>
+<p>Création de l'élément DOM du composant</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong></strong> <code>Chaîne TagName</code> <em>(FACULTATIF)</em> Type de nœud de l'élément, par exemple « div »</li>
+<li><strong>Attributs</strong> <code>Objet</code> <em>(FACULTATIF)</em> Objet d'attributs d'élément qui doit être défini sur l'élément</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Element</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L190">src/js/component.js #L190</a></p>
+
+<hr>
+
+<h3 id="dimensions-width-height-">dimensions (largeur, hauteur)</h3>
+
+<blockquote>
+<p>Définissez la largeur et la hauteur en même temps</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>largeur</strong> <code>numéro|chaîne</code> </li>
+<li><strong>hauteur</strong> <code>Numéro|String</code> </li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS.Component</code> Le composant</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L737">src/js/component.js #L737</a></p>
+
+<hr>
+
+<h3 id="disable">disable ()</h3>
+
+<blockquote>
+<p>Désactiver le composant en le rendant impossible à voir</p>
+</blockquote>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L691">src/js/component.js #L691</a></p>
+
+<hr>
+
+<h3 id="dispose">jetez ()</h3>
+
+<blockquote>
+<p>Éliminez le composant et tous les composants enfants</p>
+</blockquote>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L74">src/js/component.js #L74</a></p>
+
+<hr>
+
+<h3 id="el">el ()</h3>
+
+<blockquote>
+<p>Obtenir l'élément DOM du composant</p>
+
+<pre><code>var Domel = MyComponent.el () ; </code></pre>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Element</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L201">src/js/component.js #L201</a></p>
+
+<hr>
+
+<h3 id="getchild-name-">GetChild (nom)</h3>
+
+<blockquote>
+<p>Renvoie un composant enfant portant le nom fourni</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>nom</strong> </li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L311">src/js/component.js #L311</a></p>
+
+<hr>
+
+<h3 id="getchildbyid-id-">Obtenir l'enfant par ID (id)</h3>
+
+<blockquote>
+<p>Retourne un composant enfant avec l'ID fourni</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>ID</strong> </li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L294">src/js/component.js #L294</a></p>
+
+<hr>
+
+<h3 id="height-num-skiplisteners-">hauteur ([num], [SkiPlisteners])</h3>
+
+<blockquote>
+<p>Obtenir ou définir la hauteur du composant (valeurs CSS)</p>
+
+<p>La définition des valeurs de dimension de balise vidéo ne fonctionne qu'avec des valeurs exprimées en pixels. Les valeurs en pourcentage ne fonctionneront pas. Certains pourcentages peuvent être utilisés, mais width () /height () renvoie le nombre +%, et non la largeur/hauteur calculée réelle.</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>num</strong> <code>Number|Chaîne</code> <em>(FACULTATIF)</em> Nouvelle hauteur de composant</li>
+<li><strong>SkiListeners</strong> <code>Boolean</code> <em>(FACULTATIF)</em> Ignorer le déclencheur d'événement de redimensionnement</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS.Component</code> Ce composant, lors de la définition de la hauteur</li>
+<li><code>Number|String</code> La hauteur, lors de l'obtention</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L726">src/js/component.js #L726</a></p>
+
+<hr>
+
+<h3 id="hide">cacher ()</h3>
+
+<blockquote>
+<p>Masquer l'élément composant s'il est actuellement affiché</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L659">src/js/component.js #L659</a></p>
+
+<hr>
+
+<h3 id="id">id ()</h3>
+
+<blockquote>
+<p>Obtenir l'ID du composant</p>
+
+<pre><code>var id = MyComponent.ID () ; </code></pre>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>String</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L239">src/js/component.js #L239</a></p>
+
+<hr>
+
+<h3 id="init-player-options-ready-">init (joueur, options, prêt)</h3>
+
+<blockquote>
+<p>la fonction constructeur de la classe</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>joueur</strong> </li>
+<li><strong>options</strong> </li>
+<li><strong>prêt</strong> </li>
+</ul>
+
+<p><em>défini dans</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/button.js#L15">src/js/button.js #L15</a></p>
+
+<hr>
+
+<h3 id="initchildren">Enfants en TI ()</h3>
+
+<blockquote>
+<p>Ajouter et initialiser des composants enfants par défaut à partir d'options</p>
+
+<pre><code>//lorsqu'une instance de MyComponent est créée, tous les enfants des options//seront ajoutés à l'instance par leurs chaînes de nom et les options MyComponent.Prototype.Options_.Children = { myChildComponent: { myChildOption: true }} </code></pre>
+</blockquote>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L439">src/js/component.js #L439</a></p>
+
+<hr>
+
+<h3 id="name">nom ()</h3>
+
+<blockquote>
+<p>Obtenez le nom du composant. Le nom est souvent utilisé pour référencer le composant.</p>
+
+<pre><code>nom var = MyComponent.Name () ; </code></pre>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>String</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L258">src/js/component.js #L258</a></p>
+
+<hr>
+
+<h3 id="off-type-fn-">désactivé ([type], [fn])</h3>
+
+<blockquote>
+<p>Supprimer un écouteur d'événements de l'élément du composant</p>
+
+<pre><code>MyComponent.off (« EventName », MyFunc) ; </code></pre>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>Type</strong> <code>String</code> <em>(FACULTATIF)</em> Type d'événement. Sans type, il supprimera tous les auditeurs.</li>
+<li><strong></strong> <code>Fonction FN</code> <em>(FACULTATIF)</em> Écouteur d'événements. Sans fn, il supprimera tous les auditeurs d'un type.</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L510">src/js/component.js #L510</a></p>
+
+<hr>
+
+<h3 id="on-type-fn-">On (type, fn)</h3>
+
+<blockquote>
+<p>Ajouter un écouteur d'événements à l'élément de ce composant</p>
+
+<pre><code>var MyFunc = function (){ var myPlayer = this; // Do something when the event is fired } ; MyPlayer.on (« EventName », MyFunc) ; </code></pre>
+
+<p>Le contexte sera le composant.</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>type</strong> <code>String</code> Le type d'événement, par exemple « clic »</li>
+<li><strong></strong> <code>Fonction fn</code> L'écouteur d'événements</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS. Composant</code> auto</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L496">src/js/component.js #L496</a></p>
+
+<hr>
+
+<h3 id="one-type-fn-">un (type, fn)</h3>
+
+<blockquote>
+<p>Ajoutez un écouteur d'événements à déclencher une seule fois, puis supprimé</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>type</strong> <code>String Type</code> d'événement</li>
+<li><strong>fn</strong> <code>Fonction</code> Écouteur d'événement</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L522">src/js/component.js #L522</a></p>
+
+<hr>
+
+<h3 id="options-obj-">options (obj)</h3>
+
+<blockquote>
+<p>Fusion profonde des objets d'options</p>
+
+<p>Chaque fois qu'une propriété est un objet sur les deux objets options, les deux propriétés sont fusionnées à l'aide de VJS.obj.DeepMerge.</p>
+
+<p>Il est utilisé pour fusionner les options des composants enfants. Nous voulons qu'il soit facile de remplacer les options individuelles d'un composant enfant sans avoir à réécrire toutes les autres options par défaut.</p>
+
+<pre><code>Parent.Prototype.Options_ = { children: { 'childOne': { 'foo': 'bar', 'asdf': 'fdsa' }, 'ChildTwo' : {}, 'ChildThree' : {}}} NewOptions = { children: { 'childOne': { 'foo': 'baz', 'abc': '123' } 'ChildTwo' : null, 'ChildFour' : {} }} this.options (nouvelles options) ; </code></pre>
+
+<p>RÉSULTAT</p>
+
+<pre><code>{ children: { 'childOne': { 'foo': 'baz', 'asdf': 'fdsa', 'abc': '123' }, 'ChildTwo' : null,//Désactivé. Ne sera pas initialisé. 'ChildThree' : {}, 'ChildFour' : {}}} </code></pre>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>Obj</strong> <code></code> Object de nouvelles valeurs d'options</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Objet</code> Un nouvel objet de ce .options_ et obj fusionné</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L169">src/js/component.js #L169</a></p>
+
+<hr>
+
+<h3 id="player">joueur ()</h3>
+
+<blockquote>
+<p>Retourner le lecteur du composant</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS Player</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L116">src/js/component.js #L116</a></p>
+
+<hr>
+
+<h3 id="ready-fn-">prêt (fn)</h3>
+
+<blockquote>
+<p>Lier un écouteur à l'état prêt du composant</p>
+
+<p>Différent des écouteurs d'événements en ce sens que si l'événement prêt s'est déjà produit, il déclenchera immédiatement la fonction.</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>écouteur FN</strong> <code>Function</code> Ready</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L581">src/js/component.js #L581</a></p>
+
+<hr>
+
+<h3 id="removechild-component-">RemoveChild (composant)</h3>
+
+<blockquote>
+<p>Supprimez un composant enfant de la liste des enfants de ce composant et l'élément du composant enfant de l'élément de ce composant</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>composant</strong> <code></code> VJS.Component à supprimer</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L401">src/js/component.js #L401</a></p>
+
+<hr>
+
+<h3 id="removeclass-classtoremove-">Supprimer la classe (classe à supprimer)</h3>
+
+<blockquote>
+<p>Supprimer un nom de classe CSS de l'élément du composant</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>ClassStoRemove</strong> <code>String</code> Classname à supprimer</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L639">src/js/component.js #L639</a></p>
+
+<hr>
+
+<h3 id="show">spectacle ()</h3>
+
+<blockquote>
+<p>Afficher l'élément composant s'il est masqué</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L649">src/js/component.js #L649</a></p>
+
+<hr>
+
+<h3 id="trigger-type-event-">trigger (type, événement)</h3>
+
+<blockquote>
+<p>Déclencher un événement sur un élément</p>
+
+<pre><code>MyComponent.Trigger ('EventName') ; </code></pre>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>type</strong> <code>String Type</code> d'événement à déclencher, par exemple « clic »</li>
+<li><strong>événement</strong> <code>Event|Object</code> L'objet événement à transmettre à l'écouteur</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS. Composant</code> auto</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L536">src/js/component.js #L536</a></p>
+
+<hr>
+
+<h3 id="triggerready">Déclencheur prêt ()</h3>
+
+<blockquote>
+<p>Déclenchez les auditeurs prêts</p>
+</blockquote>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>Composant VJS</code> </li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L600">src/js/component.js #L600</a></p>
+
+<hr>
+
+<h3 id="width-num-skiplisteners-">largeur ([num], SkiPlisteners)</h3>
+
+<blockquote>
+<p>Définir ou obtenir la largeur du composant (valeurs CSS)</p>
+
+<p>La définition des valeurs de dimension de balise vidéo ne fonctionne qu'avec des valeurs exprimées en pixels. Les valeurs en pourcentage ne fonctionneront pas. Certains pourcentages peuvent être utilisés, mais width () /height () renvoie le nombre +%, et non la largeur/hauteur calculée réelle.</p>
+</blockquote>
+
+<h5>PARAMÈTRES :</h5>
+
+<ul>
+<li><strong>num</strong> <code>Number|Chaîne</code> <em>(FACULTATIF)</em> Numéro de largeur optionnel</li>
+<li><strong>SkipListeners</strong> <code>Boolean</code> Ignorer le déclencheur d'' événement « redimensionner »</li>
+</ul>
+
+<h5>RETOURS :</h5>
+
+<ul>
+<li><code>VJS.Component</code> Ce composant, lors de la définition de la largeur</li>
+<li><code>Number|String</code> La largeur, lors de l'obtention</li>
+</ul>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L709">src/js/component.js #L709</a></p>
+
+<hr>
+
+</div>
+<div class="section" id="eventsSection">
+<h2 id="events">ÉVÉNEMENTS</h2>
+
+<h3 id="resize-event"> <code>EVENT redimensionner</code></h3>
+
+<blockquote>
+<p>Défilé lorsque la largeur et/ou la hauteur du composant changent</p>
+</blockquote>
+
+<p><em>hérité de</em>: <a href="https://github.com/videojs/video.js/blob/master/src/js/component.js#L816">src/js/component.js #L816</a></p>
+
+<hr>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bcl scripts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script src="/en/scripts/log.js"></script>
+    <script src="/en/scripts/docs-nav-data.min.js"></script>
+    <script src="/en/scripts/bcls-doc-site-v1.js"></script>
+    <script src="/en/scripts/bc-mapi.js"></script>
+    <script>
+        $ (document) .foundation () ;
+    </script>
+    <script type="text/javascript">
+    /******** Tous les scripts spécifiques aux échantillons de pages doivent être présentés ici *********/
+  </script>
+    
+    
+	<div style="text-align:center">
+    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+</div>
+<div class="bcls-footer"><a id="feedbackMail" href="mailto:docs@brightcove.com">Des questions ou des commentaires ?</a></div>
+<script>
+var FeedbackMail = document.getElementById (« FeedbackMail ») ; FeedbackMail.setAttribute (« href », « mailto : docs@brightcove.com ? subject=question concernant "+ EncodeURI (document.location.href)) ;
+</script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
+<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+</body>
+
+</html>

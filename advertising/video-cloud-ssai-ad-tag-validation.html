@@ -1,6 +1,7 @@
 ---
-title: Description de la validation des balises publicitaires SSAI Video Cloud : Dans cette rubrique, vous apprendrez à suivre les appels d'annonces spécifiés avec l'insertion d'annonces côté serveur (SSAI).
-parent: Advertising
+title: "la validation des balises publicitaires SSAI Video Cloud"
+description: "Dans cette rubrique, vous apprendrez à suivre les appels d'annonces spécifiés avec l'insertion d'annonces côté serveur (SSAI).
+parent: Advertising"
 ---
 
 
@@ -18,7 +19,7 @@ parent: Advertising
   <section class="bcls-section">
     <h2 id="Overview">Vue d'ensemble</h2>
     <p>Pour faciliter le débogage des publicités côté serveur, Dynamic Delivery with SSAI fournit des points de terminaison d'API pour suivre les appels d'annonces.</p>
-    <aside class="bcls-aside bcls-aside--information">Notes :
+    <aside class="bcls-aside bcls-aside--information">Notes:
       <ul>
         <li>Pour utiliser SSAI, votre compte Video Cloud doit être configuré pour <a href="https://studio.support.brightcove.com/general/overview-dynamic-delivery.html">Dynamic Delivery</a> et activé pour SSAI. Contactez votre responsable de compte pour commencer à utiliser cette fonctionnalité.</li>
         <li>Cette interface de débogage est réservée à la VOD SSAI.</li>
@@ -27,7 +28,7 @@ parent: Advertising
     </aside>
     <!-- <aside class="bcls-aside bcls-aside--information">SSAI logging is session based and uses parameters for a particular session. It’s critical to test in an environment that best represents your needs to debug including, geography, page variables, playback device, etc.</aside> -->
     
-    <p>Pour déboguer des publicités côté serveur avec votre contenu vidéo stocké dans Video Cloud, procédez comme suit :</p>
+    <p>Pour déboguer des publicités côté serveur avec votre contenu vidéo stocké dans Video Cloud, procédez comme suit:</p>
     <ol class="bcls-tasklist__restart">
       <li><a href="#General_information">Consultez les informations générales sur le chemin et l'autorisation de l'API</a></li>
       <li><a href="#Run_a_trace_for_an_ad_configuration">Exécuter une trace pour une configuration d'annonce</a></li>
@@ -38,22 +39,22 @@ parent: Advertising
     <h2 id="General_information">Informations générales</h2>
     <p>Les informations suivantes concernent toutes les demandes d'API SSAI.</p>
     <h3>URL de base</h3>
-    <p>L'URL de base de l'API SSAI est :</p>
+    <p>L'URL de base de l'API SSAI est:</p>
     <pre class="line-numbers">
   <code class="language-http" translate="No">https://ssai.api.brightcove.com/v1</code></pre>
     <h4>Chemin du compte</h4>
-    <p>Dans tous les cas, des demandes seront faites pour un compte Video Cloud spécifique. Ainsi, vous ajouterez toujours le terme <code translate="No">accounts</code> suivi de votre identifiant de compte à l'URL de base :</p>
+    <p>Dans tous les cas, des demandes seront faites pour un compte Video Cloud spécifique. Ainsi, vous ajouterez toujours le terme <code translate="No">accounts</code> suivi de votre identifiant de compte à l'URL de base:</p>
     <pre class="line-numbers">
   <code class="language-http" translate="No">https://ssai.api.brightcove.com/v1<strong>/accounts/</strong><span class="bcls-input">your account id</span></code></pre>
     <h3>Autorisation</h3>
-    <p>Les requêtes API nécessitent un en-tête Authorization :</p>
+    <p>Les requêtes API nécessitent un en-tête Authorization:</p>
     <pre class="line-numbers">
   <code class="language-http" translate="No">Authorization: Bearer <span class="bcls-input">your access token</span></code></pre>
     <p>Le <code translate="No">access_token</code> est un jeton d'accès OAuth2 temporaire qui doit être obtenu à partir du service Brightcove OAuth. Pour plus d'informations sur la façon d'obtenir des informations d'identification client et de les utiliser pour récupérer des jetons d'accès, consultez la <a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">présentation OAuth de Brightcove</a>.</p>
     <h3>Opérations</h3>
-    <p>Lorsque vous demandez les informations d'identification du client, vous devrez spécifier le type d'accès au compte ou les opérations que vous souhaitez. Voici une liste des opérations actuellement prises en charge pour l'API SSAI :</p>
+    <p>Lorsque vous demandez les informations d'identification du client, vous devrez spécifier le type d'accès au compte ou les opérations que vous souhaitez. Voici une liste des opérations actuellement prises en charge pour l'API SSAI:</p>
     <ul>
-      <li>Données SSAI :
+      <li>Données SSAI:
         <p><code translate="No">video-cloud/ssai/read</code><br />
           <code translate="No">video-cloud/ssai/all</code></p>
       </li>
@@ -61,9 +62,9 @@ parent: Advertising
   </section>
   <section class="bcls-section">
     <h2 id="Run_a_trace_for_an_ad_configuration">Exécuter une trace pour une configuration d'annonce</h2>
-    <p>Pour exécuter un suivi d'une configuration publicitaire, procédez comme suit :</p>
+    <p>Pour exécuter un suivi d'une configuration publicitaire, procédez comme suit:</p>
     <h3>Collecter des informations</h3>
-    <p>Recueillez les informations suivantes pour le <strong>corps</strong> de votre demande d'API :</p>
+    <p>Recueillez les informations suivantes pour le <strong>corps</strong> de votre demande d'API:</p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -117,7 +118,7 @@ parent: Advertising
           <td>Authorization: Porteur <span class="bcls-input">access_token</span> (voir <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Obtenir des jetons d'accès</a>)</td>
         </tr>
         <tr>
-          <td>Type de contenu : application/json</td>
+          <td>Type de contenu: application/json</td>
         </tr>
         <tr>
           <th>Corps de l'échantillon</th>
@@ -147,7 +148,7 @@ parent: Advertising
     </table>
     <h3>Réponse</h3>
     <p>La réponse <code translate="No">body</code> se compose de la réponse du serveur publicitaire qui inclurait la réponse VAST ou l'équivalent du serveur publicitaire.</p>
-    <p>Réponse de l'échantillon :</p>
+    <p>Réponse de l'échantillon:</p>
     <pre class="line-numbers">
   <code class="language-xml" translate="No">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
   &lt;vmap:VMAP xmlns:bc="bc" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
@@ -211,7 +212,7 @@ parent: Advertising
           <td>Authorization: Porteur <span class="bcls-input">access_token</span> (voir <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Obtenir des jetons d'accès</a>)</td>
         </tr>
         <tr>
-          <td>Type de contenu : application/json</td>
+          <td>Type de contenu: application/json</td>
         </tr>
         <tr>
           <th>Corps de l'échantillon</th>
@@ -259,7 +260,7 @@ parent: Advertising
     <!-- <aside class="bcls-aside bcls-aside--information">For data definitions within the <code translate="No">videocloud_metadata</code> object, see the <a href="http://docs.brightcove.com/en/staging/ssai-api.html#Metadata_variables">Metadata variables</a> section of the Video Cloud SSAI Ad Config API document.</aside> --><!-- <aside class="bcls-aside bcls-aside--information">Be sure to validate any server-side macros that they are correctly inserting values to that URL.</aside> -->
     
     <h3>Réponse 2</h3>
-    <p>Exemple de réponse :</p>
+    <p>Exemple de réponse:</p>
     <pre class="line-numbers">
   <code class="language-xml" translate="No">&lt;vmap:VMAP xmlns:bc="bc" xmlns:vmap="http://www.iab.net/vmap-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"&gt;
   &lt;vmap:Extensions&gt;
@@ -313,11 +314,11 @@ parent: Advertising
     <h2 id="Retrieve_trace_details">Récupérer les détails de la trace</h2>
     <p>Une fois que vous avez exécuté une trace publicitaire comme indiqué dans la section précédente, vous pouvez récupérer des informations détaillées sur la trace à l'aide de l'ID de session.</p>
     <p>Le <code translate="No">session_id</code> spécifie la session de mise en cache. Chaque session a sa propre durée en fonction de la longueur du contenu vidéo. Vous pouvez obtenir l'ID à partir de la réponse à l'appel d'API à l'étape précédente.</p>
-    <p>L'identifiant de session se trouve dans les réponses VMAP de la section précédente. Voici un exemple :</p>
+    <p>L'identifiant de session se trouve dans les réponses VMAP de la section précédente. Voici un exemple:</p>
     <pre>
   <code class="language-xml" translate="No">&lt;bc:BrightcoveDebug sessionID="<span class="bcls-input">your session id</span>"&gt;&lt;/bc:BrightcoveDebug&gt;</code></pre>
     <h3>Requête</h3>
-    <p>Pour récupérer les informations de suivi des appels d'annonces en fournissant un identifiant de session, utilisez une requête GET similaire à la suivante :</p>
+    <p>Pour récupérer les informations de suivi des appels d'annonces en fournissant un identifiant de session, utilisez une requête GET similaire à la suivante:</p>
     <table class="bcls-table">
       <tbody class="bcls-table__body">
         <tr>
@@ -333,14 +334,14 @@ parent: Advertising
           <td>Authorization: Porteur <span class="bcls-input">access_token</span> (voir <a href="https://apis.support.brightcove.com/oauth/guides/getting-access-tokens.html">Obtenir des jetons d'accès</a>)</td>
         </tr>
         <tr>
-          <td>Type de contenu : application/json</td>
+          <td>Type de contenu: application/json</td>
         </tr>
       </tbody>
     </table>
     <!-- <aside class="bcls-aside bcls-aside--information">Be sure to validate any server-side macros that they are correctly inserting values to that URL.</aside> -->
     
     <h3>Réponse</h3>
-    <p>Réponse de l'échantillon :</p>
+    <p>Réponse de l'échantillon:</p>
     <pre class="line-numbers">
   <code class="language-json" translate="No">{
     "ad_calls": [
@@ -411,7 +412,7 @@ parent: Advertising
     ]
   }</code></pre>
     <p>Vous pouvez utiliser un outil comme <a href="https://www.base64decode.org/">BASE64</a> pour rendre le corps de la réponse lisible.</p>
-    <p>Exemple de corps de réponse décodé :</p>
+    <p>Exemple de corps de réponse décodé:</p>
     <pre class="line-numbers">
   <code class="language-xml" translate="No">&lt;vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0"&gt;
 

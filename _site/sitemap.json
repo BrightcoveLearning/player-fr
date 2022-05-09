@@ -50,6 +50,16 @@
   },
 
   {
+      "newURL": "https://player.support.brightcove.com/plugins/airplay-plugin.html",
+      "oldURL": "/airplay-plugin"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/amp/amp-and-advertising.html",
+      "oldURL": "/amp-and-advertising"
+  },
+
+  {
       "newURL": "https://player.support.brightcove.com/amp/amp-using-external-video.html",
       "oldURL": "/amp-using-external-video"
   },
@@ -82,11 +92,6 @@
   {
       "newURL": "https://player.support.brightcove.com/plugins/beta-chromecast-plugin-brightcove-player.html",
       "oldURL": "/beta-chromecast-plugin-brightcove-player"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/support/brightcove-answer.html",
-      "oldURL": "/brightcove-answer"
   },
 
   {
@@ -540,11 +545,6 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/code-samples/brightcove-player-samples-simulated-live.html",
-      "oldURL": "/brightcove-player-samples-simulated-live"
-  },
-
-  {
       "newURL": "https://player.support.brightcove.com/references/brightcove-player-system-requirements.html",
       "oldURL": "/brightcove-player-system-requirements"
   },
@@ -567,6 +567,11 @@
   {
       "newURL": "https://player.support.brightcove.com/references/catalog-search-architecture.html",
       "oldURL": "/catalog-search-architecture"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/playback/china-delivery-with-bcp.html",
+      "oldURL": "/china-delivery-with-bcp"
   },
 
   {
@@ -745,6 +750,16 @@
   },
 
   {
+      "newURL": "https://player.support.brightcove.com/playback/forensic-watermarking-with-bcp.html",
+      "oldURL": "/forensic-watermarking-with-bcp"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/general/ga-self-configure.html",
+      "oldURL": "/ga-self-configure"
+  },
+
+  {
       "newURL": "https://player.support.brightcove.com/plugins/google-tag-manager-plugin-brightcove-player.html",
       "oldURL": "/google-tag-manager-plugin-brightcove-player"
   },
@@ -825,17 +840,12 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/release-notes/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/basics/",
-      "oldURL": "/index"
-  },
-
-  {
       "newURL": "https://player.support.brightcove.com/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/release-notes/",
       "oldURL": "/index"
   },
 
@@ -845,37 +855,7 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/general/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/coding-topics/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/advertising/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/styling/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/amp/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/training/",
-      "oldURL": "/index"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/support/",
+      "newURL": "https://player.support.brightcove.com/basics/",
       "oldURL": "/index"
   },
 
@@ -885,12 +865,27 @@
   },
 
   {
+      "newURL": "https://player.support.brightcove.com/coding-topics/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/training/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/advertising/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://player.support.brightcove.com/content-protection/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/plugins/changelog/",
+      "newURL": "https://player.support.brightcove.com/styling/",
       "oldURL": "/index"
   },
 
@@ -900,7 +895,12 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/getting-started/",
+      "newURL": "https://player.support.brightcove.com/amp/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/support/",
       "oldURL": "/index"
   },
 
@@ -910,13 +910,23 @@
   },
 
   {
+      "newURL": "https://player.support.brightcove.com/getting-started/",
+      "oldURL": "/index"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/plugins/changelog/",
+      "oldURL": "/index"
+  },
+
+  {
       "newURL": "https://player.support.brightcove.com/publish/",
       "oldURL": "/index"
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/playback/ios-and-brightcove-player.html",
-      "oldURL": "/ios-and-brightcove-player"
+      "newURL": "https://player.support.brightcove.com/general/",
+      "oldURL": "/index"
   },
 
   {
@@ -947,6 +957,11 @@
   {
       "newURL": "https://player.support.brightcove.com/getting-started/learning-guide-video-advertising.html",
       "oldURL": "/learning-guide-video-advertising"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/playback/license-protection-with-bcp.html",
+      "oldURL": "/license-protection-with-bcp"
   },
 
   {
@@ -1000,12 +1015,12 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/getting-started/overview-brightcove-player-plugins.html",
+      "newURL": "https://player.support.brightcove.com/plugins/overview-brightcove-player-plugins.html",
       "oldURL": "/overview-brightcove-player-plugins"
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/plugins/overview-brightcove-player-plugins.html",
+      "newURL": "https://player.support.brightcove.com/getting-started/overview-brightcove-player-plugins.html",
       "oldURL": "/overview-brightcove-player-plugins"
   },
 
@@ -1047,6 +1062,11 @@
   {
       "newURL": "https://player.support.brightcove.com/plugins/changelog/picture-picture-plugin-changelog.html",
       "oldURL": "/picture-picture-plugin-changelog"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/playback/playback-restrictions-with-bcp.html",
+      "oldURL": "/playback-restrictions-with-bcp"
   },
 
   {
@@ -1092,6 +1112,11 @@
   {
       "newURL": "https://player.support.brightcove.com/general/playing-live-streams.html",
       "oldURL": "/playing-live-streams"
+  },
+
+  {
+      "newURL": "https://player.support.brightcove.com/plugins/playlist-endscreen-plugin.html",
+      "oldURL": "/playlist-endscreen-plugin"
   },
 
   {
@@ -1150,12 +1175,12 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/support/register-training.html",
+      "newURL": "https://player.support.brightcove.com/training/register-training.html",
       "oldURL": "/register-training"
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/training/register-training.html",
+      "newURL": "https://player.support.brightcove.com/support/register-training.html",
       "oldURL": "/register-training"
   },
 
@@ -1170,6 +1195,11 @@
   },
 
   {
+      "newURL": "https://player.support.brightcove.com/support/reset-support-portal-password.html",
+      "oldURL": "/reset-support-portal-password"
+  },
+
+  {
       "newURL": "https://player.support.brightcove.com/styling/responsive-sizing-brightcove-player.html",
       "oldURL": "/responsive-sizing-brightcove-player"
   },
@@ -1180,13 +1210,13 @@
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/troubleshooting/running-network-path-trace.html",
-      "oldURL": "/running-network-path-trace"
+      "newURL": "https://player.support.brightcove.com/coding-topics/retrieve-bitrate-current-rendition.html",
+      "oldURL": "/retrieve-bitrate-current-rendition"
   },
 
   {
-      "newURL": "https://player.support.brightcove.com/search-test.html",
-      "oldURL": "/search-test"
+      "newURL": "https://player.support.brightcove.com/troubleshooting/running-network-path-trace.html",
+      "oldURL": "/running-network-path-trace"
   },
 
   {
@@ -1327,11 +1357,6 @@
   {
       "newURL": "https://player.support.brightcove.com/advertising/using-dfp-premium-brightcove-player.html",
       "oldURL": "/using-dfp-premium-brightcove-player"
-  },
-
-  {
-      "newURL": "https://player.support.brightcove.com/general/using-directed-migration-tool-migrate-brightcove-smart-players.html",
-      "oldURL": "/using-directed-migration-tool-migrate-brightcove-smart-players"
   },
 
   {
