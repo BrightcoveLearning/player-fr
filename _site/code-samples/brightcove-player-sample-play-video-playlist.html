@@ -24,8 +24,12 @@
   
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script>
-  Window.DataLayer = Window.DataLayer || [] ; tag de fonction (){dataLayer.push(arguments);} tag ('js', new Date () ; tag ('config', 'UA-2728311-17') ;
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
@@ -819,7 +823,7 @@
 
 <hr>
 <div class="last-updated">
-  Dernière mise à jour de la page 14 Feb 2022
+  Dernière mise à jour de la page 09 May 2022
 </div>
 
 
@@ -901,7 +905,19 @@
 
 <script>
       
-  var SearchBox = sajari.init ({ mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to }) ; SearchBox (« sub », « pipeline.search-sent », fonction (_, requête) { window.location = "/search.html?q=" + encodeURIComponent(query.q); }) ;
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documenation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+  
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
   
 
 </script>
