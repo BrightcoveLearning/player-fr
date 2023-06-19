@@ -1,22 +1,74 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Document sans titre</title>
-    <style>
-        /* * Le style du corps est juste pour la * couleur d'arrière-plan du codepen. * Ne pas inclure dans votre code. */ corps { background-color: #111; color: #fff; } /* * Les styles essentiels à l'échantillon * sont ci-dessous */ .video-js { height: 440px; width: 560px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Document sans titre</title>
+  <style translate="no">
+    /* * The body style is just for the
+ * background color of the codepen.
+ * Do not include in your code.
+ */
+    body {
+      background-color: #111;
+      color: #fff;
+    }
+
+    /*
+ * Styles essential to the sample
+ * are below
+ */
+    .video-js {
+      height: 440px;
+      width: 560px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <video-js id="myPlayerID" data-video-id="5185914204001" data-account="1752604059001" data-player="Hyv669PDZ" data-embed="default" data-application-id class="video-js" controls></video-js>
-    <script src="https://players.brightcove.net/1752604059001/Hyv669PDZ_default/index.min.js"></script>
+  <video-js id="myPlayerID" data-video-id="5185914204001" data-account="1752604059001" data-player="Hyv669PDZ" data-embed="default" data-application-id controls=""></video-js>
+  <script src="https://players.brightcove.net/1752604059001/Hyv669PDZ_default/index.min.js"></script>
 
-    <script>
-        videojs.getPlayer('myPlayerID').ready(function() { var myPlayer = this; // Créer un div dans lequel placer le contenu HTML et placer l'image à l'intérieur var newElement = document.createElement("div"); newElement.innerHTML = "<img src='https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-live-custom-error-message/please-stand-by.png'>"; // Définit l'objet options à utiliser pour le contenu modal var options = {} ; options.content = newElement; // Créer un modal avec l'objet d'options var ModalDialog = videojs.getComponent("ModalDialog"); var myModal = new ModalDialog(myPlayer, options); myPlayer.addChild(myModal); // Ecoute un événement d'erreur myPlayer.on("error", function(err) { // The Modal should only be displayed if the error code is 4 // and the duration is NaN (not a number) // The following code gets the error code and duration var errNo = myPlayer.error().code; var duration = myPlayer.duration(); //Check if the error code and duration mean no video has loaded if (errNo == "4" &amp;&amp; duration == 0) { console.log('info: in if'); // Hide the error display myPlayer.errorDisplay.hide(); // If conditions met show the custom modal myModal.open(); } }); // Si l'erreur modale personnalisée est fermée, affiche l'erreur par défaut myModal.on("modalclose", function() { myPlayer.errorDisplay.show(); }); });
-    </script>
+  <script translate="no">
+        videojs.getPlayer('myPlayerID').ready(function() {
+            var myPlayer = this;
+            // Create a div in which to place HTML content and place image inside
+            var newElement = document.createElement("div");
+            newElement.innerHTML =
+                "<img src='https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-live-custom-error-message/please-stand-by.png'>";
+            // Define options object to be used for modal content
+            var options = {};
+            options.content = newElement;
+
+            // Create Modal with options object
+            var ModalDialog = videojs.getComponent("ModalDialog");
+            var myModal = new ModalDialog(myPlayer, options);
+            myPlayer.addChild(myModal);
+
+            // Listen for an error event
+            myPlayer.on("error", function(err) {
+                // The Modal should only be displayed if the error code is 4
+                // and the duration is NaN (not a number)
+                // The following code gets the error code and duration
+                var errNo = myPlayer.error().code;
+                var duration = myPlayer.duration();
+                //Check if the error code and duration mean no video has loaded
+                if (errNo == "4" && duration == 0) {
+                    console.log('info: in if');
+                    // Hide the error display
+                    myPlayer.errorDisplay.hide();
+                    // If conditions met show the custom modal
+                    myModal.open();
+                }
+            });
+
+            // If custom modal error closed, show the default error
+            myModal.on("modalclose", function() {
+                myPlayer.errorDisplay.show();
+            });
+        });
+  </script>
 
 </body>
 

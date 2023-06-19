@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     
@@ -20,8 +20,14 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/font-hack/2.015/css/hack-extended.min.css">
 
-  <script>
-  (fonction (i, s, o, g, r, a, m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)}, i [r] .l=1*nouvelle date () ; a=S.createElement (o), m=S.getElementsByTagName (o) [0] ; a.async=1 ; a.src=g ; m.ParentNode.InsertBefore (a, m)}) (fenêtre, document, 'script', '//www.google-analytics.com/analytics.js', 'ga') ; ga ('créer', 'UA-2728311- 23', 'auto') ; ga ('envoyer', 'pageview') ;
+  <script translate="no">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2728311-23', 'auto');
+  ga('send', 'pageview');
 
 </script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
@@ -50,11 +56,12 @@
 
 <p>Sert également de fonction principale permettant aux utilisateurs de créer une instance de lecteur ainsi que l'objet principal de la bibliothèque.</p>
 
-<p><strong>alias</strong> videojs, <em>V</em> (obsolète)</p>
+<p><strong>ALIASES</strong> videojs, <em>V</em> (obsolète)</p>
 
 <p>Les <code>vj</code> La fonction peut être utilisée pour initialiser ou récupérer un lecteur.</p>
 
-<pre><code>var myPlayer = vjs('my_video_id'); </code></pre>
+<pre><code>var myPlayer = vjs('my_video_id') ;
+</code></pre>
 
 <hr>
 
@@ -83,7 +90,7 @@
 <li>CoreObject<a href="vjs.CoreObject.html"></a></li>
 <li><a href="vjs.CurrentTimeDisplay.html">Affichage de l'heure actuelle</a></li>
 <li><a href="vjs.DurationDisplay.html">Affichage de la durée</a></li>
-<li><a href="vjs.Flash.html">Flash</a></li>
+<li><a href="vjs.Flash.html">Éclat</a></li>
 <li><a href="vjs.FullscreenToggle.html">Bascule plein écran</a></li>
 <li><a href="vjs.Html5.html">Html5</a></li>
 <li><a href="vjs.LoadProgressBar.html">Barre de progression du chargement</a></li>
@@ -151,7 +158,7 @@
 
 </div>
 <div class="section" id="methodsSection">
-<h2 id="methods">MÉTHODES</h2>
+<h2 id="methods">LES MÉTHODES</h2>
 
 <h3 id="plugin-name-init-">plugin( nom, init )</h3>
 
@@ -186,23 +193,18 @@
     <script src="/en/scripts/docs-nav-data.min.js"></script>
     <script src="/en/scripts/bcls-doc-site-v1.js"></script>
     <script src="/en/scripts/bc-mapi.js"></script>
-    <script>
-        $ (document) .foundation () ;
+    <script translate="no">
+        $(document).foundation();
     </script>
     <script type="text/javascript">
-    /******** Tous les scripts spécifiques aux échantillons de pages doivent être présentés ici *********/
+    /******** Any scripts specific to page samples should go here *********/
   </script>
     
     
 	<div style="text-align:center">
-    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+    
 </div>
-<div class="bcls-footer"><a id="feedbackMail" href="mailto:docs@brightcove.com">Des questions ou des commentaires ?</a></div>
-<script>
-var FeedbackMail = document.getElementById (« FeedbackMail ») ; FeedbackMail.setAttribute (« href », « mailto : docs@brightcove.com ? subject=question concernant "+ EncodeURI (document.location.href)) ;
-</script>
-<script src="https://learning-services-media.brightcove.com/doc-assets/js/https-fix.js"></script>
-<script src="https://learning-services-media.brightcove.com/doc-assets/js/support-feedback.js"></script><script src="https://support.brightcove.com/site-assets/js/site/feedback-docs.js"></script>
+
 </body>
 
 </html>
